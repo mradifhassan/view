@@ -33,7 +33,6 @@ body {
     box-sizing: border-box;
 }
 
-/* Profile Container */
 .profile-container {
     background: var(--background-color);
     padding: 20px;
@@ -45,7 +44,6 @@ body {
     box-sizing: border-box;
 }
 
-/* Profile Header */
 .profile-header {
     display: flex;
     flex-direction: column;
@@ -79,7 +77,6 @@ body {
     filter: invert(1); /* Invert the icon color */
 }
 
-/* Ensure map icons stay black in light mode */
 body:not(.dark-mode) .profile-info .map-icon {
     filter: invert(0); /* Revert back to original color */
 }
@@ -99,7 +96,6 @@ body:not(.dark-mode) .profile-info .map-icon {
     background-color: var(--button-hover-background);
 }
 
-/* Social Links */
 .social-links {
     display: flex;
     flex-wrap: wrap;
@@ -129,7 +125,6 @@ body:not(.dark-mode) .profile-info .map-icon {
     filter: invert(1); /* Invert the icon color */
 }
 
-/* Ensure icons stay black in light mode */
 body:not(.dark-mode) .social-links a img {
     filter: invert(0); /* Revert back to original color */
 }
@@ -167,7 +162,6 @@ body:not(.dark-mode) .social-links a img {
     color: var(--link-hover-color);
 }
 
-/* Contact Form */
 .contact-form {
     text-align: left;
     margin-top: 20px;
@@ -213,7 +207,6 @@ body:not(.dark-mode) .social-links a img {
     background-color: var(--button-hover-background);
 }
 
-/* Footer Styles */
 .footer {
     text-align: center;
     margin-top: 20px;
@@ -229,19 +222,16 @@ body.dark-mode .footer {
     color: #f0f0f0;
 }
 
-/* Slideshow container */
 .slideshow-container {
     position: relative;
     margin: auto;
     max-width: 1000px;
 }
 
-/* Hide the images by default */
 .mySlides {
     display: none;
 }
 
-/* Next & previous buttons */
 .prev, .next {
     cursor: pointer;
     position: absolute;
@@ -257,18 +247,15 @@ body.dark-mode .footer {
     user-select: none;
 }
 
-/* Position the "next button" to the right */
 .next {
     right: 0;
     border-radius: 3px 0 0 3px;
 }
 
-/* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
     background-color: rgba(0,0,0,0.8);
 }
 
-/* Caption text */
 .text {
     color: #f2f2f2;
     font-size: 15px;
@@ -279,18 +266,16 @@ body.dark-mode .footer {
     text-align: center;
 }
 
-/* Number text (1/3 etc) */
 .numbertext {
     color: #f2f2f2;
     font-size: 12px;
     padding: 8px 12px;
     position: absolute;
     top: 0;
-    left: 0; /* This line adds the left positioning */
+    left: 0;
 }
 
 
-/* The dots/bullets/indicators */
 .dot {
     cursor: pointer;
     height: 15px;
@@ -306,7 +291,6 @@ body.dark-mode .footer {
     background-color: #717171;
 }
 
-/* Fading animation */
 .fade {
     animation-name: fade;
     animation-duration: 1.5s;
