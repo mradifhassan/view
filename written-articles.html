@@ -37,7 +37,7 @@ Now let's learn about the basic principles of classical computers and quantum co
 
 <div class="image-container">
         <img src="α_1⟩ + β_0⟩ = _Q⟩_20240907_190611_0000.png" alt="Sample Image">
-        <div class="caption">Figure 1: A qubit can exist anywhere in a quantum state</div>
+        <div class="caption">Figure \(1\): A qubit can exist anywhere in a quantum state</div>
     </div>
     <p>Imagine, if the classical bit \(0\) represents the North Pole of the Earth, then undoubtedly, \(1\) would represent the South Pole. But due to quantum superposition, the position of a qubit is not limited to these poles, but it can exist anywhere between them. In that case, a qubit can be represented using Dirac notation of quantum mechanics: \(α|1⟩ + β|0⟩ = |Q⟩\); where \(α\) and \(β\) are complex numbers, which can be used to calculate the exact state of the qubit by determining the proportional representation of \(0\) and \(1\). To understand this more easily, imagine an electron that can exist in two states simultaneously (for example, spin up and spin down). While a classical bit requires two states (\(0\) and \(1\)), a qubit can achieve this with just one. By using two qubits, four states can be represented \((00, 01, 10, 11\)) and by adding another qubit, eight states can be achieved \((000, 001, 010, 011, 100, 101, 110, 111\)). In other words, each additional qubit doubles the number of possible states. With eight qubits, or one qubyte, it’s possible to handle the work of \(256\) inputs in classical computing. The current supercomputers, which take days to perform calculations (such as accurate mechanical analysis of biological processes), could complete these tasks in just a few seconds with a \(50\) kilobyte quantum computer.
 <br><br>
@@ -45,7 +45,7 @@ The second principle of quantum mechanics that comes into play here is quantum e
 <p>Now, let’s talk about logic gates. A logic gate is a type of digital electronic circuit that performs various logical operations using Boolean algebra. Logic gates generally refer to logic circuits that have one or more binary inputs and only one output.</p>
 <div class="image-container">
     <img src="α_1⟩ + β_0⟩ = _Q⟩_20240907_184322_0001.png" alt="Sample Image">
-    <div class="caption">Figure 2: If the spin of one electron is positive, the other must be negative.</div>
+    <div class="caption">Figure \(2\): If the spin of one electron is positive, the other must be negative.</div>
 </div>
 <p>There are 3 types of basic logic gates. These are:</p>
 <p class="logic-gates">\(AND\) gate</p>
@@ -54,7 +54,7 @@ The second principle of quantum mechanics that comes into play here is quantum e
 <p>In a classical computer, if two inputs, \(0\) and \(1\), are passed through an \(AND\) gate, the results are as belows: \(0\) \(AND\) \(0 = 0,\) \(0\) \(AND\) \(1 = 0,\) \(1\) \(AND\) \(0 = 0,\) \(1\) \(AND\) \(1 = 1\). When passed through an \(OR\) gate, the results are: \(0\) \(OR\) \(0  = 0,\) \(0\) \(OR\) \(1 = 1,\) \(1\) \(OR\) \(0 = 1,\) \(1\) \(OR\) \(1 = 1\). When passed through a \(NOT\) gate, the input gets inverted, for example, \(0\) \(NOT\) \(= 1,\) \(1\) \(NOT\) \(= 0\), and so on. Quantum logic gates are almost similar to classical logic gates, but they are more complex due to the inputs of qubits depending on quantum probabilities.</p>
 <div class="image-container">
         <img src="α_1⟩ + β_0⟩ = _Q⟩_20240907_184323_0002.png" alt="Sample Image">
-        <div class="caption">Figure 3: Hadamard Gate</div>
+        <div class="caption">Figure \(3\): Hadamard Gate</div>
     </div>
     <p>Quantum logic gates are time-dependent. The most well-known quantum gate is the Hadamard gate or H gate. This quantum gate is named after the French mathematician Jacques Hadamard. The H gate converts the qubit input into a superposition state. In other words, when a \(0\) and \(1\) qubit are passed through an H quantum gate, it creates a superposition state of \(0\) and \(1\). Another basic quantum gate widely used in quantum computing is the Controlled-NOT gate, or \(CNOT\) gate. The CNOT quantum gate works similarly to the Exclusive OR \(XOR\) gate in classical computing. It does not change the value of the controlled qubit input, but it flips the value of the entangled qubit. There are many other types of gates as well, and more will emerge in the distant future.
 <p>Now, let's discuss how a quantum computer solves problems.</p>
