@@ -1023,7 +1023,44 @@ return 0;
 </code></pre> 
    </div> 
   </div>
-  
+  <br><br><hr><br>
+  <u><h3>Problem 34-</h3></u>
+   <br><br>
+   <p><a href="https://dimikoj.com/problems/10/run-rate-1">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <p>Here is the solution</p>
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;iostream&gt;
+#include &lt;iomanip&gt;
+
+using namespace std;
+
+int main(void){
+    int n;
+    cin >> n;
+    double x[n], y[n], z[n];
+    for(int i = 0; i < n; i++){
+        cin >> x[i] >> y[i] >> z[i];
+    }
+    for(int i = 0; i < n; i++){
+        double remained_over = (z[i] / 6);
+        double left_over = 50 - remained_over;
+        double run_rate = y[i] / left_over;
+        int target_run = x[i] + 1;
+        int remained_run = target_run - y[i];
+        double desired_run = remained_run / remained_over;
+        cout << fixed << setprecision(2) << 
+        run_rate << " " << fixed << 
+        setprecision(2) << desired_run << endl;
+    }
+    return 0;
+}
+</code></pre> 
+   </div> 
+  </div>
           <footer class="footer">
             <h6>© 2025 • Developed by <br>Muhammad Radif Hassan</h6>
         </footer>
