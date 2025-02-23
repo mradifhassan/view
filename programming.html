@@ -1059,6 +1059,36 @@ int main(void){
 </code></pre> 
    </div> 
   </div>
+<br><br><hr><br>
+  <u><h3>Problem 34-</h3></u>
+   <br><br>
+   <p><a href="https://projecteuler.net/problem=6">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <p>Here is the solution</p>
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;iostream&gt;
+#include &ltcmath&gt;
+
+using namespace std;
+
+int main(void){
+    long long int whole_square, square, subtraction, n = 100, sum = 0, addition = 0;
+    for(int i = 1; i <= n; i++){
+      square = pow(i, 2);
+      sum += square;
+      addition += i;
+      whole_square = pow(addition, 2);
+      subtraction = whole_square - sum;
+    }
+    cout << subtraction << endl;
+    return 0;
+}
+</code></pre> 
+   </div> 
+  </div>
           <footer class="footer">
             <h6>© 2025 • Developed by <br>Muhammad Radif Hassan</h6>
         </footer>
