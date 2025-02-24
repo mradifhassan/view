@@ -1089,6 +1089,61 @@ int main(void){
 </code></pre> 
    </div> 
   </div>
+<br><br><hr><br>
+  <u><h3>Problem 36-</h3></u>
+   <br><br>
+   <p><a href="https://projecteuler.net/problem=3">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class= "container">
+<p> First of all, we will find out all the divisors of \(600851475143\) by using the program below-</p>
+<div class="code-frame">
+<pre><code class="language-c">
+
+<div class="container"> 
+   <p>Again, we need to check if \(8462696833\) is a prime number or not, we can check it by running this program below-</p>
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;iostream&gt;
+
+using namespace std;
+int prime(long long int n){
+	if(n < 2){
+		return 0;
+	}
+	if(n == 2){
+		return 1;
+	}
+	if(n % 2 == 0){
+		return 0;
+	}
+	for(long long int i = 3; i <= n / 2; i += 2){
+		if(n % i == 0){
+			return 0;
+		}
+	}
+	return 1;
+}
+int main(void){
+    long long int n;
+    while(1){
+    	cin >> n;
+    	if(n == 0){
+    		break;
+    	}
+    	if(1 == prime(n)){
+    		cout << "Prime Number";
+    	}
+    	else{
+    		cout << "Compound Number";
+    	}
+    }
+    return 0;
+    }
+</code></pre> 
+   </div> 
+  </div>
+<br><br><hr><br>
           <footer class="footer">
             <h6>© 2025 • Developed by <br>Muhammad Radif Hassan</h6>
         </footer>
