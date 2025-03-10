@@ -327,34 +327,49 @@ int main(void){
     <br><br><hr><br>
   <u><h3>Problem 12-</h3></u>
    <br><br>
-   <p>Write a program using conditional statement which will take three integers as input and give output as an ascending order.</p> 
+  <p><a href="https://dimikoj.com/problems/8/small-to-large">Problem Statement</a></p> 
  <div class="math-content">
   <u><h3>Solve-</h3></u>
 <div class="container"> 
    <p>Here is the solution</p>
    <div class="code-frame"> 
     <pre><code class="language-c">
-#include &lt;stdio.h&gt;
+#include &lt;iostream&gt;
 
-int main(void) {
-    int a, b, c;
-    scanf("%d %d %d", &amp;a, &amp;b, &amp;c);
+using namespace std;
 
-    if (a &lt; b &amp;&amp; b &gt; c &amp;&amp; a &gt; c) {
-        printf("%d %d %d", c, a, b);
-    } else if (a &gt; b &amp;&amp; b &lt; c &amp;&amp; a &lt; c) {
-        printf("%d %d %d", b, a, c);
-    } else if (a &lt; b &amp;&amp; b &gt; c &amp;&amp; a &lt; c) {
-        printf("%d %d %d", a, c, b);
-    } else if (a &lt; c &amp;&amp; a &lt; b &amp;&amp; b &lt; c) {
-        printf("%d %d %d", a, b, c);
-    } else if (a &gt; b &amp;&amp; b &gt; c &amp;&amp; a &gt; c) {
-        printf("%d %d %d", c, b, a);
-    } else if (a &gt; c &amp;&amp; a &gt; b &amp;&amp; b &lt; c) {
-        printf("%d %d %d", b, c, a);
-    } else {
-        printf("Enter valid number");
+int main() {
+    int n;
+    cin >> n;
+    int x[n], y[n], z[n];
+
+    for (int i = 0; i < n; i++) {
+        cin >> x[i] >> y[i] >> z[i];
     }
+
+    for (int i = 0; i < n; i++) {
+        cout << "Case " << i + 1 << ": ";
+        
+        if (x[i] < y[i] && y[i] > z[i] && x[i] > z[i]) {  
+            cout << z[i] << " " << x[i] << " " << y[i] << endl;  
+        }  
+        else if (x[i] > y[i] && y[i] < z[i] && x[i] < z[i]) {  
+            cout << y[i] << " " << x[i] << " " << z[i] << endl;  
+        }  
+        else if (x[i] < y[i] && y[i] > z[i] && x[i] < z[i]) {  
+            cout << x[i] << " " << z[i] << " " << y[i] << endl;  
+        }  
+        else if (x[i] < z[i] && x[i] < y[i] && y[i] < z[i]) {  
+            cout << x[i] << " " << y[i] << " " << z[i] << endl;  
+        }  
+        else if (x[i] > y[i] && y[i] > z[i] && x[i] > z[i]) {  
+            cout << z[i] << " " << y[i] << " " << x[i] << endl;  
+        }  
+        else if (x[i] > z[i] && x[i] > y[i] && y[i] < z[i]) {  
+            cout << y[i] << " " << z[i] << " " << x[i] << endl;  
+        }
+    }
+    
     return 0;
 }
         </code></pre> 
