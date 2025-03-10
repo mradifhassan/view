@@ -1200,6 +1200,45 @@ int main(void){
 <p>Our program shows us that \(8462696833\) is a compound number. So the largest prime factor of \(600851475143\) is \(6857\) which was previously in <b>Case</b> \(4\).
   </div>
 <br><br><hr><br>
+  <u><h3>Problem 37-</h3></u>
+   <br><br>
+   <p><a href="https://dimikoj.com/problems/32/multiple-of-x">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <p>Here is the solution</p>
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;iostream&gt;
+
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    int x[n], y[n];
+
+    for (int i = 0; i < n; i++) {
+        cin >> x[i] >> y[i];
+    }
+
+    for (int i = 0; i < n; i++) {
+        if (x[i] < y[i]) {
+            for (int j = x[i]; j <= y[i]; j += x[i]) {
+                cout << j << endl;
+            }
+        } else {
+            cout << "Invalid!" << endl;
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
+</code></pre> 
+   </div> 
+  </div>
+  <br><br><hr><br>
           <footer class="footer">
             <h6>© 2025 • Developed by <br>Muhammad Radif Hassan</h6>
         </footer>
