@@ -1239,6 +1239,42 @@ int main() {
    </div> 
   </div>
   <br><br><hr><br>
+  <u><h3>Problem 38-</h3></u>
+   <br><br>
+   <p><a href="https://dimikoj.com/problems/40/sum-of-series-1">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <p>Here is the solution</p>
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;iostream&gt;
+#include &lt;cmath&gt;
+
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    int x[n], y[n];
+
+    for(int i = 0; i < n; i++){
+        cin >> x[i] >> y[i];
+    }
+
+    for(int i = 0; i < n; i++){
+        long long int sum = 0;
+        for(int j = y[i]; j >= 0; j--){
+        	long long int expansion = pow(x[i], j);
+        	sum += expansion;
+        }
+        cout << "Result = " << sum << endl;
+    }
+    return 0;
+}
+</code></pre> 
+   </div> 
+  </div>
           <footer class="footer">
             <h6>© 2025 • Developed by <br>Muhammad Radif Hassan</h6>
         </footer>
