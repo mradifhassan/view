@@ -37,43 +37,22 @@ body {
   text-align: left;
   margin-bottom: 20px;
 }
-.profile-header h1 {
-    text-align: center;
-    font-size: 30px;
-    font-weight: 700;
-    margin-bottom: 20px;
-}
 .profile-container h3 {
   text-align: left;
   margin-bottom: 10px;
 }
-.introductory-image {
+.philosophy {
   height: 180px;
   width: 300px;
-  
+}
+.philosophy-image {
+  height: 190px;
+  width: 340px;
 }
 .profile-container p {
     text-align: left;
     font-size: 16px;
     margin-bottom: 10px;
-}
-.image-container {
-    text-align: center;
-    margin: 20px auto;
-    max-width: 400px;
-}
-.points::before {
-    content: "•";
-    font-weight: bold;
-    color: #000;
-    font-size: 20px;
-    padding-right: 03px;
-}
-
-.points {
-    font-weight: normal;
-    margin-left: 20px;
-    color: #333;
 }
 .footer {
     text-align: center;
