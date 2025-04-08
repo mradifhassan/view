@@ -49,6 +49,13 @@ body {
   height: 190px;
   width: 340px;
 }
+.point::before {
+    content: "•";
+    font-weight: bold;
+    color: #000;
+    font-size: 20px;
+    padding-right: 03px;
+}
 .profile-container p {
     text-align: left;
     font-size: 16px;
