@@ -1309,6 +1309,38 @@ int main(){
 </code></pre> 
    </div> 
   </div>
+<br><br><hr><br>
+  <u><h3>Problem 40-</h3></u>
+   <br><br>
+   <p><a href="https://dimikoj.com/problems/5/box-1">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <p>Here is the solution</p>
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;iostream&gt;
+
+using namespace std;
+
+int main(void){
+    int n;
+    cin >> n;
+    int x[n];
+    for(int i = 0; i < n; i++){
+        cin >> x[i];
+    }
+    for(int i = 0; i < n; i++){
+        for(int j = 1; j <= x[i]; j++){
+            for(int k = 1; k <= x[i]; k++){
+                cout << "*";
+            }
+            cout << endl;
+        }
+        cout << endl;
+    }
+    return 0;
+}
           <footer class="footer">
             <h6>© 2025 • Developed by <br>Muhammad Radif Hassan</h6>
         </footer>
