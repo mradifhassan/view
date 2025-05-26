@@ -1355,23 +1355,63 @@ int main(void){
    <div class="code-frame"> 
     <pre><code class="language-c">
 #include &lt;iostream&gt;
-
 using namespace std;
 
 int main() {
     int n, temp;
     cin >> n;
+
     int x[n];
-    for(int i = 0; i < n; i++){
-            cin >> x[i];
-    }                                                  for(int i = 0; i < n - 1; i++){
-        for(int j = 0; j < n - 1; j++){                       if(x[j] > x[j + 1]){                                    
+    for (int i = 0; i < n; i++) {
+        cin >> x[i];
+    }
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - 1; j++) {
+            if (x[j] > x[j + 1]) {
                 temp = x[j];
                 x[j] = x[j + 1];
-                x[j + 1] = x[j];
-           }                                               }
+                x[j + 1] = temp;
+            }
+        }
     }
     cout << x[1] - x[0];
+    return 0;
+}
+
+</code></pre> 
+   </div> 
+  </div>
+	    <br><br><hr><br>
+  <u><h3>Problem 41-</h3></u>
+   <br><br>
+   <p><a href="https://www.codechef.com/practice/course/basic-math/BASICMATH/problems/SNDMAX">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <p>Here is the solution</p>
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    int x[n], y[n], z[n];
+    for(int i = 0; i < n; i++){
+        cin >> x[i] >> y[i] >> z[i];
+    }
+    for(int i = 0; i < n; i++){
+        if((x[i] < y[i] && y[i] < z[i] && x[i] < z[i]) || (x[i] > y[i] && y[i] > z[i] && x[i] > z[i])){
+            cout << y[i] << endl;
+        }
+        else if((x[i] > y[i] && z[i] > y[i] && z[i] > x[i]) || (x[i] < y[i] && y[i] > z[i] && x[i] > z[i])){
+            cout << x[i] << endl;
+        }
+        else{
+            cout << z[i] << endl;
+        }
+    }
     return 0;
 }
 </code></pre> 
