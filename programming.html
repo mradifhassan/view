@@ -1453,6 +1453,40 @@ int main(){
 	    </code></pre> 
    </div> 
   </div>
+	<br><br><hr><br>
+  <u><h3>Problem 43-</h3></u>
+   <br><br>
+   <p><a href="https://www.codechef.com/practice/course/basic-math/BASICMATH/problems/CANDYSTORE">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <p>Here is the solution</p>
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;iostream&gt;
+using namespace std;
+void madeMoney(int x, int y){
+    if(x >= y){
+        int money = y;
+        cout << money << endl;
+    }
+    else{
+        int extra = y - x;
+        int extraMoney = extra * 2 + x;
+        cout << extraMoney << endl;
+    }
+}
+int main(){
+    int n; cin >> n;
+    while(n--){
+        int a, b; cin >> a >> b;
+        madeMoney(a, b);
+    }
+    return 0;
+}
+	    </code></pre> 
+   </div> 
+  </div>
           <footer class="footer">
             <h6>© 2025 • Developed by <br>Muhammad Radif Hassan</h6>
         </footer>
