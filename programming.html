@@ -1487,6 +1487,44 @@ int main(){
 	    </code></pre> 
    </div> 
   </div>
+	 <br><br><hr><br>
+  <u><h3>Problem 44-</h3></u>
+   <br><br>
+   <p><a href="https://www.codechef.com/practice/course/basic-math/BASICMATH/problems/SCALENE">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <p>Here is the solution</p>
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;iostream&gt;
+#include <bits/stdc++.h>
+using namespace std;
+void scalTri(int x, int y, int z){
+    if(x == y || y == x || y == z || z == y || x == z || z == x || x == y == z){
+        cout << "NO" << endl;
+    }
+    else{
+        cout << "YES" << endl;
+    }
+}
+int main() {
+    int t;
+    cin>>t;
+    while(t--){
+        int a,b,c;
+        cin>>a>>b>>c;
+        scalTri(a, b, c);
+        
+    }
+	return 0;
+
+}
+
+	    </code></pre> 
+   </div> 
+  </div>
+	 
           <footer class="footer">
             <h6>© 2025 • Developed by <br>Muhammad Radif Hassan</h6>
         </footer>
