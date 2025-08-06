@@ -51,11 +51,64 @@ body {
 }
 
 .profile-image {
+    position: relative;
     width: 120px;
     height: 120px;
     border-radius: 50%;
     margin-bottom: 20px;
+    object-fit: cover;
+    animation: glitch 2s infinite;
 }
+
+.profile-image::before,
+.profile-image::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: url('profile.jpg') no-repeat center/cover;
+    opacity: 0.6;
+    mix-blend-mode: screen;
+    pointer-events: none;
+}
+
+.profile-image::before {
+    animation: glitchTop 2s infinite;
+    transform: translate(2px, -2px);
+    clip-path: inset(0 0 60% 0);
+}
+
+.profile-image::after {
+    animation: glitchBottom 2s infinite;
+    transform: translate(-2px, 2px);
+    clip-path: inset(60% 0 0 0);
+}
+
+@keyframes glitch {
+    0%, 100% { transform: none; }
+    20% { transform: translate(2px, 2px) rotate(0.5deg); }
+    40% { transform: translate(-2px, -2px) rotate(-0.5deg); }
+    60% { transform: translate(2px, -2px) rotate(0.5deg); }
+    80% { transform: translate(-2px, 2px) rotate(-0.5deg); }
+}
+
+@keyframes glitchTop {
+    0%, 100% { transform: translate(0, 0); }
+    10% { transform: translate(5px, -5px); }
+    20% { transform: translate(-5px, 5px); }
+    30% { transform: translate(3px, -3px); }
+}
+
+@keyframes glitchBottom {
+    0%, 100% { transform: translate(0, 0); }
+    10% { transform: translate(-5px, 5px); }
+    20% { transform: translate(5px, -5px); }
+    30% { transform: translate(-3px, 3px); }
+}
+
 
 .profile-info .name {
     font-size: 24px;
