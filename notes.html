@@ -142,7 +142,14 @@ int main(){
 }
     </code></pre>
    </div>
-  </div>    
+  </div> 
+    <p>Did we find any difference between first and second example? Of course there is some difference. Let's go to the structural
+difference. Structural difference means we didn't add <code>string.h</code> header file. Instead of this, we have determined <code>
+n</code> by our most conventional popular method which is <code>sizeof(name)/sizeof(name[0])</code>. Here null character is also
+taken at the last. The ASCII value of <code>'\0'</code> is \(0\). So it is added lastly where previously our <code>strlen(name)</code>
+didn't take null character. Because, <code>strlen()</code> function doesn't count null character whenever it is needed to calculate the
+size of the string. <code>strlen()</code> means string length. This is a built in funtion in C. To use that, we must add <code>string.h</code> header file. So, the final statement is, if we want the original string size, then usually we are go through <code>
+sizeof(array)/sizeof(array[0])</code> and there null character is counted. But when we don't need to work with null character, then we are to use <code>strlen(array)</code> function in order to avoid the counting of null character.</p>
   <br><br><hr><br>
 <footer class="footer">
             <h6>© 2025 • Developed by <br>Muhammad Radif Hassan</h6>
