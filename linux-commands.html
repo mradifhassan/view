@@ -95,7 +95,50 @@ installing something or something like that, then do that so. Otherwise, no need
 <p class="point"><code>cp  text.txt /path/to/destination/another_text.txt</code> - If you want to copy a file and take this file by giving a new name to another directory, then you have to use this command.</p>
 <p class="point"><code>pwd</code> - This command is used to print writing directory, which means it will print your current directory path actually  where you are working right now.</p>
 <p class="point"><code>mv my_file.txt (Directory Name)</code> - If you have a file named my_file.txt and want to move it to the Documents directory, you would use that command.</p> 
-
+<p class="point"><code>mv old_name.txt new_name.txt</code> -You can rename a file by specifying the new name as the destination. For example, to rename old_name.txt to new_name.txt in the same directory, you need to use that command.</p> 
+<p class="point"><code>mv file1.txt file2.txt /path/to/destination</code> -  You can move multiple files simultaneously by listing them as sources, followed by the destination directory.</p>
+<p class="point"><code>yt-dlp</code> - This tool will help you to download anything from Interent include YouTube videos, webpage's video etc.</p>
+<p class="point"><code>yt-dlp "Any Video Link from Internet which are user accessible"</code> - After prompting this command, the video will be saved in the current directory.</p>
+<p class="point"><code>yt-dlp -x --audio-format mp3 (optional but better result to use "bestaudio/best") "link"</code> - Download audio only (MP3)</p>
+<p class="point"><code>yt-dlp -F "link"</code> - Choose format manually.</p>
+<p class="point"><code>yt-dlp -o "video.mp4" "link"</code> - Set output filename.</p>
+<p class="point"><code>yt-dlp -o "~/Videos/%(title)s.%(ext)s" "link"</code> - Set custom output path./</p>
+<p class="point"><code>yt-dlp -i "playlist-link"</code> - Download playlist.</p>
+<p class="point"><code>yt-dlp --write-subs --sub-lang en "link"</code> - Download subtitles.</p>
+<p class="point"><code>yt-dlp -c "link"</code> - Resume broken download.</p>
+<p class="point"><code>yt-dlp "link" --list-formats</code> - It will show you how many download options are available according to your machine's capabilities.</p>
+<p class="point"><code>yt-dlp -f (formate code that you have got) "%(title)s.%(ext)s" "link"</code> - This will let you download specific Video format. Here -f refers format and format code is <code>Format Code of Video+Format Code of Audio/Video</code>, sometimes you will see two stuffs are available, one is only audio and another is only video, in that case, you will to choice valid option from them, and then you are to add <code>+</code> sign to integrade them and thus they will combinely form a video with audio.</p> 
+<p class="point"><code>yt-dlp -f "bv*[height=1080]+ba" -o "%(title)s.%(ext)s" "link"</code> - In this command, you are telling to the Computer to
+download the best video stream at <code>1080p (bv*)</code> and best audio <code>(ba)</code>, then merges them and lastly save the file using the video title as filename, with correct extension. Make sure to install ffmpeg at first. This will work for mergind.
+<p class="point"><code>yt-dlp -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best" "link"</code> - This will let yt-dlp auto-pick the best compatible formats.</p>
+<p class="point"><code>yt-dlp -f "bestvideo+bestaudio" "link"</code> - If you want best quality of <code>video+audio</code> merged.</p>
+<p class="point"><code>yt-dlp -c --no-part --no-clean-infojson -o "%(title)s.%(ext)s" "link"</code> - If the file partially downloaded, you can resume the download process by this command.</p>
+<p class="point"><code>yt-dlp -f bestvideo+bestaudio -o "~/Videos/%(title)s.%(ext)s" "link"</code> - Download to specific folder with custom name.</p>
+<p class="point"><code>history</code> - This will let you see the bash commands history.</p>
+<p class="point"><code>history -c</code> - This will remove everything in your current shell but not permanently.</p>
+<p class="point"><code>history -c && > ~/.bash_history && history -w</code> - This will delete your bash files permanently. But there is a chance if it is backed up in device.</p>
+<p class="point"><code>wc -w filename.txt</code> - This will count your total word inside a <code>.txt</code> file. After that number, it will return that file name.</p>
+<p class="point"><code>wc -w <</code> <code>filename.txt</code> - The <code><</code> sign before the file name will allow you to avoid returning the file name.</p>
+<p class="point"><code>mupdf (file name)</code> - This tool will help you to open any pdf file smoothly.</p>
+<p class="point"><code>cd - </code>- If you wanna go back your previous directory, then you can use this command. If you repeat the process again, you will be in your first directory actually where you were.</p>
+<p class="point"><code>cd ../Directory_name</code> - If you are in a main directory, then use this command to go another main directory, let's say, you are in /home/alex/Documents, but you need to go to another directory, say for example, you wanna go to Videos, then use that command to there (cd ../Videos). Remember, it won't work for to go in subdirectory.</p>
+<p class="point"><code>cd /path/to/destination</code> - By using this command, you will be able to go any directory or subdirectory. Say for example you are in /home/alex/Documents/pdf and want to go /home/alex/Audio/Nasheeds, then use cd /home/alex/Audio/Nasheeds to go there.</p>
+<p class="point"><code>cd ~/Home Directory</code> - This command will take you away to the home directory if you are in its sub directory.</p>
+<p class="point"><code>sed -i 's/mistakenword/correctword/g' (filename)</code> - If you made a mistake inside a text filename or filename or  file, then use this command to replace correct word. This will work if you are in that directory exact where the file is located.</p>
+<p class="point"><code>sed -i 's/mistakenword/correctword/g' /path/to/destination/filename</code> - If you are not exactly where the document is, then use this command to correct your stuffs. Here sed means stream editor, -i means edit in-place (modifies the file), 's/old/new/g' stands for substitution (s), global (g) means replace all occurrences and filename.txt: the file where the typo exists.</p>
+<p class="point"><code>package --version</code> - This is how you can check the version of any program or package that you have installed.</p>
+<p class="point"><code>man (the stuffs that you are doing)</code> - If you want to check how the package works or why this command is for, then use this command to know about that. This means manual.</p>
+<p class="point"><code>(the stuffs that you are doing) --help</code> - You can also do the same thing by help command.</p>
+<p class="point"><code>cmatrix</code> - This is nothing but showing a cool interface just like a hacker movies.</p>
+<p class="point"><code>~</code> - This will let you know exactly where you are currently.</p>
+<p class="point"><code>ls (folder name)</code> - If you are inside any directory and want to see what's inside another directory or folder which are included in your current directory, then write down this commands to view all of them, e.g. I am in Desktop, now I wanna see what's inside in Program - which is also inside my current directory, so I can simply write ls Program and I'll be able to see what bunches of stuff inside there.</p>
+<p class="point"><code>cd ..</code> - This command is used for going your previous directory. Which means you can jump in your previous directory or parent directory from your current directory or your child directory, you can repeat the process to go to your root directory. Say for example, <code>cd ../../../</code> this will take you away to the root directory if your current directory is 3 times far away.</p>
+<p class="point"><code>date</code> - This will show time and date of your current location.</p>
+<p class="point"><code>arch</code> - This will let you know about the type of your processor archietecture.</p>
+<p class="point"><code>sl</code> - This command will show a train on your terminal display.</p>
+<p class="point"><code>source filename.sh</code> - This will take you to the another directory just typing this command. Imagine, you need to visit in a directory frequently, like the directory is something like that, <code>/home/alex/Videos/Courses/Programing/cs50</code>. Now this is very boring every time when you enter the whole adress. So, its better to make this easier and easy to use everytime whenever we want. So before that, we 
+    need to create a bash file, then write down our frequent visited directory. And <code>chmod +x filename.sh</code> to become executable. And write the command. Here source executes commands from a file in the current shell — not in a new shell. That means any variables, functions, or directory changes <code>(cd)</code> will persist after the script ends. Contrast this with running <code>./script.sh</code>, which runs in a subshell and 
+    discards any changes when it exits. We can also run the command by <code>. filename.sh</code></p>
   <footer class="footer">
             <h6>© 2025 • Developed by <br>Muhammad Radif Hassan</h6>
         </footer>
