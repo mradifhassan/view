@@ -42,111 +42,130 @@ something to do for general people (its completely my personal opinion btw :")).
 Linux allows you to know about Computer Archietecture and how Computer actually works behind. Now, I am going to provide some Linux based bash commands that I learnt up to this day according
     to their usage in different ways and I made them as categorized-</p>
 <br>
-        <u><h3>Hardware Information</h3></u> 
+<u><h3>Hardware Information</h3></u> 
 <br>
 <p class="point"><code>neofetch/fastfetch</code> - It allows you to view your hardware and other stuffs at a glance, but before you need to install that first!</p>
 <p class="point"><code>date</code> - This will show time and date of your current location.</p>
 <p class="point"><code>arch</code> - This will let you know about the type of your processor archietecture.</p>
-<p class="point"><code>df -h</code> - It allows you to see how much memories your located files have taken, besides it will also show Size, Used, Avail, Use% and Mounted on. It means disk free human readable format like MB, GB etc but not in bytes in the current directory. So, here df shows how much disk space is used and available on file systems and <code>-h</code> displays sizes in a friendly format like <code>MB, GB</code>code> etc instead of raw bytes.</p>
-<p class="point"><code>du -sh *</code> - It summarizes each and every folder or directory's spaces that have been taken inside current directories. Here <code>du</code> stands for disk usage, <code>-sh</code> stands for show as human readable format like <code>KB, GB, MB</code> and lastly <code>*</code> stands for applying the command for every directories or folder or files that are inside the current folder.</p>
-<p class="point"><code>du -sh</code> - Everything is same as above command. Only changes is not using here <code>*</code> because without using this, we get the total space information that has been taken by that directory.</p>
-<p class="point"><code>w</code> - The <code>w</code> command in Linux shows who is logged in and what they are doing — including active sessions.</p> 
-<p class="point"><code>df -aT</code> - Here <code>-T</code> shows file system type (like <code>ext4, tmpfs,</code> etc.)</p>
-<p class="point"><code>df -ha</code> -  Here <code>-a</code> includes pseudo, duplicate, and inaccessible file systems.</p>
-<p class="point"><code>uptime</code> - The uptime command tells you how long the system has been running, how many users are logged in, and the system load average.
-<p class="point"><code>who -b</code> - It shows last boot time.</p>
-<p class="point"><code>users</code> - It allows you to know about user's name.</p>
-<p class="point"><code>ip a</code> - You can view your ip address by running this command. Here <code>ip a</code> stands for <code>ip</code>code> address.
-<p class="point"><code>htop</code> - A visual, interactive system monitor which allows you to view CPU, Memory and Processes scenario.</p>
-<p class="point"><code>history</code> - This will let you see the bash commands history.</p>
-<p class="point"><code>history -c</code> - This will remove everything in your current shell but not permanently.</p>
-<p class="point"><code>history -c && > ~/.bash_history && history -w</code> - This will delete your bash files permanently. But there is a chance if it is backed up in device.</p>
-
+<p class="point"><code>df -h</code> - It allows you to see how much memories your located files have taken, besides it will also show Size, Used, Avail, Use% and Mounted on.</p>
+<p class="point"><code>du -sh *</code> - It summarizes each and every folder or directory's spaces inside current directories.</p>
+<p class="point"><code>du -sh</code> - Shows the total space used by the current directory.</p>
+<p class="point"><code>w</code> - Shows who is logged in and what they are doing.</p> 
+<p class="point"><code>df -aT</code> - Shows file system type (like <code>ext4, tmpfs</code>, etc.).</p>
+<p class="point"><code>df -ha</code> - Includes pseudo, duplicate, and inaccessible file systems.</p>
+<p class="point"><code>uptime</code> - Shows how long the system has been running, user count, and load average.</p>
+<p class="point"><code>who -b</code> - Shows last boot time.</p>
+<p class="point"><code>users</code> - Displays currently logged-in users.</p>
+<p class="point"><code>ip a</code> - Shows your IP address and network interfaces.</p>
+<p class="point"><code>htop</code> - Interactive system monitor (CPU, Memory, Processes).</p>
+<p class="point"><code>history</code> - Shows bash command history.</p>
+<p class="point"><code>history -c</code> - Clears history in current shell (not permanent).</p>
+<p class="point"><code>history -c && > ~/.bash_history && history -w</code> - Permanently clears bash history.</p>
+<p class="point"><code>whoami</code> - Shows your current logged-in username.</p>
+<p class="point"><code>passwd (your username)</code> - Change your user password.</p>
+<p class="point"><code>ls -la</code> - Lists all files and directories including hidden ones.</p>
+<p class="point"><code>package --version</code> - Shows installed package version.</p>
+<p class="point"><code>man (command)</code> - Opens manual page for the command.</p>
+<p class="point"><code>(command) --help</code> - Shows help and usage of the command.</p>
+<p class="point"><code>~</code> - Represents your home directory path.</p>
         <br>
-<p class="point"><code>sudo apt install (package name)</code> and <code>sudo apt update && sudo apt upgrade</code> - In Linux, you will have to use many packages or softwares which are completely free to use as 
-I mentioned above before. To install any packages, use first command prompt and to update or upgrade the system, use second prompt which allows your machine to stay up to date advance 
-because every time many new changes are coming and you have to be adapted, I am not saying you have to do frequently, just ensure when you are doing any new activities or new tasks like 
-installing something or something like that, then do that so. Otherwise, no needed. Actually these are your first and basic commands in Linux. Your command journey will start from here.</p>
-<p class="point"><code>ls</code> - It shows your folder in your computer and visible tasks. It means Lists.</p>
-<p class="point"><code>ls -a</code> - It  will show all the files and folders of your machine. It means Lists all and it will lists everything include your hidden files.</p>
-<p class="point"><code>ls -A</code> - It will show almost every file and folders of your machine. It means Lists almost all.</p>
-<p class="point"><code>cd</code> - It means Change Directory. Which means you can change from your current directory to default directory which is void.</p>
-<p class="point"><code>cd Documents</code>- After doing this, it will take you to the Documents directory and then you can do whatever you want. I wrote this as an example. But you can write any valid directory name here instead of Documents. If you don't know the directory names, then just write ls and you will find your directory name there.</p>
-<p class="point"><code>vim</code> - Vim is a open source and free text filename or filename or  editor for using in Linux. It allows you to take notes (Most likely to as Windows based Notepad) and run programs.</p>
-<p class="point"><code>vim (filename.extension)</code> - This is the basic structure of creating a file by using vim.</p>
-<p class="point"><code>vim program.c</code> - You will be allowed to create and write C program from vim by using this command.</p>
-<p class="point"><code>vim program.cpp</code> - Same as 9, just for C++ code.</p>
-<p class="point"><code>gcc/clang</code> - These are the compilers for running <code>C/C++</code> code. You will need to install it first, but gcc is preinstalled in Linux.</p>
-<p class="point"><code>gcc/clang program.c -o program</code> - This is the process for compiling your C program.</p>
-<p class="point"><code>./program</code> - This is how you can run your program after compiling.</p>
-<p class="point"><code>gcc/clang program.c -o program && ./program</code> - It will allow you perform compiling and running two tasks at once.</p>
-<p class="point"><code>time</code> - This stuff allow you to calculate how much time your program has taken if you want to see.</p>
-<p class="point"><code>./program && time</code> - This will show you both time and allow you to run the program at once.</p>
-<p class="point"><code>gcc/clang program.c -o program && time ./program</code> - You can do those three things at once by adding <code>&&</code> (double and symbol) and thats how everything will happen at once <code>&&</code> is used for executing multiple tasks at once.</p>
-<p class="point"><code>vim text filename or filename or .txt</code> - You can create a txt based file by using this command.</p>
-<p class="point"><code>cat text filename or filename or .txt</code> - You will able to view your <code>txt</code> file by running this command and <code>cat</code> is used for viewing a <code>text</code> filename.</p>
-<p class="point"><code>lynx/w3m</code> - These are the tools for viewing a website from terminal but before that you need to install them first.</p>
-<p class="point"><code>lynx/w3m www.websitename.com</code> - That's how you can view and enter a website.</p>
-<p class="point"><code>nmap</code> - This is a powerful tool to view how many devices are connected with your WiFi network and you have to install this stuff first.</p>
-<p class="point"><code>nmap -sn 192.168.0.XXX/24</code> - This is how you can check users and you will see something like (Integer Number) host up what the end which means only that number of devices are using your network. Here <code>-sn</code> stands for scan network.</p>
-<p class="point"><code>ip a</code> - You can view your ip address by running this command. Here <code>ip a</code> stands for <code>ip</code>code> address.
-<p class="point"><code>whoami</code> - You can know your username by this.</p>
-<p class="point"><code>passwd (your username)</code> - You are allowed to change your password by this and here passwd username means password changing for the user.</p>
-<p class="point"><code>ls -la</code> - Which means lists all files and directories include hidden files.</p>
-<p class="point"><code>htop</code> - A visual, interactive system monitor which allows you to view CPU, Memory and Processes scenario.</p>
-<p class="point"><code>grep -Ri 'text' filename or filename or /path/to/destination</code> - Here <code>grep</code> is a tool which allows you to search a particular word (case insensitive Like <code>'text' = 'TEXT' = 'TeXt'</code>) recursively. Here <code>R</code> stands for recursively and <code>i</code> stands for insensitively. Say for example, I want to search <code>'sudo'</code> inside a file. The location of this file is <code>/home/alex/Documents</code>. I have to go first in home, then alex and after that Documents. So the command should be like this: <code>grep -Ri 'sudo' /home/alex/Documents</code> and by entering the command, I'll get my desired stuffs.</p>
-<p class="point"><code>pdftotext</code> - This package helps us to convert a <code>pdf</code> file to <code>txt</code> file. </p>
-<p class="point"><code>pdftotext currentfile.pdf desiredfile.txt</code> - Firstly we need to write the tool name by which we are going to do our desired activity. In this case, we are going to convert pdf to txt format, then we need to write down the pdf file's name and after that our desired txt file's name. And that's how we can convert.</p>
-<p class="point"><code>mpv</code> - It allows you to view your both mp3 and mp4 file. Of course you need to install this tool first before using it.</p>
-<p class="point"><code>mpv file.mp3/mp4</code> - This is the format how you can view your mp3 or mp4 file.</p>
-<p class="point"><code>feh</code> - This tool allows you to view your photos like .jpg/.jpeg/.png or somerhing like that.</p>
-<p class="point"><code>feh image.format extenstion</code> - This is the basic syntax of viewing any image through this tool.</p>
-<p class="point"><code>mkdir (New folder or Directory)</code> - This command allows you to create a new directory or folder.</p>
-<p class="point"><code>rm -r (Directory Name)</code> - This is used for deleting any directory or folder recursively, here -r stands for recursively.</p>
-<p class="point"><code>cp (file name) /path/to/destination</code> - This will lead you to copy a file from your default directory to another directory. Say for example your currently now inside Documents directory, now you want to move a <code>.jpg</code> file to Photos directory, then you have to go through <code>cp image.jpg /home/alex/Photos</code> and thats how you can copy a file from your current direxctory to another directory.</p> 
-<p class="point"><code>cp text.txt another_text.txt</code> - This command will help you to make duplicate file inside your current directory.</p>
-<p class="point"><code>cp  text.txt /path/to/destination/another_text.txt</code> - If you want to copy a file and take this file by giving a new name to another directory, then you have to use this command.</p>
-<p class="point"><code>pwd</code> - This command is used to print writing directory, which means it will print your current directory path actually  where you are working right now.</p>
-<p class="point"><code>mv my_file.txt (Directory Name)</code> - If you have a file named my_file.txt and want to move it to the Documents directory, you would use that command.</p> 
-<p class="point"><code>mv old_name.txt new_name.txt</code> -You can rename a file by specifying the new name as the destination. For example, to rename old_name.txt to new_name.txt in the same directory, you need to use that command.</p> 
-<p class="point"><code>mv file1.txt file2.txt /path/to/destination</code> -  You can move multiple files simultaneously by listing them as sources, followed by the destination directory.</p>
-<p class="point"><code>yt-dlp</code> - This tool will help you to download anything from Interent include YouTube videos, webpage's video etc.</p>
-<p class="point"><code>yt-dlp "Any Video Link from Internet which are user accessible"</code> - After prompting this command, the video will be saved in the current directory.</p>
-<p class="point"><code>yt-dlp -x --audio-format mp3 (optional but better result to use "bestaudio/best") "link"</code> - Download audio only (MP3)</p>
-<p class="point"><code>yt-dlp -F "link"</code> - Choose format manually.</p>
-<p class="point"><code>yt-dlp -o "video.mp4" "link"</code> - Set output filename.</p>
-<p class="point"><code>yt-dlp -o "~/Videos/%(title)s.%(ext)s" "link"</code> - Set custom output path./</p>
-<p class="point"><code>yt-dlp -i "playlist-link"</code> - Download playlist.</p>
-<p class="point"><code>yt-dlp --write-subs --sub-lang en "link"</code> - Download subtitles.</p>
-<p class="point"><code>yt-dlp -c "link"</code> - Resume broken download.</p>
-<p class="point"><code>yt-dlp "link" --list-formats</code> - It will show you how many download options are available according to your machine's capabilities.</p>
-<p class="point"><code>yt-dlp -f (formate code that you have got) "%(title)s.%(ext)s" "link"</code> - This will let you download specific Video format. Here -f refers format and format code is <code>Format Code of Video+Format Code of Audio/Video</code>, sometimes you will see two stuffs are available, one is only audio and another is only video, in that case, you will to choice valid option from them, and then you are to add <code>+</code> sign to integrade them and thus they will combinely form a video with audio.</p> 
-<p class="point"><code>yt-dlp -f "bv*[height=1080]+ba" -o "%(title)s.%(ext)s" "link"</code> - In this command, you are telling to the Computer to
-download the best video stream at <code>1080p (bv*)</code> and best audio <code>(ba)</code>, then merges them and lastly save the file using the video title as filename, with correct extension. Make sure to install ffmpeg at first. This will work for mergind.
-<p class="point"><code>yt-dlp -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best" "link"</code> - This will let yt-dlp auto-pick the best compatible formats.</p>
-<p class="point"><code>yt-dlp -f "bestvideo+bestaudio" "link"</code> - If you want best quality of <code>video+audio</code> merged.</p>
-<p class="point"><code>yt-dlp -c --no-part --no-clean-infojson -o "%(title)s.%(ext)s" "link"</code> - If the file partially downloaded, you can resume the download process by this command.</p>
-<p class="point"><code>yt-dlp -f bestvideo+bestaudio -o "~/Videos/%(title)s.%(ext)s" "link"</code> - Download to specific folder with custom name.</p>
-<p class="point"><code>wc -w filename.txt</code> - This will count your total word inside a <code>.txt</code> file. After that number, it will return that file name.</p>
-<p class="point"><code>wc -w <</code> <code>filename.txt</code> - The <code><</code> sign before the file name will allow you to avoid returning the file name.</p>
-<p class="point"><code>mupdf (file name)</code> - This tool will help you to open any pdf file smoothly.</p>
-<p class="point"><code>cd - </code>- If you wanna go back your previous directory, then you can use this command. If you repeat the process again, you will be in your first directory actually where you were.</p>
-<p class="point"><code>cd ../Directory_name</code> - If you are in a main directory, then use this command to go another main directory, let's say, you are in /home/alex/Documents, but you need to go to another directory, say for example, you wanna go to Videos, then use that command to there (cd ../Videos). Remember, it won't work for to go in subdirectory.</p>
-<p class="point"><code>cd /path/to/destination</code> - By using this command, you will be able to go any directory or subdirectory. Say for example you are in /home/alex/Documents/pdf and want to go /home/alex/Audio/Nasheeds, then use cd /home/alex/Audio/Nasheeds to go there.</p>
-<p class="point"><code>cd ~/Home Directory</code> - This command will take you away to the home directory if you are in its sub directory.</p>
-<p class="point"><code>sed -i 's/mistakenword/correctword/g' (filename)</code> - If you made a mistake inside a text filename or filename or  file, then use this command to replace correct word. This will work if you are in that directory exact where the file is located.</p>
-<p class="point"><code>sed -i 's/mistakenword/correctword/g' /path/to/destination/filename</code> - If you are not exactly where the document is, then use this command to correct your stuffs. Here sed means stream editor, -i means edit in-place (modifies the file), 's/old/new/g' stands for substitution (s), global (g) means replace all occurrences and filename.txt: the file where the typo exists.</p>
-<p class="point"><code>package --version</code> - This is how you can check the version of any program or package that you have installed.</p>
-<p class="point"><code>man (the stuffs that you are doing)</code> - If you want to check how the package works or why this command is for, then use this command to know about that. This means manual.</p>
-<p class="point"><code>(the stuffs that you are doing) --help</code> - You can also do the same thing by help command.</p>
-<p class="point"><code>cmatrix</code> - This is nothing but showing a cool interface just like a hacker movies.</p>
-<p class="point"><code>~</code> - This will let you know exactly where you are currently.</p>
-<p class="point"><code>ls (folder name)</code> - If you are inside any directory and want to see what's inside another directory or folder which are included in your current directory, then write down this commands to view all of them, e.g. I am in Desktop, now I wanna see what's inside in Program - which is also inside my current directory, so I can simply write ls Program and I'll be able to see what bunches of stuff inside there.</p>
-<p class="point"><code>cd ..</code> - This command is used for going your previous directory. Which means you can jump in your previous directory or parent directory from your current directory or your child directory, you can repeat the process to go to your root directory. Say for example, <code>cd ../../../</code> this will take you away to the root directory if your current directory is 3 times far away.</p>
-<p class="point"><code>sl</code> - This command will show a train on your terminal display.</p>
-<p class="point"><code>source filename.sh</code> - This will take you to the another directory just typing this command. Imagine, you need to visit in a directory frequently, like the directory is something like that, <code>/home/alex/Videos/Courses/Programing/cs50</code>. Now this is very boring every time when you enter the whole adress. So, its better to make this easier and easy to use everytime whenever we want. So before that, we 
-    need to create a bash file, then write down our frequent visited directory. And <code>chmod +x filename.sh</code> to become executable. And write the command. Here source executes commands from a file in the current shell — not in a new shell. That means any variables, functions, or directory changes <code>(cd)</code> will persist after the script ends. Contrast this with running <code>./script.sh</code>, which runs in a subshell and 
-    discards any changes when it exits. We can also run the command by <code>. filename.sh</code></p>
+<u><h3>Package Management</h3></u>
+<br>
+<p class="point"><code>sudo apt install (package name)</code> – Install packages.</p>
+<p class="point"><code>sudo apt update && sudo apt upgrade</code> – Update and upgrade system packages.</p>
+<p class="point"><code>package --version</code> – Check installed package version.</p>
+<p class="point"><code>man (command)</code> – Open manual for a command.</p>
+<p class="point"><code>(command) --help</code> – Show help/usage for a command.</p>
+<br>
+<u><h3>File & Directory Management</h3></u>
+<br>
+<p class="point"><code>ls</code> – List files/folders.</p>
+<p class="point"><code>ls -a</code> – List all files, including hidden.</p>
+<p class="point"><code>ls -A</code> – List almost all files (excludes “.” and “..”).</p>
+<p class="point"><code>ls (folder name)</code> – List contents of a specific folder.</p>
+<p class="point"><code>ls -la</code> – Detailed list including hidden files.</p>
+<p class="point"><code>pwd</code> – Show current working directory.</p>
+<p class="point"><code>mkdir (New folder)</code> – Create new directory.</p>
+<p class="point"><code>rm -r (Directory)</code> – Remove a directory recursively.</p>
+<p class="point"><code>cp (file) /path/to/destination</code> – Copy file to another directory.</p>
+<p class="point"><code>cp text.txt another_text.txt</code> – Duplicate file.</p>
+<p class="point"><code>cp text.txt /path/to/destination/another_text.txt</code> – Copy and rename in new directory.</p>
+<p class="point"><code>mv my_file.txt (Directory)</code> – Move file to another directory.</p>
+<p class="point"><code>mv old_name.txt new_name.txt</code> – Rename file.</p>
+<p class="point"><code>mv file1.txt file2.txt /path/to/destination</code> – Move multiple files.</p>
+<p class="point"><code>cat filename.txt</code> – Display contents of a file.</p>
+<p class="point"><code>wc -w filename.txt</code> – Count words in file.</p>
+<p class="point"><code>wc -w < filename.txt</code> – Count words (without showing filename).</p>
+<p class="point"><code>sed -i 's/mistaken/correct/g' filename</code> – Replace text in file (in-place).</p>
+<p class="point"><code>sed -i 's/mistaken/correct/g' /path/to/filename</code> – Replace text in file (with full path).</p>
+<br>
+<u><h3>Text Editing & Programming</h3></u>
+<br>
+<p class="point"><code>vim</code> – Open text editor.</p>
+<p class="point"><code>vim (filename.extension)</code> – Create/edit a file.</p>
+<p class="point"><code>vim program.c</code> – Create/edit C program.</p>
+<p class="point"><code>vim program.cpp</code> – Create/edit C++ program.</p>
+<p class="point"><code>vim text.txt</code> – Create/edit text file.</p>
+<p class="point"><code>gcc/clang</code> – C/C++ compilers.</p>
+<p class="point"><code>gcc program.c -o program</code> – Compile C program.</p>
+<p class="point"><code>./program</code> – Run compiled program.</p>
+<p class="point"><code>gcc program.c -o program && ./program</code> – Compile & run.</p>
+<p class="point"><code>time ./program</code> – Measure runtime.</p>
+<p class="point"><code>gcc program.c -o program && time ./program</code> – Compile, run & measure time.</p>
+<br>
+<u><h3>Networking & Internet</h3></u>
+<br>
+<p class="point"><code>lynx/w3m</code> – Terminal web browsers (install required).</p>
+<p class="point"><code>lynx www.example.com</code> – Visit a website in terminal.</p>
+<p class="point"><code>nmap</code> – Network scanner (install required).</p>
+<p class="point"><code>nmap -sn 192.168.0.XXX/24</code> – Scan devices on local network.</p>
+<br>
+<u><h3>Media & Documents</h3></u>
+<br>
+<p class="point"><code>mpv file.mp3/mp4</code> – Play audio/video.</p>
+<p class="point"><code>feh image.png</code> – View image.</p>
+<p class="point"><code>pdftotext file.pdf file.txt</code> – Convert PDF to text.</p>
+<p class="point"><code>mupdf file.pdf</code> – View PDF file.</p>
+<br>
+<u><h3>Downloading (yt-dlp)</h3></u>
+<br>
+<p class="point"><code>yt-dlp "link"</code> – Download video.</p>
+<p class="point"><code>yt-dlp -x --audio-format mp3 "link"</code> – Download audio only.</p>
+<p class="point"><code>yt-dlp -F "link"</code> – List available formats.</p>
+<p class="point"><code>yt-dlp -o "video.mp4" "link"</code> – Set filename.</p>
+<p class="point"><code>yt-dlp -o "~/Videos/%(title)s.%(ext)s" "link"</code> – Save to custom path.</p>
+<p class="point"><code>yt-dlp -i "playlist-link"</code> – Download playlist.</p>
+<p class="point"><code>yt-dlp --write-subs --sub-lang en "link"</code> – Download subtitles.</p>
+<p class="point"><code>yt-dlp -c "link"</code> – Resume download.</p>
+<p class="point"><code>yt-dlp "link" --list-formats</code> – Show format options.</p>
+<p class="point"><code>yt-dlp -f (code) "%(title)s.%(ext)s" "link"</code> – Download specific format.</p>
+<p class="point"><code>yt-dlp -f "bv*[height=1080]+ba" -o "%(title)s.%(ext)s" "link"</code> – Download 1080p video + best audio.</p>
+<p class="point"><code>yt-dlp -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best" "link"</code> – Auto-pick best formats.</p>
+<p class="point"><code>yt-dlp -f "bestvideo+bestaudio" "link"</code> – Best quality merged.</p>
+<p class="point"><code>yt-dlp -c --no-part --no-clean-infojson -o "%(title)s.%(ext)s" "link"</code> – Resume broken download.</p>
+<p class="point"><code>yt-dlp -f bestvideo+bestaudio -o "~/Videos/%(title)s.%(ext)s" "link"</code> – Save in specific folder.</p>
+<br>
+<u><h3>Searching</h3></u>
+<br>
+<p class="point"><code>grep -Ri 'text' filename</code> – Search word in file (recursive, case-insensitive).</p>
+<p class="point"><code>grep -Ri 'sudo' /home/alex/Documents</code> – Example: search “sudo” in Documents.</p>
+<br>
+<u><h3>Navigation (Directories)</h3></u>
+<br>
+<p class="point"><code>cd</code> – Go to default directory.</p>
+<p class="point"><code>cd Documents</code> – Enter Documents folder.</p>
+<p class="point"><code>cd -</code> – Go to previous directory.</p>
+<p class="point"><code>cd ..</code> – Move up one directory.</p>
+<p class="point"><code>cd ../Directory</code> – Move to sibling directory.</p>
+<p class="point"><code>cd /path/to/destination</code> – Move to absolute path.</p>
+<p class="point"><code>cd ~/</code> – Go to home directory.</p>
+<br>
+<u><h3>Fun / Miscellaneous</h3></u>
+<br>
+<p class="point"><code>cmatrix</code> – Matrix-style animation.</p>
+<p class="point"><code>sl</code> – ASCII train animation.</p>
+<p class="point"><code>source filename.sh</code> – Run bash file in current shell (for shortcuts/aliases).</p>
+
   <footer class="footer">
             <h6>© 2025 • Developed by <br>Muhammad Radif Hassan</h6>
         </footer>
