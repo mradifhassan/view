@@ -1500,7 +1500,7 @@ int main(){
    <p>Here is the solution</p>
    <div class="code-frame"> 
     <pre><code class="language-c">
-#include <bits/stdc++.h>
+#include &lt;bits/stdc++.h&gt;
 using namespace std;
 void scalTri(int x, int y, int z){
     if(x == y || y == x || y == z || z == y || x == z || z == x || x == y == z){
@@ -1536,7 +1536,7 @@ int main() {
    <p>This is a brute-force solution. It wont't work for big integers by the way. So, here we have used two for loops. The outer loop will controll the inner loop, the inner loop will count all of the divisors \([a, b]\). Inside the outer loop, we give a condition if the count is odd, then count2 increases. Inside the outer loop, we declared count as \(0\) which is reseted every time for every \(a\).</p>
    <div class="code-frame"> 
     <pre><code class="language-c">
-#include <bits/stdc++.h>
+#include &lt;bits/stdc++.h&gt;
 using namespace std;
 int oddDivisors(int a, int b){
     int count2 = 0, i;
