@@ -1568,6 +1568,190 @@ int main(){
 	    </code></pre> 
    </div> 
   </div>
+			 <u><h3>Problem 46-</h3></u>
+   <br><br>
+   <p><a href="https://dimikoj.com/problems/49/is-prime">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <p>Here is the solution</p>
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;iostream&gt;
+#include &lt;cmath&gt;
+		
+using namespace std;
+
+bool isPrime(long long int n);
+
+int main(){
+    int t;
+    cin >> t;
+    while(t--){
+        long long int n;
+        cin >> n;
+        if(isPrime(n)){
+            cout <<  n << " is a prime\n";
+        }
+        else{
+            cout << n << " is not a prime\n";
+        }
+    }
+    return 0;
+}
+
+bool isPrime(long long int n){
+    if(n < 2){
+        return false;
+    }
+    if(n == 2 || n == 3){
+        return true;
+    }
+    if(n % 2 == 0){
+        return false;
+    }
+    for(int i = 3; i <= sqrt(n); i += 2){
+        if(n % i == 0){
+            return false;
+        }
+    }
+    return true;
+}
+        </code></pre> 
+   </div> 
+  </div>
+		<u><h3>Problem 47-</h3></u>
+   <br><br>
+   <p><a href="https://dimikoj.com/problems/22/prime-number">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <p>Here is the solution</p>
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+#include &lt;stdbool.h&gt;
+		
+void prime(int k, int n);
+int main(){
+    int t;
+    scanf("%d", &t);
+    while(t--){
+        int m, n;
+        scanf("%d %d",&m, &n);
+        prime(m, n);
+    }
+    return 0;
+}
+void prime(int k, int n){
+    bool isPrime[n + 1];
+    for(int i = 0; i <= n; i++){
+        isPrime[i] = true;
+    }
+    isPrime[0] = isPrime[1] = false;
+    for(int i = 2; i <= n; i++){
+        if(isPrime[i] == true){
+            for(int j = 2 * i; j <= n; j += i){
+                isPrime[j] = false;
+            }
+        }
+    }
+    int count = 0;
+    for(int i = k; i <= n; i++){
+        if(isPrime[i] == true){
+            count++;
+        }
+    }
+    printf("%d\n", count);
+}
+		</code></pre> 
+   </div> 
+  </div>
+		<u><h3>Problem 48-</h3></u>
+   <br><br>
+   <p><a href="https://toph.co/p/power-of-army">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <p>Here is the solution</p>
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+		
+void numbers(int n);
+int difference(int arra[], int n);
+
+int main(){
+    int t;
+    scanf("%d", &t);
+    while(t--){
+        int n;
+        scanf("%d", &n);
+        numbers(n);
+    }
+    return 0;
+}
+void numbers(int n){
+    int i;
+    int arra[n];
+    for(i = 0; i < n; i++){
+        scanf("%d", &arra[i]);
+    }
+    difference(arra, n);
+}
+int difference(int arra[], int n){
+    int i, j, temp;
+    for(i = 0; i < n; i++){
+        for(j = 0; j < n - 1; j++){
+            if(arra[j] > arra[j + 1]){
+                temp = arra[j];
+                arra[j] = arra[j + 1];
+                arra[j + 1] = temp;
+            }
+        }
+    }
+    int dif = arra[n - 1] - arra[0];
+    printf("%d\n", dif);
+    return dif;
+}
+		
+		</code></pre> 
+   </div> 
+  </div>
+	 <u><h3>Problem 49-</h3></u>
+   <br><br>
+   <p><a href="https://toph.co/p/pythagoras-rocks">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <p>Here is the solution</p>
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+		int main(){
+    int arr[3];
+    int temp, i, j;
+    for(int i = 0; i < 3; i++){
+        scanf("%d", &arr[i]);
+    }
+    int n = 3;
+    for(i = 0; i < n; i++){
+        for(j = 0; j < n - 1; j++){
+            if(arr[j] > arr[j + 1]){
+                temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+    printf("%d", arr[n - 1]);
+    return 0;
+}
+
+		</code></pre> 
+   </div> 
+  </div>
+     <br><br><hr><br>
           <footer class="footer">
             <h6>© 2025 • Developed by <br>Muhammad Radif Hassan</h6>
         </footer>
