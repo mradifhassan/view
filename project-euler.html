@@ -33,20 +33,29 @@
   <p>In order to solve this problem, we are go through a little bit of mathematical intuition. Since we are called to determine the sum of all the numbers \((1, 1000)\) which are divislbe by \(3\) or \(5\), we need to
   list all the numbers multiple of (3\) or \(5\). So, we need to run a loop under from (1\) to \(1000\) exclusive. Which means we in programming, our initial value would be \(2\) and end just before \(1000\).
   Then initialize sum would be \(0\) and the iteration of \(i\) will be added up continuously untill \(1000\). And then we will printf the result of sum.</p>
-   <div class="code-frame"> 
+   <p>So, first of all, we need to initialize our <code>sum</code> variable as \(0\). Then we need to use a <code>for</code> loop untill \(1000\) from initializing \<code>i</code> variable as \(2\) because according to the problem,
+   \(1\) and \(1000\) will be exclusive \((1, 1000)\). Then we will set a condition that if any \(i)\ is divislbe by (3\) or \(5\), then it will be summed up the value inside the <code>sum</code> variable. And then we will return <code>sum</code> as our answer.</p>
+    <div class="code-frame"> 
     <pre><code class="language-c">
 #include &lt;stdio.h&gt;
 
+int divisibleSum(int n);
+        
 int main(){
-    int sum = 0;
     int n = 1000;
+    divisibleSum(n);
+    return 0;
+}
+
+int divisibleSum(int n){
+    int sum = 0;
     for(int i = 2; i < n; i++){
         if(i % 3 == 0 || i % 5 == 0){
             sum += i;
         }
     }
     printf("%d\n", sum);
-    return 0;
+    return sum;
 }
         </code></pre> 
    </div> 
