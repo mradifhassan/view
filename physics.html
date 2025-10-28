@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en"> 
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Physics</title>
+  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/kMVqKcWZbmrYvnzT3kMEO2Z2i1vZBw4Hbih4tnB3xQ9lFvHXtY2X5+J59Cl5YITgrW6n30z7tk2OA==" crossorigin="anonymous" referrerpolicy="no-referrer"> 
+  <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&amp;display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="mathematics.css"> 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> 
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> 
+ </head> 
+ <body> 
+  <div class="profile-container"> 
+   <div class="profile-header"> 
+    <h1>Solved Problems</h1> 
+    <p>Since developing a love for physics, I have always tried to solve any problem on my own. In this pursuit, I have solved several problems, including those from my textbooks and from the preparation stages for the Physics Olympiad. I have tried to include all the problems that I have solved on my own approach up to this day. <br></p> 
+      <br> 
+     <hr> 
+    </div> 
+    <br> <u><h3>Problem 1-</h3></u> 
+    <br> 
+    <br> 
+    <p>Find out \(v_1\) or \(v_2\) after the collision of two objects.</p>
+    <div class="math-content"> <u><h3>Solution-</h3></u> 
+    <p>As we know, if an elastic collision will happen, then the both momentum and kinetic energy will be conserved.</p>
+    <p>Which means,<br>\(P_i =P_f...(i)\)<br>\({E_k}_i = {E_k}_f...(ii)\)</p>
+    <p>From \((i)\), we get \(P_i =P_f\)</p>
+    <p>\(\implies m_1u_1 + m_2u_2 = m_1v_1 + m_2v_2\)</p>
+    <p>\(\implies m_1u_1 - m_1v_1 = m_2v_2 - m_2u_2\)</p>
+    <p>\(\implies m_1(u_1 - v_1) = m_2(v_2 - u_2)\)</p>
+    <p>\(\implies m_1(u_1 - v_1) = -m_2(u_2 - v_2)\)</p>
+    <p>\(\implies m_1(u_1 - v_1) = -\frac {m_2(u_2 - v_2)(u_2 + v_2)}{(u_2 + v_2)}\)</p>
+ <p>\(\implies (u_2 + v_2)(u_1 - v_1) = -\frac {m_2(u_2^2 - v_2^2)}{m_1}\)</p>
+ <br>
+ <p>From \((ii)\), we get \({E_k}_i = {E_k}_f\)</p>
+ <p>\(\implies \frac {1}{2} m_1u_1^2 + \frac {1}{2} m_2u_2^2 = \frac {1}{2}m_1v_1^2\)</p>
+ <p style="text-indent: 47px;">\(+ \frac {1}{2} m_2v_2^2\)</p>
+ <p>\(\implies \frac {1}{2}(m_1u_1^2 + m_2u_2^2) = \frac {1}{2}(m_1v_1^2\)</p>
+ <p style="text-indent: 47px;">\(+ m_2v_2^2)\)</p>
+  <p>\(\implies m_1u_1^2 + m_2u_2^2 = m_1v_1^2 + m_2v_2^2\)</p>
+  <p>\(\implies m_1u_1^2 - m_1v_1^2 = m_2(v_2^2 - u_2^2)\)</p>
+  <p>\(\implies m_1u_1^2 - m_1v_1^2 = -m_2(u_2^2 - v_2^2)\)</p>
+  <p>\(\implies m_1v_1^2 = m_1u_1^2 + m_2(u_2^2 - v_2^2)\)</p>
+  <p>\(\implies v_1^2 = u_1^2 +\frac {m_2(u_2^2 - v_2^2)}{m_1}\)</p>
+  <p>\(\implies v_1^2 = u_1^2 -(-\frac {m_2(u_2^2 - v_2^2)}{m_1})\)</p>
+  <p>\(\implies u_2^2 - v_2^2 = (u_2 + v_2)(u_1 - v_1)\)</p>
+  <p>\(\implies u_1 + v_1 = u_2 + v_2\)</p>
+  <p>\(\implies v_1 = u_2 - u_1 + v_2...(iii)\)</p>
+  <p>\(\implies v_2 = u_1 - u_2 + v_1...(iv)\)</p>
+  <br>
+  <p>From \((i)\), we get \(P_i =P_f\)</p>
+  <p>\(\implies m_1u_1 + m_2u_2 = m_1v_1 + m_2v_2\)</p>
+  <p>By replacing the value of \((iii)\),</p>
+  <p>\(\implies m_1u_1 + m_2u_2 = m_1(u_2 - u_1 + v_2)\)</p>
+  <p style="text-indent: 47px;">\(+ m_2v_2\)</p>
+  <p>\(\implies m_1u_1 + m_2u_2 - m_1u_2 + m_1u_1\)</p>
+  <p style="text-indent: 47px;">\(= m_1 v_2 + m_2 v_2\)</p>
+  <p>\(\implies m_1u_1 + m_2u_2 = m_1 u_2 - m_1 u_1\)</p> 
+  <p style="text-indent: 47px;">\(+ m_1 v_2 + m_2 v_2\)</p>
+  <p>\(\implies 2m_1 u_1 + m_2 u_2 - m_1 u_2 = (m_1\)</p> 
+  <p style="text-indent: 47px;">\(+ m_2) v_2\)</p>
+  <p>\(\implies v_2 = \frac{2m_1 u_1 + (m_2 - m_1)u_2}{m_1 + m_2}\)</p>
+   <p>By replacing the value of \((iv)\),</p>
+   <p>\(\implies m_1u_1 + m_2u_2 = m_2(u_1 - u_2 + v_1)\)</p>
+   <p style="text-indent: 47px;">\(+ m_1v_1\)</p>
+   <p>\(\implies m_1v_1 + m_2u_1 - m_2u_2 + m_2v_1\)</p>
+   <p style="text-indent: 47px;">\(= m_1u_1 + m_2u_2\)</p>
+   <p>\(\implies m_1u_1 + m_2u_2 - m_2u_1 + m_2u_2\)</p> 
+   <p style="text-indent: 47px;">\(= m_1v_1 + m_2v_1\)</p>
+   <p>\(\implies (m_1 - m_2)u_1 + 2m_2u_2 = (m_1\)</p> 
+   <p style="text-indent: 47px;">\(+ m_2)v_1\)</p>
+   <p>\(\implies v_1 = \frac{(m_1 - m_2)u_1 + 2m_2u_2}{m_1 + m_2}\)</p>
+      <br> 
+     <hr> 
+    </div> 
+     <footer class="footer"> 
+      <h6>© 2025 • Developed by <br>Muhammad Radif Hassan</h6> 
+     </footer> 
+    </div> 
+   </div> 
+  </div> 
+ </body>
+</html>

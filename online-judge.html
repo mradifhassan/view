@@ -1,0 +1,1761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Judge</title>
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/prism-themes@1.9.0/themes/prism-vsc-dark-plus.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/kMVqKcWZbmrYvnzT3kMEO2Z2i1vZBw4Hbih4tnB3xQ9lFvHXtY2X5+J59Cl5YITgrW6n30z7tk2OA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="programming.css">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/prism.min.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-c.min.js"></script> <!-- Prism.js for syntax highlighting -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/prism.min.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-c.min.js"></script> 
+   
+</head>
+<body>
+    <div class="profile-container">
+        <div class="profile-header">
+          <h1>Solved Problems</h1>          
+          <p>Since developing a love for programming, I have always tried to solve any problem on my own. In this pursuit, I have solved several problems, including those from <a href="https://toph.co/problems">Toph</a>, <a href="https://projecteuler.net/archives">Project Euler</a>, <a href="https://dimikoj.com/problems">Dimik OJ</a>, some books and from the preparation stages for the Informatics Olympiad. I have tried to include all the problems that I have solved on my own approach up to this day.
+          <br><hr>
+       
+<u><h3>Problem 1-</h3></u>
+   <br><br>
+   <p><a href="https://toph.co/p/copycat">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int main(void){
+
+    int a;
+    
+    scanf("%d", &a);
+    printf("%d", a);
+    
+    return 0;
+}
+        </code></pre> 
+   </div> 
+  </div>
+  <br><br><hr><br>
+  <u><h3>Problem 2-</h3></u>
+   <br><br>
+   <p><a href="https://toph.co/p/add-them-up">Problem Statement</a></p> 
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int main(void){
+
+    int a, b;
+    
+    scanf("%d", &a);
+    
+    int sum = a + b;
+    
+    printf("%d", sum);
+    
+    return 0;
+}
+        </code></pre> 
+   </div> 
+  </div>
+    <br><br><hr><br>
+    <u><h3>Problem 3-</h3></u>
+   <br><br>
+  <p><a href="https://toph.co/p/divisors">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int main(void){
+
+    int a;
+    
+    scanf("%d", &a);
+    
+    for(int i = 1; i <= a; i++){
+      if(a % i == 0){
+        printf("%d\n", i);
+      }
+    }
+    
+    return 0;
+}
+        </code></pre> 
+   </div> 
+  </div>
+    <br><br><hr><br>
+  <u><h3>Problem 4-</h3></u>
+   <br><br>
+   <p><a href="https://toph.co/p/fair-distribution">Problem Statement</a></p> 
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int main(void){
+
+    int a, b;
+    
+    scanf("%d %d", &a, &b);
+    
+    int remainder = b % a;
+    int c = a - remainder;
+    
+    printf("%d", c);
+    
+    return 0;
+}
+        </code></pre> 
+   </div> 
+  </div>
+    <br><br><hr><br>
+  <u><h3>Problem 5-</h3></u>
+   <br><br>
+   <p><a href="https://toph.co/p/pie-are-squared">Problem Statement</a></p> 
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+
+int main(void){
+
+    int r;
+    
+    scanf("%d", &r);
+    
+    double area = acos(-1) * pow(r, 2);
+    
+    printf("%0.10lf", area);
+    
+    return 0;
+}
+        </code></pre> 
+   </div> 
+  </div>
+    <br><br><hr><br>
+  <u><h3>Problem 6-</h3></u>
+   <br><br>
+   <p><a href="https://toph.co/p/missing-number">Problem Statement</a></p> 
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int main(void){
+
+    int sum, a, b, c, d;
+    
+    scanf("%d %d %d %d", &sum, &a, &b, &c);
+    
+    d = sum - (a + b + c);
+    
+    printf("%d", d);
+    
+    return 0;
+}
+        </code></pre> 
+   </div> 
+  </div>
+    <br><br><hr><br>
+  <u><h3>Problem 7-</h3></u>
+   <br><br>
+   <p><a href="https://toph.co/p/mixed-fractions">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int main(void){
+
+    int num1, num2;
+    int a, b, c;
+    
+    scanf("%d %d", &num1, &num2);
+    
+    a = num1 / num2;
+    b = num1 % num2;
+    
+    printf("%d %d %d", a, b, num2);
+    
+    return 0;
+}
+        </code></pre> 
+   </div> 
+  </div>
+    <br><br><hr><br>
+  <u><h3>Problem 8-</h3></u>
+   <br><br>
+   <p><a href="https://toph.co/p/leap-years">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int main(void){
+
+    int year;
+    
+    scanf("%d", &year);
+    
+    if(year % 4 == 0 && year % 400 != 0){
+      printf("Yes");
+    }
+    else{
+      printf("No");
+    }
+    
+    return 0;
+}
+        </code></pre> 
+   </div> 
+  </div>
+    <br><br><hr><br>
+  <u><h3>Problem 9-</h3></u>
+   <br><br>
+  <p><a href="https://toph.co/p/squared">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;stdio.h&gt
+
+int main(void){
+
+    int a;
+    
+    scanf("%d", &a);
+    
+    int area = a * a;
+    
+    printf("%d", area);
+    
+    return 0;
+}
+        </code></pre> 
+   </div> 
+  </div>
+    <br><br><hr><br>
+  <u><h3>Problem 10-</h3></u>
+   <br><br>
+  <p><a href="https://toph.co/p/who-is-the-champion">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int main(void){
+
+    int m, n;
+    scanf("%d %d", &m, &n);
+    if(1 <= n && m <= 11 && m != n && m > n){
+      printf("Champion\nRunners Up");
+    }
+    else{
+      printf("Runners Up\nChampion");
+    }
+    return 0;
+}
+        </code></pre> 
+   </div> 
+  </div>
+    <br><br><hr><br>
+  <u><h3>Problem 11-</h3></u>
+   <br><br>
+  <p><a href="https://toph.co/p/maximum">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int main(void){
+  int m;
+  scanf("%d", &m);
+  int array[m];
+  for(int i = 0; i < m; i++){
+    scanf("%d", &array[i]);
+  }
+  int max = array[0];
+  int size = sizeof(array) / sizeof(array[0]);
+  for(int i = 1; i < size; i++){
+    if(array[i] > max){
+        max = array[i];
+    }
+    else{
+      max = max;
+    }
+}
+  printf("%d", max);
+  return 0;
+}
+        </code></pre> 
+   </div> 
+  </div>
+    <br><br><hr><br>
+  <u><h3>Problem 12-</h3></u>
+   <br><br>
+  <p><a href="https://dimikoj.com/problems/8/small-to-large">Problem Statement</a></p> 
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <p>Here is the solution</p>
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;iostream&gt;
+
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    int x[n], y[n], z[n];
+
+    for (int i = 0; i < n; i++) {
+        cin >> x[i] >> y[i] >> z[i];
+    }
+
+    for (int i = 0; i < n; i++) {
+        cout << "Case " << i + 1 << ": ";
+        
+        if (x[i] < y[i] && y[i] > z[i] && x[i] > z[i]) {  
+            cout << z[i] << " " << x[i] << " " << y[i] << endl;  
+        }  
+        else if (x[i] > y[i] && y[i] < z[i] && x[i] < z[i]) {  
+            cout << y[i] << " " << x[i] << " " << z[i] << endl;  
+        }  
+        else if (x[i] < y[i] && y[i] > z[i] && x[i] < z[i]) {  
+            cout << x[i] << " " << z[i] << " " << y[i] << endl;  
+        }  
+        else if (x[i] < z[i] && x[i] < y[i] && y[i] < z[i]) {  
+            cout << x[i] << " " << y[i] << " " << z[i] << endl;  
+        }  
+        else if (x[i] > y[i] && y[i] > z[i] && x[i] > z[i]) {  
+            cout << z[i] << " " << y[i] << " " << x[i] << endl;  
+        }  
+        else if (x[i] > z[i] && x[i] > y[i] && y[i] < z[i]) {  
+            cout << y[i] << " " << z[i] << " " << x[i] << endl;  
+        }
+    }
+    
+    return 0;
+}
+        </code></pre> 
+   </div> 
+  </div>
+      <br><br><hr><br>
+  <u><h3>Problem 13-</h3></u>
+     <br><br>
+   <p><a href="https://toph.co/p/victory-robot">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int main() {
+    int m, n;
+    scanf("%d", &m);
+    for(int i = 1; i <= m; i++){
+      scanf("%d", &n);
+      if(n % 2 == 0){
+        printf("Bangla\n");
+      }
+      else if(n == 1971){
+        printf("Joy Bangla\n");
+      }
+      else{
+        printf("Joy\n");
+      }
+    }
+    return 0;
+}
+        </code></pre> 
+   </div> 
+  </div>
+  <br><br><hr><br>
+  <u><h3>Problem 14-</h3></u>
+   <br><br>
+   <p><a href="https://toph.co/p/how-many-x-s">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main() {
+    char str[101];
+    scanf("%s", str);
+    int count = strlen(str);
+    printf("%d\n", count);
+    return 0;
+}
+        </code></pre> 
+   </div> 
+  </div>
+  <br><br><hr><br>
+  <u><h3>Problem 15-</h3></u>
+   <br><br>
+   <p><a href="https://toph.co/p/cheers">Problem Statement</a></p> 
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <p>Here is the solution</p>
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;iostream&gt;
+
+using namespace std;
+
+int main(void){
+  int n;
+  cin >> n;
+  int array[n];
+  for(int i = 1; i <= n; i++){
+    cin >> array[i];
+  }
+  for(int i = 1; i <= n; i++){
+    if(array[i] % 19 == 0){
+      cout << "Lucky" << "\n";
+    }
+    else{
+      cout << "Unlucky" << "\n";
+    }
+  }
+  return 0;
+}
+        </code></pre> 
+   </div> 
+  </div>
+    <br><br><hr><br>
+  <u><h3>Problem 16-</h3></u>
+   <br><br>
+   <p><a href="https://dimikoj.com/problems/1/even-odd-1">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int main(){
+  int n;
+  scanf("%d", &n);
+  int array[n];
+  for(int i = 1; i <= n; i++){
+    scanf("%d", &array[i]);
+  }
+  for(int i = 1; i <= n; i++){
+    if(array[i] % 2 == 0){
+      printf("even\n");
+    }
+    else{
+      printf("odd\n");
+    }
+  }
+  return 0;
+}
+        </code></pre> 
+   </div> 
+  </div>
+  <br><br><hr><br>
+  <u><h3>Problem 17-</h3></u>
+   <br><br>
+   <p><a href="https://toph.co/p/making-friends">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <p>Here is the solution</p>
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int main(void) {
+    int n, count = 0;
+    scanf("%d", &n);
+    for (int i = 1; i <= n; i++) {
+        if (n % i == 0) {
+            count++;
+        }
+    }
+    printf("%d", count - 1);
+    return 0;
+}
+        </code></pre> 
+   </div> 
+  </div>
+  <br><br><hr><br>
+  <u><h3>Problem 18-</h3></u>
+   <br><br>
+   <p><a href="https://toph.co/p/throught-game">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int main(void) {
+    int n;
+    int x, y;
+    scanf("%d", &n);
+    for(int i = 1; i <= n; i++){
+      scanf("%d %d", &x, &y);
+      int avg = (x + y) / 2;
+    if(avg % 2 == 0){
+      printf("Sadia will be happy.\n");
+    }
+    else{
+      printf("Oops!\n");
+    }
+    }
+    
+    return 0;
+}
+        </code></pre> 
+   </div> 
+  </div>
+  <br><br><hr><br>
+  <u><h3>Problem 19-</h3></u>
+   <br><br>
+   <p><a href="https://toph.co/p/nusrat-apur-treat">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <p>Here is the solution</p>
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int main(void) {
+    int n, sum = 0;
+    scanf("%d", &n);
+    for(int i = 1; i <= n; i++){
+      sum += i;
+    }
+    printf("%d", sum);
+    return 0;
+}
+        </code></pre> 
+   </div> 
+  </div>
+  <br><br><hr><br>
+  <u><h3>Problem 20-</h3></u>
+   <br><br>
+   <p><a href="https://toph.co/p/the-titan">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <p>Here is the solution</p>
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+
+int main(void) {
+    int n, sum = 0;
+    scanf("%d", &n);
+    for(int i = 1; i <= n; i++){
+      int square = pow(i, 2);
+      sum += square;
+    }            
+    printf("%d", sum);
+    return 0;
+}
+        </code></pre> 
+   </div> 
+  </div>
+   <br><br><hr><br>
+  <u><h3>Problem 21-</h3></u>
+   <br><br>
+  <p><a href="https://toph.co/p/absolute-u">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <p>Here is the solution</p>
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main() {
+  int n, num;
+  scanf("%d", &n);
+  for(int i = 1; i <= n; i++){
+    scanf("%d", &num);
+    printf("%d\n", abs(num));
+  }
+  
+  return 0;
+}
+        </code></pre> 
+   </div> 
+  </div>
+   <br><br><hr><br>
+  <u><h3>Problem 22-</h3></u>
+   <br><br>
+   <p><a href="https://toph.co/p/fibonacci-numbers">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <p>Here is the solution</p>
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int F(int n) {
+    if (n <= 1) {
+        return n;
+    } else {
+        return F(n - 1) + F(n - 2);
+    }
+}
+
+int main() {
+    int m;
+    scanf("%d", &m);
+    printf("%d\n", F(m));
+    return 0;
+}
+        </code></pre> 
+   </div> 
+  </div>
+     <br><br><hr><br>
+  <u><h3>Problem 23-</h3></u>
+   <br><br>
+   <p><a href="https://projecteuler.net/problem=1">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <p>Here is the solution</p>
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int main(void){
+  int n = 1000;
+  int sum = 0;
+  for(int i = 1; i < n; i++){
+    if(i % 3 == 0 || i % 5 == 0){
+      sum += i;
+    }
+  }
+  printf("%d", sum);
+  return 0;
+}
+        </code></pre> 
+   </div> 
+  </div>
+     <br><br><hr><br>
+  <u><h3>Problem 24-</h3></u>
+   <br><br>
+   <p><a href="https://toph.co/p/count-the-odds">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <p>Here is the solution</p>
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;iostream&gt;
+
+using namespace std;
+
+int main(void){
+	int m, n, count = 0;
+	cin >> m >> n;
+	for(int i = m; i <= n; i++){
+		if(i % 2 == 1){
+			count++;
+		}
+	}
+	cout << count;
+	return 0;
+}
+        </code></pre> 
+   </div> 
+  </div>
+     <br><br><hr><br>
+  <u><h3>Problem 25-</h3></u>
+   <br><br>
+   <p><a href="https://toph.co/p/who-is-the-champion">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <p>Here is the solution</p>
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;iostream&gt;
+
+using namespace std;
+
+int main(void){
+  int m, n;
+  cin >> m >> n;
+  if(1 <= n && m <= 11 && m != n && m > n){
+      cout << "Champion\n" << "Runner up" << endl;
+    }
+    else{
+      cout << "Runner up\n" << "Champion" << endl;
+      }
+  return 0;
+}
+        </code></pre> 
+   </div> 
+  </div>
+     <br><br><hr><br>
+  <u><h3>Problem 26-</h3></u>
+   <br><br>
+   <p><a href="https://toph.co/p/who-win-the-game">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <p>Here is the solution</p>
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;iostream&gt;
+
+using namespace std;
+
+int main() {
+	int m, n;
+	cin >> m >> n;
+	if(m > n){
+		cout << "Alice";
+	}
+	else{
+		cout << "Bob";
+	}
+	return 0;
+}
+        </code></pre> 
+   </div> 
+  </div>
+     <br><br><hr><br>
+  <u><h3>Problem 27-</h3></u>
+   <br><br>
+   <p><a href="https://toph.co/p/circles-in-a-rectangle">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <p>Here is the solution</p>
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;iostream&gt;
+#include &lt;iomanip&gt;
+
+using namespace std;
+
+int main(void){
+  int n;
+  cin >> n;
+  double array[n];
+  for(int i = 1; i <= n; i++){
+    cin >> array[i];
+  }
+  for(int i = 1; i <= n; i++){
+    double pi = 3.1416;
+    double width, height, area_of_circle, area_of_rectangle;
+    width = array[i] * 4;
+    height = array[i] * 2;
+    area_of_rectangle = width * height;
+    area_of_circle = 2 * array[i] * array[i] * pi;
+    double green_region = area_of_rectangle - area_of_circle;
+    cout << "Case " << i << ": " << fixed << setprecision(2) << green_region << "\n";
+  }
+  return 0;
+}
+        </code></pre> 
+   </div> 
+  </div>
+     <br><br><hr><br>
+  <u><h3>Problem 28-</h3></u>
+   <br><br>
+   <p><a href="https://dimikoj.com/problems/2/even-odd-2">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <p>Here is the solution</p>
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;iostream&gt;
+#include &lt;cmath&gt;
+
+using namespace std;
+
+int main() {
+	int n;
+	cin >> n;
+	int a[n], b[n];
+	for(int i = 0; i < n; i++){
+		cin >> a[i] >> b[i];
+	}
+	for(int i = 0; i < n; i++){
+		int sum = pow(a[i], 2) + pow(b[i], 2);
+		cout << "Case " << i + 1 << ": " << sum << endl;
+	}
+	return 0;
+}
+        </code></pre> 
+   </div> 
+  </div>
+  <br><br><hr><br>
+  <u><h3>Problem 29-</h3></u>
+   <br><br>
+   <p><a href="https://dimikoj.com/problems/46/area-of-triangle">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <p>Here is the solution</p>
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;iostream&gt;
+#include &lt;iomanip&gt;
+#include &lt;cmath&gt;
+
+using namespace std;
+int main(){
+    int n;
+    cin >> n;
+    double array_a[n], array_b[n], array_c[n];
+    for(int i = 0; i < n; i++){
+        cin >> array_a[i] >> array_b[i] >> array_c[i];
+    }
+    for(int i = 0; i < n; i++){
+        double s = (array_a[i] + array_b[i] + array_c[i]) / 2;
+        double m = (s - array_a[i]) * (s - array_b[i]) * (s - array_c[i]);
+        double n = s * m;
+        double area = sqrt(n);
+        cout << "Area = " << fixed <<  setprecision(3) << area << endl;
+    }
+    return 0;
+}
+</code></pre> 
+   </div> 
+  </div>
+  <br><br><hr><br>
+  <u><h3>Problem 30-</h3></u>
+   <br><br>
+   <p><a href="https://dimikoj.com/problems/11/factorial">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <p>Here is the solution</p>
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;iostream&gt;
+
+using namespace std;
+
+int main(void){
+    int n;
+    cin >> n;
+    int array[n];
+    for(int i = 0; i < n; i++){
+        cin >> array[i];
+    }
+    for(int i = 0; i < n; i++){
+        long long int factorial = 1; 
+        for(int j = 1; j <= array[i]; j++){
+            factorial *= j;
+        }
+        cout << factorial << "\n";
+    }
+    return 0;
+}
+ </code></pre> 
+   </div> 
+  </div>
+  <br><br><hr><br>
+  <u><h3>Problem 31-</h3></u>
+   <br><br>
+   <p><a href="https://dimikoj.com/problems/2/even-odd-2">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <p>Here is the solution</p>
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int main() {
+    int n;
+    scanf("%d", &n);    
+    int array[n];
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &array[i]);
+    }
+    for (int i = 0; i < n; i++) {
+        printf("Case %d:", i + 1);
+        printf(" 1");
+        for (int j = 2; j <= array[i]; j++) { 
+            if (array[i] % j == 0) {
+                printf(" %d", j);
+            }
+        }
+        printf("\n");
+    }    
+    return 0;
+}
+</code></pre> 
+   </div> 
+  </div>
+  <div class="container"> 
+   <p><b>Different approach through C++-</b></p>
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+
+using namespace std;
+
+int main(void){
+    int n;
+    cin >> n;
+    vector&lt;int&gt; array(n);
+    for(int i = 0; i < n; i++){
+        cin >> array[i];
+    }
+    for(int i = 0; i < n; i++){
+        cout << "Case " << i + 1 << ": ";
+        for(int j = 1; j <= array[i]; j++){
+            if(array[i] % j == 0){
+                cout << j << " ";
+            }
+        }
+        cout << endl;
+    }
+    return 0;
+}
+</code></pre> 
+   </div> 
+  <br><br><hr><br>
+  <u><h3>Problem 32-</h3></u>
+   <br><br>
+   <p><a href="https://dimikoj.com/problems/2/even-odd-2">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <p>Here is the solution</p>
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;iostream&gt;
+
+using namespace std;
+
+int main(void) {
+    int n;
+    cin >> n;
+    int array[n];
+    for(int i = 0; i < n; i++){
+      cin >> array[i];
+    }
+    for(int i = 0; i < n; i++){
+      if(array[i] % 2 == 0){
+        cout << "even\n";
+      }
+      else{
+        cout << "odd\n";
+      }
+    }
+    return 0;
+}
+</code></pre> 
+   </div> 
+  </div>
+  <br><br><hr><br>
+  <u><h3>Problem 33-</h3></u>
+   <br><br>
+   <p><a href="https://dimikoj.com/problems/30/perfect-number-1">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <p>Here is the solution</p>
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;iostream&gt;
+
+using namespace std;
+
+int main(void){
+    int n;
+    cin >> n;
+    long long array[n];
+    for(int i = 0; i < n; i++){
+        cin >> array[i];
+    }
+    for(int i = 0; i < n; i++){
+        long long int m = 0;
+        for(long long j = 1; j < array[i]; j++){
+            if(array[i] % j == 0){
+                m += j;
+            }
+        }
+        if(m == array[i]){
+            cout << "YES, " << array[i] << " is a perfect number!" << endl;
+        }
+        else{
+            cout << "NO, " << array[i] << " is not a perfect number!" << endl;
+        }
+    }
+}
+return 0;
+}
+</code></pre> 
+   </div> 
+  </div>
+  <br><br><hr><br>
+  <u><h3>Problem 34-</h3></u>
+   <br><br>
+   <p><a href="https://dimikoj.com/problems/10/run-rate-1">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <p>Here is the solution</p>
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;iostream&gt;
+#include &lt;iomanip&gt;
+
+using namespace std;
+
+int main(void){
+    int n;
+    cin >> n;
+    double x[n], y[n], z[n];
+    for(int i = 0; i < n; i++){
+        cin >> x[i] >> y[i] >> z[i];
+    }
+    for(int i = 0; i < n; i++){
+        double remained_over = (z[i] / 6);
+        double left_over = 50 - remained_over;
+        double run_rate = y[i] / left_over;
+        int target_run = x[i] + 1;
+        int remained_run = target_run - y[i];
+        double desired_run = remained_run / remained_over;
+        cout << fixed << setprecision(2) << run_rate << " " << fixed << setprecision(2) << desired_run << endl;
+    }
+    return 0;
+}
+</code></pre> 
+   </div> 
+  </div>
+<br><br><hr><br>
+  <u><h3>Problem 35-</h3></u>
+   <br><br>
+   <p><a href="https://projecteuler.net/problem=6">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <p>Here is the solution</p>
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;iostream&gt;
+#include &ltcmath&gt;
+
+using namespace std;
+
+int main(void){
+    long long int whole_square, square, subtraction, n = 100, sum = 0, addition = 0;
+    for(int i = 1; i <= n; i++){
+      square = pow(i, 2);
+      sum += square;
+      addition += i;
+      whole_square = pow(addition, 2);
+      subtraction = whole_square - sum;
+    }
+    cout << subtraction << endl;
+    return 0;
+}
+</code></pre> 
+   </div> 
+  </div>
+<br><br><hr><br>
+  <u><h3>Problem 36-</h3></u>
+   <br><br>
+   <p><a href="https://projecteuler.net/problem=3">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class= "container">
+<p>In order to solve this problem, we will go through three approaches. First of all, we will find out all the divisors of \(600851475143\) by using the simple program below. Then we will check their divisors. If it shows void after each case, then it would be a prime factor. If not, then it will show divisors which proves that those numbers are <b>Compound Number</b>. Where the void test case will end, we have to assume the test case as our desired prime factor.</p>
+<div class="code-frame">
+<pre><code class="language-c">
+#include &lt;iostream&gt;
+
+using namespace std;
+
+int main(void){
+    long long int n = 600851475143;
+    for(int i = 2; i <= n / 2; i++){
+    	if(n % i == 0){
+    		cout << i << endl;
+    	}
+    }
+    return 0;
+    }
+</code></pre> 
+   </div> 
+ <p>Now, our task is copying all the divisors in order to check if those divisors have any other divisors, if so, then it won't be a prime factor. We can check by using the given program below although the program is not efficient to process large computational task. However, it is absolutely my learning limitation.</p>
+<div class="code-frame">
+<pre><code class="language-c">
+#include &lt;iostream&gt;
+
+using namespace std;
+
+int main(void){
+    long long int n;
+    cin >> n;
+    int array[n];
+    for(int i = 0; i < n; i++){
+      cin >> array[i];
+    }
+    for(long long int i = 0; i < n; i++){
+      cout << "Case " << i + 1 << ": ";
+      for(long long int j = 2; j <= array[i] / 2; j++){
+        if(array[i] % j == 0){
+          cout << j << " ";
+        }
+      }
+      cout << endl;
+    }
+    return 0;
+    }
+</code></pre> 
+   </div> 
+   <p>Again, we need to check if \(8462696833\) is a prime number or not since the program was unable to provide <b>Case</b> \(14\), we can check it by running this program-</p>
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;iostream&gt;
+
+using namespace std;
+int prime(long long int n){
+	if(n < 2){
+		return 0;
+	}
+	if(n == 2){
+		return 1;
+	}
+	if(n % 2 == 0){
+		return 0;
+	}
+	for(long long int i = 3; i <= n / 2; i += 2){
+		if(n % i == 0){
+			return 0;
+		}
+	}
+	return 1;
+}
+int main(void){
+    long long int n;
+    while(1){
+    	cin >> n;
+    	if(n == 0){
+    		break;
+    	}
+    	if(1 == prime(n)){
+    		cout << "Prime Number";
+    	}
+    	else{
+    		cout << "Compound Number";
+    	}
+    }
+    return 0;
+    }
+</code></pre> 
+   </div> 
+<p>Our program shows us that \(8462696833\) is a compound number. So the largest prime factor of \(600851475143\) is \(6857\) which was previously in <b>Case</b> \(4\).
+  </div>
+<br><br><hr><br>
+  <u><h3>Problem 37-</h3></u>
+   <br><br>
+   <p><a href="https://dimikoj.com/problems/32/multiple-of-x">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <p>Here is the solution</p>
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;iostream&gt;
+
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    int x[n], y[n];
+
+    for (int i = 0; i < n; i++) {
+        cin >> x[i] >> y[i];
+    }
+
+    for (int i = 0; i < n; i++) {
+        if (x[i] < y[i]) {
+            for (int j = x[i]; j <= y[i]; j += x[i]) {
+                cout << j << endl;
+            }
+        } else {
+            cout << "Invalid!" << endl;
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
+</code></pre> 
+   </div> 
+  </div>
+  <br><br><hr><br>
+  <u><h3>Problem 38-</h3></u>
+   <br><br>
+   <p><a href="https://dimikoj.com/problems/40/sum-of-series-1">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <p>Here is the solution</p>
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;iostream&gt;
+#include &lt;cmath&gt;
+
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    int x[n], y[n];
+
+    for(int i = 0; i < n; i++){
+        cin >> x[i] >> y[i];
+    }
+
+    for(int i = 0; i < n; i++){
+        long long int sum = 0;
+        for(int j = y[i]; j >= 0; j--){
+        	long long int expansion = pow(x[i], j);
+        	sum += expansion;
+        }
+        cout << "Result = " << sum << endl;
+    }
+    return 0;
+}
+</code></pre> 
+   </div> 
+  </div>
+		<br><br><hr><br>
+  <u><h3>Problem 39-</h3></u>
+   <br><br>
+   <p><a href="https://dimikoj.com/problems/34/divisible-2">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <p>Here is the solution</p>
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;iostream&gt;
+	    
+using namespace std;
+
+int main(){
+	int n;
+	cin >> n;
+	int x[n], y[n], z[n];
+	for(int i = 0; i < n; i++){
+		cin >> x[i] >> y[i] >> z[i];
+	}
+	for(int i = 0; i < n; i++){
+		for(int j = 1; j <= z[i]; j++){
+			if(j % x[i] == 0 && j % y[i] == 0){
+				cout << j << endl;
+			}
+		}
+		cout << endl;
+	}
+	return 0;
+}
+</code></pre> 
+   </div> 
+  </div>
+<br><br><hr><br>
+  <u><h3>Problem 40-</h3></u>
+   <br><br>
+   <p><a href="https://dimikoj.com/problems/5/box-1">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <p>Here is the solution</p>
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;iostream&gt;
+
+using namespace std;
+
+int main(void){
+    int n;
+    cin >> n;
+    int x[n];
+    for(int i = 0; i < n; i++){
+        cin >> x[i];
+    }
+    for(int i = 0; i < n; i++){
+        for(int j = 1; j <= x[i]; j++){
+            for(int k = 1; k <= x[i]; k++){
+                cout << "*";
+            }
+            cout << endl;
+        }
+        cout << endl;
+    }
+    return 0;
+}
+</code></pre> 
+   </div> 
+  </div>
+<br><br><hr><br>
+  <u><h3>Problem 41-</h3></u>
+   <br><br>
+   <p><a href="https://acm.timus.ru/problem.aspx?space=1&num=1005&locale=en">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <p>Here is the solution</p>
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n, temp;
+    cin >> n;
+
+    int x[n];
+    for (int i = 0; i < n; i++) {
+        cin >> x[i];
+    }
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - 1; j++) {
+            if (x[j] > x[j + 1]) {
+                temp = x[j];
+                x[j] = x[j + 1];
+                x[j + 1] = temp;
+            }
+        }
+    }
+    cout << x[1] - x[0];
+    return 0;
+}
+
+</code></pre> 
+   </div> 
+  </div>
+	    <br><br><hr><br>
+  <u><h3>Problem 41-</h3></u>
+   <br><br>
+   <p><a href="https://www.codechef.com/practice/course/basic-math/BASICMATH/problems/SNDMAX">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <p>Here is the solution</p>
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    int x[n], y[n], z[n];
+    for(int i = 0; i < n; i++){
+        cin >> x[i] >> y[i] >> z[i];
+    }
+    for(int i = 0; i < n; i++){
+        if((x[i] < y[i] && y[i] < z[i] && x[i] < z[i]) || (x[i] > y[i] && y[i] > z[i] && x[i] > z[i])){
+            cout << y[i] << endl;
+        }
+        else if((x[i] > y[i] && z[i] > y[i] && z[i] > x[i]) || (x[i] < y[i] && y[i] > z[i] && x[i] > z[i])){
+            cout << x[i] << endl;
+        }
+        else{
+            cout << z[i] << endl;
+        }
+    }
+    return 0;
+}
+</code></pre> 
+   </div> 
+  </div>
+		<br><br><hr><br>
+  <u><h3>Problem 42-</h3></u>
+   <br><br>
+   <p><a href="https://www.codechef.com/practice/course/basic-math/BASICMATH/problems/FAVOURITENUM">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <p>Here is the solution</p>
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;iostream&gt;
+using namespace std;
+
+int function(int n){
+        if(n % 2 == 0 && n % 7 == 0){
+	    cout << "Alice" << endl;
+	}
+        else if(n % 2 == 1 && n % 9 == 0){                         
+		cout << "Bob" << endl;
+        }
+        else{
+                cout << "Charlie" << endl;
+        }
+        return n;
+}
+int main(){
+        int m; cin >> m;
+        int array[m];
+        for(int i = 0; i < m; i++){
+                cin >> array[i];
+        }
+        for(int i = 0; i < m; i++){
+                function(array[i]);
+        }
+        return 0;
+}
+	    </code></pre> 
+   </div> 
+  </div>
+	<br><br><hr><br>
+  <u><h3>Problem 43-</h3></u>
+   <br><br>
+   <p><a href="https://www.codechef.com/practice/course/basic-math/BASICMATH/problems/CANDYSTORE">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <p>Here is the solution</p>
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;iostream&gt;
+using namespace std;
+void madeMoney(int x, int y){
+    if(x >= y){
+        int money = y;
+        cout << money << endl;
+    }
+    else{
+        int extra = y - x;
+        int extraMoney = extra * 2 + x;
+        cout << extraMoney << endl;
+    }
+}
+int main(){
+    int n; cin >> n;
+    while(n--){
+        int a, b; cin >> a >> b;
+        madeMoney(a, b);
+    }
+    return 0;
+}
+	    </code></pre> 
+   </div> 
+  </div>
+	 <br><br><hr><br>
+  <u><h3>Problem 44-</h3></u>
+   <br><br>
+   <p><a href="https://www.codechef.com/practice/course/basic-math/BASICMATH/problems/SCALENE">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <p>Here is the solution</p>
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+void scalTri(int x, int y, int z){
+    if(x == y || y == x || y == z || z == y || x == z || z == x || x == y == z){
+        cout << "NO" << endl;
+    }
+    else{
+        cout << "YES" << endl;
+    }
+}
+int main() {
+    int t;
+    cin>>t;
+    while(t--){
+        int a,b,c;
+        cin>>a>>b>>c;
+        scalTri(a, b, c);
+        
+    }
+	return 0;
+
+}
+
+	    </code></pre> 
+   </div> 
+  </div>
+	  <br><br><hr><br>
+  <u><h3>Problem 45-</h3></u>
+   <br><br>
+   <p><a href="https://toph.co/arena?practice=688f499a6b5807a14dfea0ab#!/p/6835773b2455249f27b0695d">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <p>This is a brute-force solution. It wont't work for big integers by the way. So, here we have used two for loops. The outer loop will controll the inner loop, the inner loop will count all of the divisors \([a, b]\). Inside the outer loop, we give a condition if the count is odd, then count2 increases. Inside the outer loop, we declared count as \(0\) which is reseted every time for every \(a\).</p>
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+int oddDivisors(int a, int b){
+    int count2 = 0, i;
+    for(a; a <= b; a++){
+        int count = 0;
+        for(i = 1; i <= a; i++){
+            if(a % i == 0){
+                count++;
+            }
+        }
+        if(count % 2 == 1){
+            count2++;
+        }
+    }
+        cout << count2 << endl;
+        return count2;
+}
+int main(){
+    int t;
+    cin >> t;
+    while(t--){
+        int x, y;
+        cin >> x >> y;
+        oddDivisors(x, y);
+    }
+    return 0;
+}
+
+	    </code></pre> 
+   </div> 
+  </div>
+			 <u><h3>Problem 46-</h3></u>
+   <br><br>
+   <p><a href="https://dimikoj.com/problems/49/is-prime">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <p>Here is the solution</p>
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;iostream&gt;
+#include &lt;cmath&gt;
+		
+using namespace std;
+
+bool isPrime(long long int n);
+
+int main(){
+    int t;
+    cin >> t;
+    while(t--){
+        long long int n;
+        cin >> n;
+        if(isPrime(n)){
+            cout <<  n << " is a prime\n";
+        }
+        else{
+            cout << n << " is not a prime\n";
+        }
+    }
+    return 0;
+}
+
+bool isPrime(long long int n){
+    if(n < 2){
+        return false;
+    }
+    if(n == 2 || n == 3){
+        return true;
+    }
+    if(n % 2 == 0){
+        return false;
+    }
+    for(int i = 3; i <= sqrt(n); i += 2){
+        if(n % i == 0){
+            return false;
+        }
+    }
+    return true;
+}
+        </code></pre> 
+   </div> 
+  </div>
+		<u><h3>Problem 47-</h3></u>
+   <br><br>
+   <p><a href="https://dimikoj.com/problems/22/prime-number">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <p>Here is the solution</p>
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+#include &lt;stdbool.h&gt;
+		
+void prime(int k, int n);
+int main(){
+    int t;
+    scanf("%d", &t);
+    while(t--){
+        int m, n;
+        scanf("%d %d",&m, &n);
+        prime(m, n);
+    }
+    return 0;
+}
+void prime(int k, int n){
+    bool isPrime[n + 1];
+    for(int i = 0; i <= n; i++){
+        isPrime[i] = true;
+    }
+    isPrime[0] = isPrime[1] = false;
+    for(int i = 2; i <= n; i++){
+        if(isPrime[i] == true){
+            for(int j = 2 * i; j <= n; j += i){
+                isPrime[j] = false;
+            }
+        }
+    }
+    int count = 0;
+    for(int i = k; i <= n; i++){
+        if(isPrime[i] == true){
+            count++;
+        }
+    }
+    printf("%d\n", count);
+}
+		</code></pre> 
+   </div> 
+  </div>
+		<u><h3>Problem 48-</h3></u>
+   <br><br>
+   <p><a href="https://toph.co/p/power-of-army">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <p>Here is the solution</p>
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+		
+void numbers(int n);
+int difference(int arra[], int n);
+
+int main(){
+    int t;
+    scanf("%d", &t);
+    while(t--){
+        int n;
+        scanf("%d", &n);
+        numbers(n);
+    }
+    return 0;
+}
+void numbers(int n){
+    int i;
+    int arra[n];
+    for(i = 0; i < n; i++){
+        scanf("%d", &arra[i]);
+    }
+    difference(arra, n);
+}
+int difference(int arra[], int n){
+    int i, j, temp;
+    for(i = 0; i < n; i++){
+        for(j = 0; j < n - 1; j++){
+            if(arra[j] > arra[j + 1]){
+                temp = arra[j];
+                arra[j] = arra[j + 1];
+                arra[j + 1] = temp;
+            }
+        }
+    }
+    int dif = arra[n - 1] - arra[0];
+    printf("%d\n", dif);
+    return dif;
+}
+		
+		</code></pre> 
+   </div> 
+  </div>
+	 <u><h3>Problem 49-</h3></u>
+   <br><br>
+   <p><a href="https://toph.co/p/pythagoras-rocks">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <p>Here is the solution</p>
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+		int main(){
+    int arr[3];
+    int temp, i, j;
+    for(int i = 0; i < 3; i++){
+        scanf("%d", &arr[i]);
+    }
+    int n = 3;
+    for(i = 0; i < n; i++){
+        for(j = 0; j < n - 1; j++){
+            if(arr[j] > arr[j + 1]){
+                temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+    printf("%d", arr[n - 1]);
+    return 0;
+}
+
+		</code></pre> 
+   </div> 
+  </div>
+     <br><br><hr><br>
+          <footer class="footer">
+            <h6>© 2025 • Developed by <br>Muhammad Radif Hassan</h6>
+        </footer>
+        </div>
+        </div>
+    </div>
+</body>
+</html>

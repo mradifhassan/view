@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linux Commands</title>
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/kMVqKcWZbmrYvnzT3kMEO2Z2i1vZBw4Hbih4tnB3xQ9lFvHXtY2X5+J59Cl5YITgrW6n30z7tk2OA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Bangla&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="philosophy.css">
+           <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/kMVqKcWZbmrYvnzT3kMEO2Z2i1vZBw4Hbih4tnB3xQ9lFvHXtY2X5+J59Cl5YITgrW6n30z7tk2OA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> 
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> 
+</head>
+    <div class="profile-container">
+        <div class="profile-header">
+          <br>
+            <u class="published"><h6>Published: 05-08-2025</h6></u>
+          <u><h3>Linux Commands</h3></u>
+    <body>
+<p>When I come to realize that Windows is not for me, windows is such a bullshit OS, then I focused on Linux. Why linux? Well, its very simple, it allows you to take full 
+control over your machine or computer. Actually its very fast and lightweight. It will also allow you to make changes whatever you want from your computer or 
+machine which means it is customizable as well as secured than other OS. I know MacOS provides you world class UX as well as security. But who can bear those expenses? 
+And for the Windows, its very risky to use while multiple malware attacks and make your machine very slow. Now most important thing is, Linux is fully open source. 
+Its completely free for everyone. It has many tastes and distros. You can choice any of them according to your tastes. Actually Linux is for those people who want full 
+control over their machine, OS as well as everything while MacOS and Windows don't allow you to do that so. They are very limited to provide you such a kind of opportunity. 
+Besides, if you are Mathematics, Computer Science and Logical thoughts enthusiasts, then Linux is for you as I think! Because if you study on CS or Maths, you must have to 
+know to operate Linux! Linux will give you a great power and make you generous since you are become used to in a Open Source softwares and packages. You will feel 
+something to do for general people (its completely my personal opinion btw :")). Windows doesn't run on older archietecture based computer while only Linux can run. Learning 
+Linux allows you to know about Computer Archietecture and how Computer actually works behind. Now, I am going to provide some Linux based bash commands that I learnt up to this day according
+    to their usage in different ways and I made them as categorized-</p>
+<br>
+<u><h3>Hardware Information</h3></u> 
+<br>
+<p class="point"><code>neofetch/fastfetch</code> - It allows you to view your hardware and other stuffs at a glance, but before you need to install that first!</p>
+<p class="point"><code>date</code> - This will show time and date of your current location.</p>
+<p class="point"><code>arch</code> - This will let you know about the type of your processor archietecture.</p>
+<p class="point"><code>df -h</code> - It allows you to see how much memories your located files have taken, besides it will also show Size, Used, Avail, Use% and Mounted on.</p>
+<p class="point"><code>du -sh *</code> - It summarizes each and every folder or directory's spaces inside current directories.</p>
+<p class="point"><code>du -sh</code> - Shows the total space used by the current directory.</p>
+<p class="point"><code>w</code> - Shows who is logged in and what they are doing.</p> 
+<p class="point"><code>df -aT</code> - Shows file system type (like <code>ext4, tmpfs</code>, etc.).</p>
+<p class="point"><code>df -ha</code> - Includes pseudo, duplicate, and inaccessible file systems.</p>
+<p class="point"><code>uptime</code> - Shows how long the system has been running, user count, and load average.</p>
+<p class="point"><code>who -b</code> - Shows last boot time.</p>
+<p class="point"><code>users</code> - Displays currently logged-in users.</p>
+<p class="point"><code>ip a</code> - Shows your IP address and network interfaces.</p>
+<p class="point"><code>htop</code> - Interactive system monitor (CPU, Memory, Processes).</p>
+<p class="point"><code>history</code> - Shows bash command history.</p>
+<p class="point"><code>history -c</code> - Clears history in current shell (not permanent).</p>
+<p class="point"><code>history -c && > ~/.bash_history && history -w</code> - Permanently clears bash history.</p>
+<p class="point"><code>whoami</code> - Shows your current logged-in username.</p>
+<p class="point"><code>passwd (your username)</code> - Change your user password.</p>
+<p class="point"><code>ls -la</code> - Lists all files and directories including hidden ones.</p>
+<p class="point"><code>package --version</code> - Shows installed package version.</p>
+<p class="point"><code>man (command)</code> - Opens manual page for the command.</p>
+<p class="point"><code>(command) --help</code> - Shows help and usage of the command.</p>
+<p class="point"><code>~</code> - Represents your home directory path.</p>
+<p class="point"><code>sensors</code> - Shows the system and cpu temperature of your machine.</p>
+<p class="point"><code>sudo inxi --basic</code> - Tells the entire system information at a glance.</p>
+<p class="point"><code>inxi --sensors</code> - Tells the temperature and fan speed in RPM.</p>
+<p class="point"><code>uname</code> - According to Wikipedia, <code>uname</code> (short for unix name) is a computer program in Unix and Unix-like computer operating systems that prints the name, version and other 
+details about the current machine and the operating system running on it. According to Oracle, in order to Display General System Information, use the <code>uname</code> command. It displays the 
+operating system name as well as the system node name, operating system release, operating system version, hardware name, and processor type.
+<p class="point"><code>uname -a</code> - Shows the full kernel information that you are currently using. Here <code>-a</code> refers to all.</p>
+<p class="point"><code>uname -r</code> - Shows the released latest kernel of your system where <code>-r</code> refers to release which mean the latest version of the kernel.</p>
+<p class="point"><code>uname -s</code> - Displays the system type of your OS where <code>-s</code> stands for system type.</p>
+<p class="point"><code>showrev -a</code> - It displays system and software release information.</p>
+<p class="point"><code>hostnamectl</code> - Shows you the production information of your machine.</p>
+<p class="point"><code>tree -d -L 1</code> - This will let you see the directories from your root directory and <code>-L 1</code> stands for the depth layer of your directories, you may change the value instead of 1 according to your taste in order to
+    to know your directories depth.</p>
+        <br>
+<u><h3>Package Management</h3></u>
+<br>
+<p class="point"><code>sudo apt install (package name)</code> – Install packages.</p>
+<p class="point"><code>sudo apt update && sudo apt upgrade</code> – Update and upgrade system packages.</p>
+<p class="point"><code>package --version</code> – Check installed package version.</p>
+<p class="point"><code>man (command)</code> – Open manual for a command.</p>
+<p class="point"><code>(command) --help</code> – Show help/usage for a command.</p>
+<br>
+<u><h3>File & Directory Management</h3></u>
+<br>
+<p class="point"><code>ls</code> – List files/folders.</p>
+<p class="point"><code>ls -a</code> – List all files, including hidden.</p>
+<p class="point"><code>ls -A</code> – List almost all files (excludes “.” and “..”).</p>
+<p class="point"><code>ls (folder name)</code> – List contents of a specific folder.</p>
+<p class="point"><code>ls -la</code> – Detailed list including hidden files.</p>
+<p class="point"><code>pwd</code> – Show current working directory.</p>
+<p class="point"><code>mkdir (New folder)</code> – Create new directory.</p>
+<p class="point"><code>rm -r (Directory)</code> – Remove a directory recursively.</p>
+<p class="point"><code>cp (file) /path/to/destination</code> – Copy file to another directory.</p>
+<p class="point"><code>cp text.txt another_text.txt</code> – Duplicate file.</p>
+<p class="point"><code>cp text.txt /path/to/destination/another_text.txt</code> – Copy and rename in new directory.</p>
+<p class="point"><code>mv my_file.txt (Directory)</code> – Move file to another directory.</p>
+<p class="point"><code>mv old_name.txt new_name.txt</code> – Rename file.</p>
+<p class="point"><code>mv file1.txt file2.txt /path/to/destination</code> – Move multiple files.</p>
+<p class="point"><code>cat filename.txt</code> – Display contents of a file.</p>
+<p class="point"><code>wc -w filename.txt</code> – Count words in file.</p>
+<p class="point"><code>wc -w < filename.txt</code> – Count words (without showing filename).</p>
+<p class="point"><code>sed -i 's/mistaken/correct/g' filename</code> – Replace text in file (in-place).</p>
+<p class="point"><code>sed -i 's/mistaken/correct/g' /path/to/filename</code> – Replace text in file (with full path).</p>
+<p class="point"><code>ls -l | wc -l</code> - This command will tell the total properties inside your current directories as human readable format (decimal).</p>
+<br>
+<u><h3>Text Editing & Programming</h3></u>
+<br>
+<p class="point"><code>vim</code> – Open text editor.</p>
+<p class="point"><code>vim (filename.extension)</code> – Create/edit a file.</p>
+<p class="point"><code>vim program.c</code> – Create/edit <code>C</code> program.</p>
+<p class="point"><code>vim program.cpp</code> – Create/edit <code>C++</code> program.</p>
+<p class="point"><code>vim text.txt</code> – Create/edit text file.</p>
+<p class="point"><code>gcc/clang</code> – <code>C/C++</code> compilers.</p>
+<p class="point"><code>gcc program.c -o program</code> – Compile <code>C</code> program.</p>
+<p class="point"><code>./program</code> – Run compiled program.</p>
+<p class="point"><code>gcc program.c -o program && ./program</code> – Compile & run.</p>
+<p class="point"><code>time ./program</code> – Measure runtime.</p>
+<p class="point"><code>gcc program.c -o program && time ./program</code> – Compile, run & measure time.</p>
+<br>
+<u><h3>Networking & Internet</h3></u>
+<br>
+<p class="point"><code>lynx/w3m</code> – Terminal web browsers (install required).</p>
+<p class="point"><code>lynx www.example.com</code> – Visit a website in terminal.</p>
+<p class="point"><code>nmap</code> – Network scanner (install required).</p>
+<p class="point"><code>nmap -sn 192.168.0.XXX/24</code> – Scan devices on local network.</p>
+<br>
+<u><h3>Media & Documents</h3></u>
+<br>
+<p class="point"><code>mpv file.mp3/mp4</code> – Play audio/video.</p>
+<p class="point"><code>feh image.png</code> – View image.</p>
+<p class="point"><code>pdftotext file.pdf file.txt</code> – Convert PDF to text.</p>
+<p class="point"><code>mupdf file.pdf</code> – View PDF file.</p>
+<br>
+<u><h3>Downloading (yt-dlp)</h3></u>
+<br>
+<p class="point"><code>yt-dlp "link"</code> – Download video.</p>
+<p class="point"><code>yt-dlp -x --audio-format mp3 "link"</code> – Download audio only.</p>
+<p class="point"><code>yt-dlp -F "link"</code> – List available formats.</p>
+<p class="point"><code>yt-dlp -o "video.mp4" "link"</code> – Set filename.</p>
+<p class="point"><code>yt-dlp -o "~/Videos/%(title)s.%(ext)s" "link"</code> – Save to custom path.</p>
+<p class="point"><code>yt-dlp -i "playlist-link"</code> – Download playlist.</p>
+<p class="point"><code>yt-dlp --write-subs --sub-lang en "link"</code> – Download subtitles.</p>
+<p class="point"><code>yt-dlp -c "link"</code> – Resume download.</p>
+<p class="point"><code>yt-dlp "link" --list-formats</code> – Show format options.</p>
+<p class="point"><code>yt-dlp -f (code) "%(title)s.%(ext)s" "link"</code> – Download specific format.</p>
+<p class="point"><code>yt-dlp -f "bv*[height=1080]+ba" -o "%(title)s.%(ext)s" "link"</code> – Download 1080p video + best audio.</p>
+<p class="point"><code>yt-dlp -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best" "link"</code> – Auto-pick best formats.</p>
+<p class="point"><code>yt-dlp -f "bestvideo+bestaudio" "link"</code> – Best quality merged.</p>
+<p class="point"><code>yt-dlp -c --no-part --no-clean-infojson -o "%(title)s.%(ext)s" "link"</code> – Resume broken download.</p>
+<p class="point"><code>yt-dlp -f bestvideo+bestaudio -o "~/Videos/%(title)s.%(ext)s" "link"</code> – Save in specific folder.</p>
+<br>
+<u><h3>Searching</h3></u>
+<br>
+<p class="point"><code>grep -Ri 'text' filename</code> – Search word in file (recursive, case-insensitive).</p>
+<p class="point"><code>grep -Ri 'sudo' /home/alex/Documents</code> – Example: search “sudo” in Documents.</p>
+<br>
+<u><h3>Navigation (Directories)</h3></u>
+<br>
+<p class="point"><code>cd</code> – Go to default directory.</p>
+<p class="point"><code>cd Documents</code> – Enter Documents folder.</p>
+<p class="point"><code>cd -</code> – Go to previous directory.</p>
+<p class="point"><code>cd ..</code> – Move up one directory.</p>
+<p class="point"><code>cd ../Directory</code> – Move to sibling directory.</p>
+<p class="point"><code>cd /path/to/destination</code> – Move to absolute path.</p>
+<p class="point"><code>cd ~/</code> – Go to home directory.</p>
+<br>
+<u><h3>Fun / Miscellaneous</h3></u>
+<br>
+<p class="point"><code>cmatrix</code> – Matrix-style animation.</p>
+<p class="point"><code>sl</code> – ASCII train animation.</p>
+<p class="point"><code>source filename.sh</code> – Run bash file in current shell (for shortcuts/aliases).</p>
+
+  <footer class="footer">
+            <h6>© 2025 • Developed by <br>Muhammad Radif Hassan</h6>
+        </footer>
+        </div>
+        </div>
+    </div>
+</body>
+</html>

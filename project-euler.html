@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Euler</title>
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/prism-themes@1.9.0/themes/prism-vsc-dark-plus.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/kMVqKcWZbmrYvnzT3kMEO2Z2i1vZBw4Hbih4tnB3xQ9lFvHXtY2X5+J59Cl5YITgrW6n30z7tk2OA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="programming.css">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/prism.min.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-c.min.js"></script> <!-- Prism.js for syntax highlighting -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/prism.min.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-c.min.js"></script> 
+   
+</head>
+<body>
+    <div class="profile-container">
+        <div class="profile-header">
+          <h1>Solved Problems</h1>          
+          <p>Since developing a love for programming, I have always tried to solve any problem on my own. In this pursuit, I have solved several problems, including those from <a href="https://projecteuler.net">Project Euler</a> some books and from the preparation stages for the Informatics Olympiad. I have tried to include all the problems that I have solved on my own approach up to this day.
+          <br><hr>
+       
+<u><h3>Problem 1-</h3></u>
+   <br><br>
+   <p><a href="https://projecteuler.net/problem=1">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+  <p>In order to solve this problem, we are go through a little bit of mathematical intuition. Since we are called to determine the sum of all the numbers \((1, 1000)\) which are divislbe by \(3\) or \(5\), we need to
+  list all the numbers multiple of \(3\) or \(5\). So, we need to run a loop under from \(1\) to \(1000\) exclusive. Which means we in programming, our initial value would be \(2\) and end just before \(1000\).
+  Then initialize sum would be \(0\) and the iteration of \(i\) will be added up continuously untill \(1000\). And then we will printf the result of sum.</p>
+   <p>So, first of all, we need to initialize our <code>sum</code> variable as \(0\). Then we need to use a <code>for</code> loop untill \(1000\) from initializing <code>i</code> variable as \(2\) because according to the problem,
+   \(1\) and \(1000\) will be exclusive \((1, 1000)\). Then we will set a condition that if any \(i\) is divislbe by \(3\) or \(5\), then it will be summed up the value inside the <code>sum</code> variable. And then we will return <code>sum</code> as our answer.</p>
+    <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int divisibleSum(int n);
+        
+int main(){
+    int n = 1000;
+    divisibleSum(n);
+    return 0;
+}
+
+int divisibleSum(int n){
+    int sum = 0;
+    for(int i = 2; i < n; i++){
+        if(i % 3 == 0 || i % 5 == 0){
+            sum += i;
+        }
+    }
+    printf("%d\n", sum);
+    return sum;
+}
+        </code></pre> 
+   </div> 
+  </div>
+  <br><br><hr><br>
+  </code></pre> 
+   </div> 
+  </div>
+     <br><br><hr><br>
+          <footer class="footer">
+            <h6>© 2025 • Developed by <br>Muhammad Radif Hassan</h6>
+        </footer>
+        </div>
+        </div>
+    </div>
+</body>
+</html>

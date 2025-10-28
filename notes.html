@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Short Notes</title>
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/prism-themes@1.9.0/themes/prism-vsc-dark-plus.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/kMVqKcWZbmrYvnzT3kMEO2Z2i1vZBw4Hbih4tnB3xQ9lFvHXtY2X5+J59Cl5YITgrW6n30z7tk2OA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="notes.css">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/prism.min.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-c.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/prism.min.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-c.min.js"></script> 
+   
+</head>
+<body>
+    <div class="profile-container">
+        <div class="profile-header">
+          <h1>Short Notes</h1>
+          
+          <p>Since developing a love for STEM, I have always tried to include all the stuffs that I discovered my own and those which has seemed to me very important and also for learning and storming brain. In this pursuit I've added several contents here including those from YouTube, Google, ChatGPT, Gemini, Websites, some books and from the learning stages for my self growth and development. I have tried to include all the contents that I have thought and expressed as well as organized on my own approach up to this day.<p>
+          <br><hr>
+       
+<u><h3>Note 1-</h3></u>
+   <p>If you store an integer variable inside an integer type variable and then print it by changing its format specifier from <code>%d</code> to <code>%c</code>, you will get character, on the contrary if you store a character variable inside an character type variable and then print by changing its format specifier from <code>%c</code> to <code>%d</code>, you will get integer value. Do you know why it happened? It has happened because of the <a href="https://www.ascii-code.com/"><code>ASCII</code></a> numbers.</p>
+   <p>For the first case-</p>
+   <div class="math-content">
+  <u><h3>Code-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int main(void){
+    char ch = 'a';
+    printf("%d", ch); /*97*/
+    return 0;
+}
+        </code></pre> 
+   </div> 
+  </div>
+   <p>For the second case-</p>
+   <div class="math-content">
+  <u><h3>Code-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int main(void){
+    int ch = 97;
+    printf("%c", ch); /*a*/
+    return 0;
+}
+        </code></pre> 
+   </div> 
+  </div>
+  <br><br><hr><br>
+       <u><h3>Note 2-</h3></u>
+   <p>We are going to discuss about string. In <code>C</code>, string is an 
+       array of <code>char</code> type data. In <code>C</code>, we can't 
+       directly deal with string through <code>string</code> data type 
+       like <code>C++</code> or <code>Java</code> or <code>JavaScript</code>. So 
+       we are to deal with string related operation through <code>char</code> data type.</p>
+   <p>There is given below how we can declare string in <code>C</code>.</p>
+   <div class="math-content">
+  <u><h3>Code-</h3></u>
+<div class="container">
+   <div class="code-frame">
+    <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int main(void){
+    char name[7] = {'S', 't', 'r', 'i', 'n', 'g', '\0'}; //Way 1
+    char name[] = {'S', 't', 'r', 'i', 'n', 'g', '\0'}; //Way 2
+    char name[] = "String"; //Way 3
+    char name[7] "";
+    name[] = "String"; //Way 4
+    return 0;
+}
+        </code></pre>
+   </div>
+  </div>
+  <p>There are something notable here. For \(1\)st case, we declared string inside a pair of curly braces and also can see something 
+  <code>'\0'</code> this is called <code>null character</code>. Obvbiously it takes memory. By declaring this in <code>C</code>, computer can understand that 
+  our declared array of character has been finished before the <code>null character</code>. So it is very important. If we don't write this, computer can print something garbage or it will think
+  that string is infinite. To avoid these stuffs, its better to write the <code>null character</code> at the end. When computer find the <code>null 
+  character</code>, it stops printing after the <code>null character</code>. For \(2\)nd case, we didn't declare the array size because computer can 
+  understand the array size automatically. For \(3\)rd case, we declared the <code>string</code> variable inside a pair of quoatation mark. And
+  there is no needed to declare <code>null character</code> because by declaring string this way, computer will automatically understand at the
+  end, there exists a <code>null character</code> and it stops printing. For the last as well as \(4\)th case, Firstly we declared our variable by its size as well as declared void and then stored the string. 
+      Each of the cases are independent.</p>
+  <p>Now we are going to see how computer stores string in <code>C</code>.</p>
+   <div class="math-content">
+  <u><h3>Code-</h3></u>
+<div class="container">
+   <div class="code-frame">
+    <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+    int main(){
+    char name[] = "String";
+    int size = sizeof(name)/sizeof(name[0]);
+    printf("Size of the string is %d", size); // 7; 'String' takes 6 bytes of memory and 1 byte memory is for null character
+    return 0;
+}
+    </code></pre>
+   </div>
+  </div>
+  <p>Now we will see how we can encrypt our message through converting them in <code>ASCII</code> number. It was discussed in Note \(1\). Check it out.
+  To do that so, we are to add <code>string.h</code> header file. It is used for manipulating string or character type data's operation.</P>
+   <div class="math-content">
+  <u><h3>Code-</h3></u>
+<div class="container">
+   <div class="code-frame">
+    <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+int main(){
+    char name[] = "String";
+    int n = strlen(name);
+    for(int i = 0; i < n; i++){
+        printf("%d", name[i]); // 83116114105110103
+    }
+    return 0;
+}
+        </code></pre>
+   </div>
+  </div>
+<p>So as we can see, the <code>ASCII</code> format of our <code>String</code> variable is \(83116114105110103\) and that's how we can encrypt any mesasge by 
+    converting to <code>ASCII</code> format and its a little bit harder to decrypt (we'll do soon later by <code>C</code>) because usually it requires 
+    <code>Python script</code>, <code>JavaScript</code> or <code>Java</code> or any other programing lanuguages. Now we'll do the same thing again by not 
+    using <code>string.h</code> header file and by using our conventional method and its very simple but there is hidden something that we are going to explore.</p>
+<div class="math-content">
+  <u><h3>Code-</h3></u>
+<div class="container">
+   <div class="code-frame">
+    <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+int main(){
+    char name[] = "String";
+    int n = sizeof(name)/sizeof(name[0]);
+    for(int i = 0; i < n; i++){
+        printf("%d", name[i]); // 831161141051101030
+    }
+    return 0;
+}
+    </code></pre>
+   </div>
+  </div> 
+    <p>Did we find any difference between first and second example? Of course there is some difference. Let's go to the structural
+difference. Structural difference means we didn't add <code>string.h</code> header file. Instead of this, we have determined <code>
+n</code> by our most conventional popular method which is <code>sizeof(name)/sizeof(name[0])</code>. Here <code>null character</code>is also
+taken at the last. The <code>ASCII</code> value of <code>'\0'</code> is \(0\). So it is added lastly where previously our <code>strlen(name)</code>
+didn't take <code>null character</code>. Because, <code>strlen()</code> function doesn't count <code>null character</code> whenever it is needed to calculate the
+size of the string. <code>strlen()</code> means the string's length. This is a built in function in <code>C</code>. To use that, we must add <code>string.h</code> header 
+        file. So, the final statement is, if we want the original string size, then usually we are go through <code>
+sizeof(array)/sizeof(array[0])</code> and there <code>null character</code> is counted. But when we don't need to work with <code>null character</code>, then we are to 
+        use <code>strlen(array)</code> function in order to avoid the counting of <code>null character</code>.</p>
+  <br><br><hr><br>
+<footer class="footer">
+            <h6>© 2025 • Developed by <br>Muhammad Radif Hassan</h6>
+        </footer>
+        </div>
+        </div>
+    </div>
+</body>
+</html>

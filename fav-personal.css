@@ -1,0 +1,106 @@
+/* Global CSS variables and body styles */
+:root {
+    --background-color: #f0f0f0;
+    --text-color: #333;
+    --link-color: #1DA1F2;
+    --link-hover-color: #0d8dd8;
+}
+
+body {
+    font-family: 'Spartan', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+/* Profile container */
+.profile-container {
+    background: var(--background-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center the content */
+    width: 90%;
+    max-width: 800px; /* Adjust max-width for responsiveness */
+    box-sizing: border-box;
+    margin-top: 20px;
+}
+
+/* Profile title */
+.profile-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* Profile header */
+.profile-header {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center items horizontally */
+    margin-bottom: 20px; /* Space between profile header and content */
+}
+
+/* Profile picture */
+.profile-header img {
+    width: 180px; /* 1.5 times bigger profile image */
+    height: 180px; /* 1.5 times bigger profile image */
+    border-radius: 50%;
+    margin-right: 20px;
+    /* Remove border around the profile image */
+}
+
+/* Profile info */
+.profile-info {
+    /* No specific styles needed here as text aligns left by default */
+    text-align: left; /* Ensure text aligns left */
+}
+
+/* Name */
+.profile-info h2 {
+    font-size: 24px;
+    margin-bottom: 10px; /* Adjust margin for spacing */
+}
+
+/* Handle */
+.profile-info p {
+    color: #586069;
+    margin: 0; /* Reset margin for the handle */
+    font-size: 14px;
+    margin-top: 6px; /* Adjusted margin top for spacing */
+    margin-bottom: 10px; /* Adjusted margin bottom for spacing */
+}
+
+/* Profile content */
+.profile-content {
+    text-align: left;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Media queries for responsiveness */
+@media only screen and (max-width: 600px) {
+    .profile-container {
+        width: 100%; /* Full width on smaller screens */
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+
+    .profile-header img {
+        width: 160px; /* Adjusted width for smaller screens */
+        height: 110px; /* Adjusted height for smaller screens */
+    }
+}
