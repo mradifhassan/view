@@ -9,8 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Tiro+Bangla&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="quantum-computing.css">
-           <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
-    <!-- Font-Awesome CSS -->
+           <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/kMVqKcWZbmrYvnzT3kMEO2Z2i1vZBw4Hbih4tnB3xQ9lFvHXtY2X5+J59Cl5YITgrW6n30z7tk2OA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> 
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> 
@@ -21,9 +20,8 @@
             <u class="published"><h6>Published: 24-09-2024</h6></u>
           <u><h3>Quantum Computing</h3></u>
     <body>
-  <img class="quantum-computer" src="InShot_20240317_122247537.jpg">
+  <img class="quantum-computer" src="../assets/InShot_20240317_122247537.jpg">
   <p>We all use computers more or less in our daily needs. When we perform any task using a computer, the computer takes input from us and converts it into binary numbers. For the flow of information in this digital system, many codes like \(ASCII\) or \(UNICODE\) have been created, but at its core are \(0\) and \(1\), which is known as the binary number system. Again, in our daily lives, we perform tasks using various electronic devices, and at the heart of these tasks are \(0\) and \(1\). The transistors, microchips, and other small electronic components that we use today are fundamentally based on \(0\) and \(1\).
-
 Nowadays, we use ordinary computers for various tasks and problem-solving in our daily lives, and in some cases, we find that our modern computers take considerable time to solve certain problems. To overcome this, scientists have developed supercomputers that have significantly reduced the time needed. However, even today's supercomputers struggle with complex calculations and problem-solving, and in some cases, they may take thousands to millions of years. To overcome this, the concept of quantum computing was first proposed by physicist Richard Feynman in 1982 during a lecture titled <b>"Simulating Physics with Computers"</b> at the annual meeting of the American Physical Society.
 <br><br>
 Before understanding quantum computing, we first need to understand quantum mechanics. Quantum mechanics is the science of the subatomic level of matter and is a branch of modern physics. Quantum mechanics deals with the subatomic level of matter. When we look at the electron configuration diagram of an element, we usually see electrons moving in a specific orbit. But in reality, the electron is present throughout the orbit, which is known as quantum superposition. It is impossible to determine both the position and velocity of an electron simultaneously and precisely. If the position is precisely known, the superposition will collapse. To explain this more simply, imagine a coin with heads on one side and tails on the other. When you toss it into the air, it will simultaneously be in both the heads and tails positions, because until it lands, we cannot say whether it will be heads or tails, and this is quantum superposition. The superposition will collapse once we determine its specific position (i.e., heads or tails) after it lands. In 1980, Feynman thought that if we could use this superposition property of subatomic particles in our computing system, it could perform many tasks at the same time very quickly. This idea marked the beginning of quantum computing, which we now see in IBM's Q System One quantum computer.
@@ -31,7 +29,7 @@ Before understanding quantum computing, we first need to understand quantum mech
 Now let's learn about the basic principles of classical computers and quantum computers! Classical computers work using binary numbers or bits, with base values of \(0\) and \(1\). Each bit represents a power of \(2\) \((2^0 = 1, 2^2 = 4, <br>2^4 = 16)\) For example, one bit can have two inputs (\(0\) and \(1\), two bits can have four inputs \((00, 01, 10, 11\)) and so on. As the number of bits increases, the number of possible inputs also increases. For example, ten bits can represent \(1,024\) inputs, and \(16\) bits can represent \(65,536\) inputs. Transistors are the building blocks of classical computers, working based on bits, where \(1\) represents the transistor being on, and \(0\) represents it being off. In essence, if we explain the difference between bits and qubits, a bit can either be \(0\) or \(1\), but a qubit can be \(0\) and \(1\) simultaneously, which is known as quantum superposition.</p>
 
 <div class="image-container">
-        <img src="α_1⟩ + β_0⟩ = _Q⟩_20240907_190611_0000.png" alt="Sample Image">
+        <img src="../assets/α_1⟩ + β_0⟩ = _Q⟩_20240907_190611_0000.png" alt="Sample Image">
         <div class="caption">Figure \(1\): A qubit can exist anywhere in a quantum state</div>
     </div>
     <p>Imagine, if the classical bit \(0\) represents the North Pole of the Earth, then undoubtedly, \(1\) would represent the South Pole. But due to quantum superposition, the position of a qubit is not limited to these poles, but it can exist anywhere between them. In that case, a qubit can be represented using Dirac notation of quantum mechanics: \(α|1⟩ + β|0⟩ = |Q⟩\); where \(α\) and \(β\) are complex numbers, which can be used to calculate the exact state of the qubit by determining the proportional representation of \(0\) and \(1\). To understand this more easily, imagine an electron that can exist in two states simultaneously (for example, spin up and spin down). While a classical bit requires two states (\(0\) and \(1\)), a qubit can achieve this with just one. By using two qubits, four states can be represented \((00, 01, 10, 11\)) and by adding another qubit, eight states can be achieved \((000, 001, 010, 011, 100, 101, 110, 111\)). In other words, each additional qubit doubles the number of possible states. With eight qubits, or one qubyte, it’s possible to handle the work of \(256\) inputs in classical computing. The current supercomputers, which take days to perform calculations (such as accurate mechanical analysis of biological processes), could complete these tasks in just a few seconds with a \(50\) kilobyte quantum computer.
@@ -39,7 +37,7 @@ Now let's learn about the basic principles of classical computers and quantum co
 The second principle of quantum mechanics that comes into play here is quantum entanglement. Quantum entanglement is a phenomenon where quantum particles become interrelated in such a way that the state of one particle directly depends on the state of the other, no matter how far apart they are. The distance between them doesn’t have any effect here. For example, consider the case of hydrogen and helium atoms. A hydrogen atom has only one electron, whose spin can be either \(+\frac{1}{2}\) or \(-\frac{1}{2}\). Until observed, it's impossible to predict what the electron's spin will be with certainty. In the case of helium, where two electrons are in the same orbit, they must follow the Pauli's exclusion principle. This means if one electron has a spin of \(+\frac{1}{2}\), the other must have a spin of \(-\frac{1}{2}\). The remarkable aspect of quantum mechanics is that until an electron is observed, we cannot definitively determine the spin of any given electron. Once the spin of one electron is measured, the spin of the other electron is instantly known. This phenomenon is quantum entanglement. In quantum computing, entanglement enables calculations across multiple qubits simultaneously.</p>
 <p>Now, let’s talk about logic gates. A logic gate is a type of digital electronic circuit that performs various logical operations using Boolean algebra. Logic gates generally refer to logic circuits that have one or more binary inputs and only one output.</p>
 <div class="image-container">
-    <img src="α_1⟩ + β_0⟩ = _Q⟩_20240907_184322_0001.png" alt="Sample Image">
+    <img src="../assets/α_1⟩ + β_0⟩ = _Q⟩_20240907_184322_0001.png" alt="Sample Image">
     <div class="caption">Figure \(2\): If the spin of one electron is positive, the other must be negative.</div>
 </div>
 <p>There are 3 types of basic logic gates. These are:</p>
@@ -48,7 +46,7 @@ The second principle of quantum mechanics that comes into play here is quantum e
 <p class="logic-gates">\(NOT\) gate</p>
 <p>In a classical computer, if two inputs, \(0\) and \(1\), are passed through an \(AND\) gate, the results are as belows: \(0\) \(AND\) \(0 = 0,\) \(0\) \(AND\) \(1 = 0,\) \(1\) \(AND\) \(0 = 0,\) \(1\) \(AND\) \(1 = 1\). When passed through an \(OR\) gate, the results are: \(0\) \(OR\) \(0  = 0,\) \(0\) \(OR\) \(1 = 1,\) \(1\) \(OR\) \(0 = 1,\) \(1\) \(OR\) \(1 = 1\). When passed through a \(NOT\) gate, the input gets inverted, for example, \(0\) \(NOT\) \(= 1,\) \(1\) \(NOT\) \(= 0\), and so on. Quantum logic gates are almost similar to classical logic gates, but they are more complex due to the inputs of qubits depending on quantum probabilities.</p>
 <div class="image-container">
-        <img src="α_1⟩ + β_0⟩ = _Q⟩_20240907_184323_0002.png" alt="Sample Image">
+        <img src="../assets/α_1⟩ + β_0⟩ = _Q⟩_20240907_184323_0002.png" alt="Sample Image">
         <div class="caption">Figure \(3\): Hadamard Gate</div>
     </div>
     <p>Quantum logic gates are time-dependent. The most well-known quantum gate is the Hadamard gate or H gate. This quantum gate is named after the French mathematician Jacques Hadamard. The H gate converts the qubit input into a superposition state. In other words, when a \(0\) and \(1\) qubit are passed through an H quantum gate, it creates a superposition state of \(0\) and \(1\). Another basic quantum gate widely used in quantum computing is the Controlled-NOT gate, or \(CNOT\) gate. The CNOT quantum gate works similarly to the Exclusive OR \(XOR\) gate in classical computing. It does not change the value of the controlled qubit input, but it flips the value of the entangled qubit. There are many other types of gates as well, and more will emerge in the distant future.
@@ -72,9 +70,9 @@ Now, let's discuss how a qubit is created, or rather, what materials are used. I
 <br><br>
 When it comes to the capability of qubits, with just \(500\) qubits, you could store more information than the number of atoms in the observable universe.
 </p>
-<br><br><br><br>
+<br>
 <p class="source"><b>Source:</b>Wikipedia, Magazine, Internet</p>
-<br><br>
+<br>
 <ul>  <li><p>To read the Bengali version of this article - 
         <a href="https://docs.google.com/document/d/1JlaoeJ-O3nMfdltDO3PKgslVMhocU56SREx9lW2wWGY/export?format=pdf" download>Download as PDF</a></li></ul>
 <ul><li><p>This article has been published in the second issue of <a href="https://somantoral.pages.dev/archive">Somantoral Magazine</a></p></li></ul>
