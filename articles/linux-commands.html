@@ -71,6 +71,10 @@ operating system name as well as the system node name, operating system release,
 <p class="point"><code>hostnamectl</code> - Shows you the production information of your machine.</p>
 <p class="point"><code>tree -d -L 1</code> - This will let you see the directories from your root directory and <code>-L 1</code> stands for the depth layer of your directories, you may change the value instead of 1 according to your taste in order to
     to know your directories depth.</p>
+<p class="point"><code>system-analyze time</code> - You will be able to know how much time it has been taken to boot your machine and other stuffs.</p>
+<p class="pont"><code>system-analyze blame</code> - It will inform any issuse that happened in your machine and additional stuffs.</p>
+<p class="point"><code>system-analyze critical-chain</code> - command shows you the critical path of services that must start sequentially during the Linux boot process. It answers the question: What is the longest required dependency 
+  path that prevents the system from reaching its target (usually <code>graphical.target</code> or <code>multi-user.target</code>) sooner?</p>
         <br>
 <u><h3>Package Management</h3></u>
 <br>
