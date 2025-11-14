@@ -59,6 +59,15 @@ int main(void){
         </code></pre> 
    </div> 
   </div>
+   <div class="math-content">
+  <u><h3>Output-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+a
+        </code></pre> 
+   </div> 
+  </div>
   <br><br><hr><br>
        <u><h3>Note 2-</h3></u>
    <p>We are going to discuss about string. In <code>C</code>, string is an 
@@ -104,11 +113,20 @@ int main(void){
     int main(){
     char name[] = "String";
     int size = sizeof(name)/sizeof(name[0]);
-    printf("Size of the string is %d", size); // 7; 'String' takes 6 bytes of memory and 1 byte memory is for null character
+    printf("Size of the string is %d", size);
     return 0;
 }
     </code></pre>
    </div>
+  </div>
+   <div class="math-content">
+  <u><h3>Ouput-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+7 /* 'String' takes 6 bytes of memory and 1 byte memory is for null character */
+        </code></pre> 
+   </div> 
   </div>
   <p>Now we will see how we can encrypt our message through converting them in <code>ASCII</code> number. It was discussed in Note \(1\). Check it out.
   To do that so, we are to add <code>string.h</code> header file. It is used for manipulating string or character type data's operation.</P>
@@ -123,12 +141,21 @@ int main(){
     char name[] = "String";
     int n = strlen(name);
     for(int i = 0; i < n; i++){
-        printf("%d", name[i]); // 83116114105110103
+        printf("%d", name[i]);
     }
     return 0;
 }
         </code></pre>
    </div>
+  </div>
+    <div class="math-content">
+  <u><h3>Ouput-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+83116114105110103
+        </code></pre> 
+   </div> 
   </div>
 <p>So as we can see, the <code>ASCII</code> format of our <code>String</code> variable is \(83116114105110103\) and that's how we can encrypt any mesasge by 
     converting to <code>ASCII</code> format and its a little bit harder to decrypt (we'll do soon later by <code>C</code>) because usually it requires 
@@ -151,6 +178,15 @@ int main(){
     </code></pre>
    </div>
   </div> 
+  <div class="math-content">
+  <u><h3>Ouput-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+83116114105110103
+        </code></pre> 
+   </div> 
+  </div>
     <p>Did we find any difference between first and second example? Of course there is some difference. Let's go to the structural
 difference. Structural difference means we didn't add <code>string.h</code> header file. Instead of this, we have determined <code>
 n</code> by our most conventional popular method which is <code>sizeof(name)/sizeof(name[0])</code>. Here <code>null character</code>is also
@@ -161,6 +197,41 @@ size of the string. <code>strlen()</code> means the string's length. This is a b
 sizeof(array)/sizeof(array[0])</code> and there <code>null character</code> is counted. But when we don't need to work with <code>null character</code>, then we are to 
         use <code>strlen(array)</code> function in order to avoid the counting of <code>null character</code>.</p>
   <br><br><hr><br>
+  <u><h3>Note 3-</h3></u>
+   <p>If we declare an array size of <code>n</code> variable, we will be able to see that all the elements of the variable will contain a fixed number of size respectively. Like for <code>int</code> type variable, it will store <code>4 bytes</code> of memory (used this example in the code snippet below). Here shown the memory address that the elements of the array contain respectively <code>4</code>.</p>
+<div class="math-content">
+  <u><h3>Code-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int main(){
+    int arr[5] = {50, 60, 70, 80, 90};
+    for(int i = 0; i < 5; i++){
+        printf("Address of arr[%d] = %d is %p\n", i, arr[i], &arr[i]);
+    }
+    return 0;
+}
+</code></pre> 
+   </div> 
+  </div>
+</div>
+<div class="math-content">
+  <u><h3>Ouput-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+Address of arr[0] = 50 is 0x7ffcaa660e70
+Address of arr[1] = 60 is 0x7ffcaa660e74
+Address of arr[2] = 70 is 0x7ffcaa660e78
+Address of arr[3] = 80 is 0x7ffcaa660e7c
+Address of arr[4] = 90 is 0x7ffcaa660e80
+</code></pre> 
+   </div> 
+  </div>
+  </div>
+<p>The memory address of every element of the array in <code>Hex</code> format. If we convert the last two or three digits of <code>Hex</code> into <code>Dec</code>, we will clearly understand that array contains a fixed amount of spaces for containing variable respectively.</p>
 <footer class="footer">
             <h6>© 2025 • Developed by <br>Muhammad Radif Hassan</h6>
         </footer>
