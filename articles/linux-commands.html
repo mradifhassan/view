@@ -40,6 +40,10 @@ Linux allows you to know about Computer Archietecture and how Computer actually 
 <p class="point"><code>df -h</code> - It allows you to see how much memories your located files have taken, besides it will also show Size, Used, Avail, Use% and Mounted on.</p>
 <p class="point"><code>du -sh *</code> - It summarizes each and every folder or directory's spaces inside current directories.</p>
 <p class="point"><code>du -sh</code> - Shows the total space used by the current directory.</p>
+<p class="point"><code>free -mh</code> - Tells <code>Mem</code> (Physical RAM) and <code>Swap</code> (Disk-based virtual memory).</p>
+<p class="point"><code>lsblk</code> - Refers to block storage devices. These are devices that move data in fixed-size blocks, primarily including hard drives (HDD), Solid State Drives (SSD), partitions, CD/DVD drives, and USB flash drives.</p>
+<p class="point"><code>lsusb</code> - Refers to devices connected via the Universal Serial Bus (USB) ports. This includes external peripherals like keyboards, mice, printers, webcams, USB flash drives, and external hard drives.</p>
+<p class="point"><code>lspci</code> - Refers to devices connected via the Peripheral Component Interconnect (PCI) bus. This includes most high-speed internal hardware components on the motherboard, such as graphics cards, network interface cards (NICs), sound cards, SATA/NVMe controllers, and USB host controllers.</p>
 <p class="point"><code>w</code> - Shows who is logged in and what they are doing.</p> 
 <p class="point"><code>df -aT</code> - Shows file system type (like <code>ext4, tmpfs</code>, etc.).</p>
 <p class="point"><code>df -ha</code> - Includes pseudo, duplicate, and inaccessible file systems.</p>
@@ -76,7 +80,22 @@ operating system name as well as the system node name, operating system release,
 <p class="pont"><code>system-analyze blame</code> - It will inform any issuse that happened in your machine and additional stuffs.</p>
 <p class="point"><code>system-analyze critical-chain</code> - command shows you the critical path of services that must start sequentially during the Linux boot process. It answers the question: What is the longest required dependency 
   path that prevents the system from reaching its target (usually <code>graphical.target</code> or <code>multi-user.target</code>) sooner?</p>
-        <br>
+<p class="point"><code>sudo dmidecode -t bios</code> - Provides information about the System BIOS/UEFI firmware, including the vendor, version, and release date.</p>
+<p class="point"><code>sudo dmidecode -t system</code> - Provides details about the overall computer system, such as the manufacturer, product name, version, and serial number (often the most useful serial number).</p>
+<p class="point"><code>sudo dmidecode -t baseboard</code> - Provides information about the main board (motherboard), including the manufacturer, product name, version, and serial number.</p>
+<p class="point"><code>sudo dmidecode -t chassis</code> - Provides details about the physical enclosure, such as the manufacturer, type (e.g., Notebook, Desktop), version, and chassis serial number.</p>
+<p class="point"><code>sudo dmidecode -t processor</code> - Provides information about the CPU, including its type, family (e.g., Zen), speed, core count, and cache handles.</p>
+<p class="point"><code>sudo dmidecode -t memory</code> - Provides information about RAM modules (DRAM), including the number of memory devices, size, speed, and form factor (DIMM, SODIMM).</p>
+<p class="point"><code>sudo dmidecode -t cache</code> - Provides detailed information about the system's caches (L1, L2, L3), including their size, type, and speed.</p>
+<p class="point"><code>sudo dmidecode -t connector</code> - Provides a list of the physical connectors on the baseboard (e.g., SATA, USB, PCIe slots) and their types.</p>
+<p class="point"><code>sudo dmidecode -t slot</code> - Provides information about the system slots available (e.g., PCI, PCIe, AGP), their designation, and their current usage status.</p>
+<p class="point"><code>sudo dmidecode -s</code> - You will see many options for you you will pick one of them as an arguement get the serial number of the arguement. E.g., <code>system-serial-number</code>,<code>chassis-type</code>,<code>chassis-serial-number</code> etc.</p>
+<p class="point"><code>hardinfo</code> - You will get everything you need to know about your deivce by this free open-source package.</p>
+<p class="point"><code>systemctl list-jobs --type=service</code> - This is used to display a list of queued or currently running jobs in the systemd manager that specifically target service units.</p>
+<p class="point"><code>systemctl stop httpd</code> - This command immediately stops the httpd service in the current runtime session.</p>
+<p class="point"><code>systemctl disable httpd</code> - This command removes the symbolic links that tell systemd to start the httpd service during the system boot process.</p>
+<p class="point"><code>sudo snort -A console -q -c /etc/snort/snort.conf -i (YOUR_INTERFACE_NAME)</code> - An IDS can monitor system activities and detect potential security threats. One popular open-source IDS for Linux is Snort. You can get your interface name from <code>ip address></code> looking like <code>wlp0s0</code>, <code>wlp1s0</code>, <code>enp0s3</code> etc.</p>
+<br>
 <u><h3>Package Management</h3></u>
 <br>
 <p class="point"><code>sudo apt install (package name)</code> – Install packages.</p>
@@ -85,7 +104,7 @@ operating system name as well as the system node name, operating system release,
 <p class="point"><code>man (command)</code> – Open manual for a command.</p>
 <p class="point"><code>(command) --help</code> – Show help/usage for a command.</p>
 <br>
-<u><h3>File, Program & Directory Management</h3></u>
+<u><h3>File, Program, Security & Directory Management</h3></u>
 <br>
 <p class="point"><code>ls</code> – List files/folders.</p>
 <p class="point"><code>ls -a</code> – List all files, including hidden.</p>
@@ -104,6 +123,8 @@ operating system name as well as the system node name, operating system release,
 <p class="point"><code>cat filename.txt</code> – Display contents of a file.</p>
 <p class="point"><code>wc -w filename.txt</code> – Count words in file.</p>
 <p class="point"><code>wc -w < filename.txt</code> – Count words (without showing filename).</p>
+<p class="point"><code>cat ~/.bash_history > file.txt</code> - Creates a <code>.txt</code> file containing your bash history at once. You can create similar files anywhere anytime.</p>
+<p class="point"><code>bash > filename.txt</code> - This will create a <code>.txt</code> file at once for you and you can use this method where datasets are contained.</p>
 <p class="point"><code>sed -i 's/mistaken/correct/g' filename</code> – Replace text in file (in-place).</p>
 <p class="point"><code>sed -i 's/mistaken/correct/g' /path/to/filename</code> – Replace text in file (with full path).</p>
 <p class="point"><code>ls -l | wc -l</code> - This command will tell the total properties inside your current directories as human readable format (decimal).</p>
@@ -112,7 +133,9 @@ operating system name as well as the system node name, operating system release,
 <p class="point"><code>sha256sum (file name)</code> - You can verify SHA256 SUM by running this command for your installed file. It's commonly used to verify <code>.iso</code> file.</p>
 <p class="point"><code>ps -aux | grep (program name)</code> - You can view if any program is running or not.</p>
 <p class="point"><code>kill -15 (PID)</code> - If you want to stop any program, then firstly view the <code>PID</code> from running <code>top</code>.</p>
-  <br>
+<p class="point"><code>ssh - keygen -t rsa</code> - Using <code>ssh</code> keys for staying more secure in your local machine is very important instead of using password authentication. This <code>ssh</code> key generates <code>RSA</code>keys.</p>
+<p class="point"><code>ssh-copy-id username@remote_server</code> - By this way you will be able to copy your key to your remote server.</p>
+<br>
 <u><h3>Text Editing & Programming</h3></u>
 <br>
 <p class="point"><code>vim</code> –Open text editor.</p>
