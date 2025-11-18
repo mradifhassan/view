@@ -25,8 +25,7 @@
           <br><hr>
        
 <u><h3>Problem 1-</h3></u>
-   <br><br>
-   <p><a href="https://projecteuler.net/problem=1">Problem Statement</a></p>
+   <p>If we list all the natural numbers below \(10\) that are multiples of \(3\) or \(5\), we get \(2, 5, 6\) and \(9\). The sum of these multiples is \(23\). Find the sum of all the multiples of \(3\) or \(5\) below \(1000\). <a href="https://projecteuler.net/problem=1"><code>(Problem Statement)</code></a></p>
  <div class="math-content">
   <u><h3>Solve-</h3></u>
 <div class="container"> 
@@ -59,12 +58,130 @@ int divisibleSum(int n){
 }
         </code></pre> 
    </div> 
+  <div class="math-content">
+  <u><h3>Output-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+233168
+        </code></pre> 
+   </div> 
   </div>
-  <br><br><hr><br>
+</div>  
+  </code></pre> 
+   </div> 
+   <br><hr><br>
+     <u><h3>Problem 2-</h3></u>
+     <p>The sum of the primes below \(10\) is \(2 + 3 + 5 + 7 = 17\). Find the sum of all the primes below two million. <a href="https://projecteuler.net/problem=1"><code>(Problem Statement)</code></a></p>
+     <div class="math-content">
+  <u><h3>Solve-</h3></u>
+  <p>To solve this, it requires to know deeply about <a href="https://blog.toph.co/tutorials/sieve-of-eratosthenes"><code>sieve-of-eratosthenes</code></a> and that's it. This problem introduces us about the <code>sieve-of-eratosthenes</code>.</p>
+<div class="container"> 
+     <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+#include &lt;stdbool.h&gt;
+
+#define N 2000000
+long long COUNT = 0;
+int primeSum();
+int main(){
+    primeSum();
+    return 0;
+}
+int primeSum(){
+    int prime[N + 1];
+    for(int i = 0; i < N; i++){
+        prime[i] = true;
+    }
+    for(int i = 2; i <= N; i++){
+        if(prime[i] == true){
+            for(int j = i * 2; j <= N; j += i){
+                prime[j] = false;
+            }
+        }
+    }
+    for(int i = 2; i <= N; i++){
+        if(prime[i] == true){
+            COUNT = COUNT + i;
+        }
+    }
+    printf("%lld\n", COUNT);
+    return COUNT;
+}
+</code></pre> 
+   </div> 
+  <div class="math-content">
+  <u><h3>Output-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+142913828922
+        </code></pre> 
+   </div> 
+  </div>
   </code></pre> 
    </div> 
   </div>
-     <br><br><hr><br>
+<br><hr><br>
+<u><h3>Problem 3-</h3></u>
+     <p>By listing the first six prime numbers: \(2, 3, 5, 7, 11\), and \(13\), we can see that the \(6\)th prime is \(13\). What is the \(10,001\)st prime number? <a href="https://projecteuler.net/problem=7"><code>(Problem Statement)</code></a></p>
+     <div class="math-content">
+  <u><h3>Solve-</h3></u>
+  <p>This problem also involves implementing <code>sieve of eratosthenes</code> as previous solution. But lastly we will check \(n\)th prime number. To do that so, we will list out all the primes and then, initialize <code>count = 0</code>, if prime numbers meet the condition, then <code>count++</code> or interate by \(1\). Lastly, if <code>input</code> and <code>count</code> are equal, terminate and print our \(n\)th prime number.</p>
+<div class="container"> 
+     <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+void prime(int n);
+
+int main(){
+    int n = 10001;
+    prime(n);
+    return 0;
+}
+
+void prime(int n){
+    int limit = n * 20;
+    int array[limit + 1];
+    for(int i = 0; i <= limit; i++){
+        array[i] = 1;
+    }
+    for(int i = 2; i <= limit; i++){
+        if(array[i] == 1){
+            for(int j = 2 * i; j <= limit; j += i){
+                array[j] = 0;
+            }
+        }
+    }
+    int count = 0;
+    for(int i = 2; i <= limit; i++){
+        if(array[i] == 1){
+            count++;
+            if(count == n){
+                printf("%d\n", i);
+                return;
+            }
+        }
+    }
+}
+ 
+</code></pre> 
+   </div> 
+  <div class="math-content">
+  <u><h3>Output-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+104743
+        </code></pre> 
+   </div> 
+  </div>
+  </code></pre> 
+   </div> 
+  </div>
+<br><hr><br>
           <footer class="footer">
             <h6>© 2025 • Developed by <br>Muhammad Radif Hassan</h6>
         </footer>
