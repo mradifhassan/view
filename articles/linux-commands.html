@@ -136,6 +136,7 @@ operating system name as well as the system node name, operating system release,
 <p class="point"><code>kill -15 (PID)</code> - If you want to stop any program, then firstly view the <code>PID</code> from running <code>top</code>.</p>
 <p class="point"><code>ssh - keygen -t rsa</code> - Using <code>ssh</code> keys for staying more secure in your local machine is very important instead of using password authentication. This <code>ssh</code> key generates <code>RSA</code>keys.</p>
 <p class="point"><code>ssh-copy-id username@remote_server</code> - By this way you will be able to copy your key to your remote server.</p>
+<p class="point"><code>ls -a | grep keyword</code> - You can findout your specific keyword contained file or stuffs from the existing folder.</p>
 <br>
 <u><h3>Text Editing & Programming</h3></u>
 <br>
@@ -150,6 +151,14 @@ operating system name as well as the system node name, operating system release,
 <p class="point"><code>gcc program.c -o program && ./program</code> – Compile & run.</p>
 <p class="point"><code>time ./program</code> – Measure runtime.</p>
 <p class="point"><code>gcc program.c -o program && time ./program</code> – Compile, run & measure time.</p>
+<p class="point"><code>bintutils</code> - Binutils is a collection of <code>GNU</code> programming tools for creating and manipulating binary files, such as object files and executables and used for converting assembly language into machine code. <a href="www.google.com/search?q=what+is+binutils"><code>(According to Google)</code></a></p>
+<p class="point"><code>as</code> - In order to compile <code>assembly</code> language, we need this compiler to execute our code.</p>
+<p class="poitn"><code>as -32 filename.s -o filename.out</code> - The command <code>as -32 filename.s -o filename.out</code> uses the <code>GNU Assembler</code> to translate the assembly code in <code>filename.s</code> into a <code>32-bit</code> object file named <code>filename.out</code>.</p>
+<p class="point"><code>ld -m elf_i386 -s filename.out -o exit</code>s used by the <code>GNU</code> Linker to combine compiled object files into a <code>32-bit ELF</code> executable while stripping the symbol and debugging information to reduce the file size.</p>
+<p class="point"><code>as -32 filename.s -o filename.out</code> - Create <code>assembly</code> formated code from <code>C</code> language and make executable by <code>./filename.s</code>.</p>
+<p class="point"><code>objdump</code> - It is a command-line utility that is part of the <code>GNU Binutils</code> (Binary Utilities) suite, primarily used to display various information about object files, executable files, and libraries.</p>
+<p class="point"><code>objdump -x filename</code> - It works after compiling <code>C</code> code by displaying a comprehensive, verbose view of the entire structure and contents of the resulting executable file. The <code>-x</code> flag is a shorthand for displaying the file's entire header contents.</p>
+
 <br>
 <u><h3>Networking & Internet</h3></u>
 <br>
