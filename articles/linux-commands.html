@@ -139,6 +139,9 @@ operating system name as well as the system node name, operating system release,
 <p class="point"><code>ls -a | grep keyword</code> - You can findout your specific keyword contained file or stuffs from the existing folder.</p>
 <p class="point"><code>fdupes /path/to/your/folder</code> - Search any duplicate files exist inside any specific folder.</p>
 <p class="point"><code>fdupes -r /path/to/your/folder</code> - To search recursively for duplicate files within subdirectories.</p>
+<p class="point"><code>find . -mindepth 1 -printf '%h %f\n' | sort -t ' ' -k 2,2 | uniq -f 1 --all-repeated=separate | tr ' ' '/'
+</code> or <code>find . -mindepth 1 -printf '%h %f\n' | sort -t ' ' -k 2,2 | uniq -f 1 --all-repeated=separate | tr ' ' '/'
+</code> - You can use any of them and get as same result or output as previous command but this one is bit more complicated to memorize.</p>
 <br>
 <u><h3>Text Editing & Programming</h3></u>
 <br>
