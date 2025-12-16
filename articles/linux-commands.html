@@ -146,7 +146,7 @@ operating system name as well as the system node name, operating system release,
 <u><h3>Text Editing & Programming</h3></u>
 <br>
 <p class="point"><code>vim</code> –Open text editor.</p>
-<p class="point"><code>vim filename.extension</code> – Create/edit a file like <code>.py</code>, <code>.txt</code>, <code>.c</code>, <code>.cpp</code>, <code>.html</code> and so on.</p>
+<p class="point"><code>vim (filename.extension)</code> – Create/edit a file.</p>
 <p class="point"><code>vim program.c</code> – Create/edit <code>C</code> program.</p>
 <p class="point"><code>vim program.cpp</code> – Create/edit <code>C++</code> program.</p>
 <p class="point"><code>vim text.txt</code> – Create/edit text file.</p>
@@ -156,8 +156,6 @@ operating system name as well as the system node name, operating system release,
 <p class="point"><code>gcc program.c -o program && ./program</code> – Compile & run.</p>
 <p class="point"><code>time ./program</code> – Measure runtime.</p>
 <p class="point"><code>gcc program.c -o program && time ./program</code> – Compile, run & measure time.</p>
-<p class="point"><code>/usr/include</code> - First you need to go to your <code>root</code> directory and then you will find this directory containing <code>GNU C</code> libraries.</p>
-<p class="point"><code>more &lt;library.h&gt;</code> - You will be able to know the working process of that header files or the <code>C</code> library.</p>
 <p class="point"><code>bintutils</code> - Binutils is a collection of <code>GNU</code> programming tools for creating and manipulating binary files, such as object files and executables and used for converting assembly language into machine code. <a href="www.google.com/search?q=what+is+binutils"><code>(According to Google)</code></a></p>
 <p class="point"><code>as</code> - In order to compile <code>assembly</code> language, we need this compiler to execute our code.</p>
 <p class="poitn"><code>as -32 filename.s -o filename.out</code> - The command <code>as -32 filename.s -o filename.out</code> uses the <code>GNU Assembler</code> to translate the assembly code in <code>filename.s</code> into a <code>32-bit</code> object file named <code>filename.out</code>.</p>
@@ -169,12 +167,25 @@ operating system name as well as the system node name, operating system release,
 <br>
 <u><h3>Networking & Internet</h3></u>
 <br>
+<p class="point"><code>nmcli</code> - A command line tool for controlling network manager.</p>
+<p class="point"><code>nmcli d</code> - To view the network state.</p>
+<p class="point"><code>nmcli r wifi on</code> - For turning on the WiFi.</p>
+<p class="point"><code>nmcli d wifi list</code> - Viewing available wifi list.</p>
+<p class="point"><code>nmcli d wifi connect &lt;wifi name&gt; password &lt;password&gt;</code> - To connect a network.</p>
 <p class="point"><code>lynx/w3m</code> – Terminal web browsers (install required).</p>
 <p class="point"><code>lynx www.example.com</code> – Visit a website in terminal.</p>
 <p class="point"><code>nmap</code> – Network scanner (install required).</p>
 <p class="point"><code>nmap -sn 192.168.0.XXX/24</code> – Scan devices on local network.</p>
 <p class="point"><code>fast</code> - Let you know your internet speed.</p>
-<p class="point"><code>ddgr <KEYWORDS></code> - Search something from your terminal by DuckDuck Go search engine known as most secured engines.</p>
+<p class="point"><code>ddgr &lt;keyword&gt;</code> - Search something from your terminal by DuckDuck Go search engine known as most secured engines.</p>
+<p class="point"><code>nslookup &lt;domain name&gt;</code> - It is a program to query Internet domain name servers interactively.</p>
+<p class="point"><code>dig &lt;domain name&gt;</code> - A flexible tool for interrogating DNS name servers.</p>
+<p class="point"><code>whois &lt;ip address&gt;</code> - It searches for an object in a RFC 3912 database.
+
+       This version of the whois client tries to guess the right server to ask
+       for the specified object. If no guess can be made it  will  connect  to
+       whois.networksolutions.com  for  NIC handles or whois.arin.net for IPv4
+       addresses and network names.</p>
 <br>
 <u><h3>Media & Documents</h3></u>
 <br>
