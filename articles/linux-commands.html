@@ -230,6 +230,37 @@ Can be installed <code>curl -fsSL https://ollama.com/install.sh | sh</code> and 
 <p class="point"><code>cd /path/to/destination</code> – Move to absolute path.</p>
 <p class="point"><code>cd ~/</code> – Go to home directory.</p>
 <br>
+<u><h3>Version control and Git</h3></u>
+<br>
+<u><b>Accessing</b></u>
+<p class="point"><code>gh auth login</code> - Login from <code>VsCode</code> to <code>GitHub</code> in order to access and make changes to the repository.</p>
+<u><b>Creating a new repository</b></u>
+<p class="point"><code>echo "# &lt;repository name&gt;" >> README.md</code> - Naming the <code>README</code> file.</p>
+<p class="point"><code>git init</code> - <code>Git</code> initialization.</p>
+<p class="point"><code>git add README.md</code> - Adding the <code>README</code> file.</p>
+<p class="point"><code>git commit -m "first commit"</code> - Creating commit.</p>
+<p class="point"><code>git branch -M main</code> - Making changes to the main branch.</p>
+<p class="point"><code>git remote add origin https://github.com/username/repository.git</code> - Telling to make changes inside the following repository.</p>
+<p class="point"><code>git push -u origin main</code> - Lastly pushing the changes to the main origin.</p>
+<br>
+<u><b>Pushing an existing repository</b></u>
+<p class="point"><code>git remote add origin https://github.com/username/repository.git</code> - Telling to make changes inside the following repository.</p>
+<p class="point"><code>git branch -M main</code> - Making changes to the main branch.</p>
+<p class="point"><code>git push -u origin main</code> - Lastly pushing the changes to the main origin.</p>
+<br>
+<u><b>Another approach</b></u>
+<p class="point"><code>git init</code> - <code>Git</code> initialization.</p>
+<p class="point"><code>git add</code> - Telling to wrap up everything</p>
+<p class="point"><code>git add .</code> - Telling to finish wrapping everything.</p>
+<p class="point"><code>git commit -m "Commit message"</code> - Creating commit.</p>
+<p class="point"><code>git push origin main</code> - Pushing changes to the origin.</p>
+<br>
+<u><b>Any issues for pushing existing repository</b></u>
+<p class="point"><code>git pull origin main</code> - The Standard Way (Merge) and this is the safest way to bring the remote changes into the local branch.</p>
+<p class="point"><code>git pull --rebase origin main</code> - The Clean Way (Rebase). If you want to keep a straight project history without "merge commits".</p>
+<p class="point"><code>git fetch origin</code> - Downloads the new data, but doesn't change your code. Then</p>
+<p class="point"><code>git rebase origin main</code> - Taking the local work and move it on top of the main branch on the origin server. Then it should work <code>git push origin main</code>.</p>
+<br>
 <u><h3>Fun / Miscellaneous</h3></u>
 <br>
 <p class="point"><code>cmatrix</code> – Matrix-style animation.</p>
