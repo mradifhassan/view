@@ -14,12 +14,12 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> 
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> 
 </head>
+    <body>
     <div class="profile-container">
         <div class="profile-header">
           <br>
             <u class="published"><h6>Published: 05-08-2025</h6></u>
           <u><h3>Linux Commands</h3></u>
-    <body>
 <p>When I come to realize that Windows is not for me, windows is such a bullshit OS, then I focused on Linux. Why linux? Well, its very simple, it allows you to take full 
 control over your machine or computer. Actually its very fast and lightweight. It will also allow you to make changes whatever you want from your computer or 
 machine which means it is customizable as well as secured than other OS. I know MacOS provides you world class UX as well as security. But who can bear those expenses? 
@@ -68,7 +68,7 @@ Linux allows you to know about Computer Archietecture and how Computer actually 
 <p class="point"><code>inxi --sensors</code> - Tells the temperature and fan speed in RPM.</p>
 <p class="point"><code>uname</code> - According to Wikipedia, <code>uname</code> (short for unix name) is a computer program in Unix and Unix-like computer operating systems that prints the name, version and other 
 details about the current machine and the operating system running on it. According to Oracle, in order to Display General System Information, use the <code>uname</code> command. It displays the 
-operating system name as well as the system node name, operating system release, operating system version, hardware name, and processor type.
+operating system name as well as the system node name, operating system release, operating system version, hardware name, and processor type.</p>
 <p class="point"><code>uname -a</code> - Shows the full kernel information that you are currently using. Here <code>-a</code> refers to all.</p>
 <p class="point"><code>uname -r</code> - Shows the released latest kernel of your system where <code>-r</code> refers to release which mean the latest version of the kernel.</p>
 <p class="point"><code>uname -s</code> - Displays the system type of your OS where <code>-s</code> stands for system type.</p>
@@ -77,7 +77,7 @@ operating system name as well as the system node name, operating system release,
 <p class="point"><code>tree -d -L 1</code> - This will let you see the directories from your root directory and <code>-L 1</code> stands for the depth layer of your directories, you may change the value instead of 1 according to your taste in order to
     to know your directories depth.</p>
 <p class="point"><code>system-analyze time</code> - You will be able to know how much time it has been taken to boot your machine and other stuffs.</p>
-<p class="pont"><code>system-analyze blame</code> - It will inform any issuse that happened in your machine and additional stuffs.</p>
+<p class="point"><code>system-analyze blame</code> - It will inform any issuse that happened in your machine and additional stuffs.</p>
 <p class="point"><code>system-analyze critical-chain</code> - command shows you the critical path of services that must start sequentially during the Linux boot process. It answers the question: What is the longest required dependency 
   path that prevents the system from reaching its target (usually <code>graphical.target</code> or <code>multi-user.target</code>) sooner?</p>
 <p class="point"><code>sudo dmidecode -t bios</code> - Provides information about the System BIOS/UEFI firmware, including the vendor, version, and release date.</p>
@@ -95,7 +95,7 @@ operating system name as well as the system node name, operating system release,
 <p class="point"><code>systemctl stop httpd</code> - This command immediately stops the httpd service in the current runtime session.</p>
 <p class="point"><code>systemctl disable httpd</code> - This command removes the symbolic links that tell systemd to start the httpd service during the system boot process.</p>
 <p class="point"><code>sudo snort -A console -q -c /etc/snort/snort.conf -i (YOUR_INTERFACE_NAME)</code> - An IDS can monitor system activities and detect potential security threats. One popular open-source IDS for Linux is Snort. You can get your interface name from <code>ip address</code> looking like <code>wlp0s0</code>, <code>wlp1s0</code>, <code>enp0s3</code> etc.</p>
-<p class="poitn"><code>speaker-test -t wav -c 8</code> - You will be able to inform and hear if your sound system (output) is okay or not. This is very useful to checkout sound problem.</p>
+<p class="point"><code>speaker-test -t wav -c 8</code> - You will be able to inform and hear if your sound system (output) is okay or not. This is very useful to checkout sound problem.</p>
 <br>
 <u><h3>Package Management</h3></u>
 <br>
@@ -159,9 +159,9 @@ operating system name as well as the system node name, operating system release,
 <p class="point"><code>gcc program.c -o program && ./program</code> – Compile & run.</p>
 <p class="point"><code>time ./program</code> – Measure runtime.</p>
 <p class="point"><code>gcc program.c -o program && time ./program</code> – Compile, run & measure time.</p>
-<p class="point"><code>bintutils</code> - Binutils is a collection of <code>GNU</code> programming tools for creating and manipulating binary files, such as object files and executables and used for converting assembly language into machine code. <a href="https://www.google.com/search?q=what+is+binutils" target="_blank"><code>(According to Google)</code></a></p>
+<p class="point"><code>bintutils</code> - Binutils is a collection of <code>GNU</code> programming tools for creating and manipulating binary files, such as object files and executables and used for converting assembly language into machine code. <a href="https://www.google.com/search?q=what+is+binutils" target="_blank"><code><i>[According to Google Search Result]</i></code></a></p>
 <p class="point"><code>as</code> - In order to compile <code>assembly</code> language, we need this compiler to execute our code.</p>
-<p class="poitn"><code>as -32 filename.s -o filename.out</code> - The command <code>as -32 filename.s -o filename.out</code> uses the <code>GNU Assembler</code> to translate the assembly code in <code>filename.s</code> into a <code>32-bit</code> object file named <code>filename.out</code>.</p>
+<p class="point"><code>as -32 filename.s -o filename.out</code> - The command <code>as -32 filename.s -o filename.out</code> uses the <code>GNU Assembler</code> to translate the assembly code in <code>filename.s</code> into a <code>32-bit</code> object file named <code>filename.out</code>.</p>
 <p class="point"><code>ld -m elf_i386 -s filename.out -o exit</code>s used by the <code>GNU</code> Linker to combine compiled object files into a <code>32-bit ELF</code> executable while stripping the symbol and debugging information to reduce the file size.</p>
 <p class="point"><code>as -32 filename.s -o filename.out</code> - Create <code>assembly</code> formated code from <code>C</code> language and make executable by <code>./filename.s</code>.</p>
 <p class="point"><code>objdump</code> - It is a command-line utility that is part of the <code>GNU Binutils</code> (Binary Utilities) suite, primarily used to display various information about object files, executable files, and libraries.</p>
@@ -181,10 +181,19 @@ operating system name as well as the system node name, operating system release,
 <p class="point"><code>nmap -sn 192.168.0.XXX/24</code> – Scan devices on local network.</p>
 <p class="point"><code>fast</code> - Let you know your internet speed.</p>
 <p class="point"><code>wget &lt;link&gt;</code> - Can download something from terminal.</p>
-<p class="point"><code>ddgr &lt;keyword&gt;</code> - Search something from your terminal by <code>DuckDuck</code> Go search engine known as most secured engines. <code>sudo apt install ddgr</code></p>
+<p class="point"><code>ddgr &lt;keyword&gt;</code> - Search something from your terminal by <code>DuckDuck</code> Go search engine known as most secured engines. <code>sudo apt install ddgr</code> to install.</p>
 <p class="point"><code>wikit</code> - A terminal based wikipedia accessor. <code>wikit "&lt;keyword&gt;".</code> Firstly required <code>sudo apt install nodejs npm</code> and then <code>sudo npm install wikit -g</code>.</p>
 <p class="point"><code>Ollama</code> - A free, open-source tool that simplifies running large language models <code>(LLMs)</code> like <code>Llama 3</code> or <code>Mixtral</code> directly on your local computer (Mac, Windows, Linux).
-Can be installed <code>curl -fsSL https://ollama.com/install.sh | sh</code> and then <code>ollama pull llama3</code> or any model. Can be used <code>ollama run llama3</code>.</p>
+Can be installed <code>curl -fsSL https://ollama.com/install.sh | sh</code> and then pull a model like <code>llama3</code> using <code>ollama pull llama3</code> or any model. Can be used <code>ollama run llama3</code> to run from the terminal. To use ollama, 
+you need to use <code>ollama run llama3</code> everytime.
+So this will load <code>Ollama</code> model everytime. To make <code>Ollama</code> accessible from terminal everytime, it needs to run some commands to permanently setup so that user can run anytime rather than loading whole model everytime and killing time.
+Firstly, <code>sudo systemctl daemon-reload</code> tells the systemd manager to reread its configuration, rerun generators, reload all unit files (like service definitions), and rebuild the dependency tree, which is crucial after changing unit files or 
+adding new services to apply those changes without a full system reboot. It's like a refresh button for systemd's understanding of your services and system setup. <code>sudo systemctl enable ollama</code> makes the <code>Ollama</code> application start 
+automatically every time your Linux system boots up, running it as a background service (<code>daemon</code>) so it's always available for serving large language models (<code>LLMs</code>) without needing manual startup or login, unlike just running 
+<code>ollama serve</code> which stops when you log out. It uses <code>systemd</code>, the standard Linux service manager, to control the <code>ollama.service</code> file. Now enable the service <code>sudo systemctl enable ollama</code>. Then restart the Unit 
+<code>status.service</code> <code>sudo systemctl restart ollama</code>. Now view service if enabled or not <code>sudo systemctl status ollama</code>. To check from browser, use <code>ollama serve</code> to get <code>http://localhost:11434</code> which is basically used
+for different purpose, this <code>REST API</code> access models via <code>http://localhost:11434</code>. You can send requests to this <code>API</code> from <code>Python</code> scripts or other applications without starting a new <code>ollama</code> run command for each interaction.
+However,now we're ready to use <code>ollama run llama3</code> which doesn't require to load the model everytime instead of setting up permanently to the local macine. <code><i>[Information used here taken from Google Search Results and Ollama Documentation]</i></code></p>
 <p class="point"><code>nslookup &lt;domain name&gt;</code> - It is a program to query Internet domain name servers interactively.</p>
 <p class="point"><code>dig &lt;domain name&gt;</code> - A flexible tool for interrogating <code>DNS</code> name servers.</p>
 <p class="point"><code>whois &lt;ip address&gt;</code> - It searches for an object in a <code>RFC 3912</code> database.
@@ -193,7 +202,7 @@ Can be installed <code>curl -fsSL https://ollama.com/install.sh | sh</code> and 
        <code><a href="https://whois.networksolutions.com" target="_blank">whois.networksolutions.com</a></code> for <code>NIC</code> handles or <code><a href="https://whois.arin.net">whois.arin.net</a></code> for <code>IPv4</code>
        addresses and network names.</p>
 <br>
-<u><h3>Media & Documents</h3></u>
+<h3><u>Media & Documents</u></h3>
 <br>
 <p class="point"><code>mpv file.mp3/mp4</code> – Play audio/video.</p>
 <p class="point"><code>feh image.png</code> – View image.</p>
