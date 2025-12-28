@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
             slides[i].style.display = "none";
         }
         slides[slideIndex].style.display = "block";
-
+        
         for (let i = 0; i < dots.length; i++) {
             dots[i].classList.remove("active");
         }
