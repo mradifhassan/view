@@ -134,7 +134,7 @@ operating system name as well as the system node name, operating system release,
 <p class="point"><code>sudo apt install -f</code> - Fix missing dependencies.</p>
 <p class="point"><code>chmod +x &lt;program&gt;</code> - It executes a program.</p>
 <p class="point"><code>chmod 000 &lt;name of a directory&gt;</code> - It locks your folder and only root user can view this folder.</p>
-<p class="point"><code>sha256sum &lt;file name&gt;</code> - You can verify SHA256 SUM by running this command for your installed file. It's commonly used to verify <code>.iso</code> file.</p>
+<p class="point"><code>sha256sum &lt;file name&gt;</code> - You can verify <code>SHA256 SUM</code> by running this command for your installed file. It's commonly used to verify <code>.iso</code> file.</p>
 <p class="point"><code>ps -aux | grep &lt;program name&gt;</code> - You can view if any program is running or not.</p>
 <p class="point"><code>kill -15 &lt;PID&gt;</code> - If you want to stop any program, then firstly view the <code>PID</code> from running <code>top</code>.</p>
 <p class="point"><code>ssh - keygen -t rsa</code> - Using <code>ssh</code> keys for staying more secure in your local machine is very important instead of using password authentication. This <code>ssh</code> key generates <code>RSA</code>keys.</p>
@@ -170,6 +170,9 @@ operating system name as well as the system node name, operating system release,
 <br>
 <u><h3>Networking & Internet</h3></u>
 <br>
+<p class="point"><code>nameserver 8.8.8.8</code> - In order to prevent pornographic sites viewing and appearing, you can customize your <code>DNS</code> by going <code>/etc/resolv.conf</code> and editing the file by <code>sudo vim resolv.conf</code> and writing <code>nameserver &lt;dns&gt;</code>. You can add <a href="https://www.cloudflare.com"><code>cloudflare</code></a></code>
+<code>dns</code> shield then restart the network manager <code>sudo service network-manager restart</code> or <code>sudo systemctl restart NetworkManager</code>. Additionally you might add specific domain names to prevent those sites viewing from your devie going <code>/etc/hosts</code> and adding the scripts <a href="https://docs.google.com/document/d/1GBQiz3o9e0v1R283nZM-cx-T_DKDNViOg6Wjkvq6oic/export?format=html">
+<code>Download "blocked sites" as HTML</code></a> and paste it to the <code>/etc/hosts</code>. That's how you can protect yourself from adult sites viewing and so on.</p>
 <p class="point"><code>nmcli</code> - A command line tool for controlling network manager.</p>
 <p class="point"><code>nmcli d</code> - To view the network state.</p>
 <p class="point"><code>nmcli r wifi on</code> - For turning on the WiFi.</p>
