@@ -1750,9 +1750,56 @@ int difference(int arra[], int n){
 		</code></pre> 
    </div> 
   </div>
+  	 <u><h3>Problem 50-</h3></u>
+   <br><br>
+   <p><a href="https://dimikoj.com/problems/25/lcm">Problem Statement</a></p>
+ <div class="math-content">
+  <u><h3>Solve-</h3></u>
+<div class="container"> 
+   <p>Here is the solution</p>
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int lcm(int gcd, int x, int y)
+{
+   int lcmMulti = (x * y) / gcd;
+   printf("LCM = %d\n", lcmMulti);
+}
+
+int gcdEucledian(int x, int y)
+{
+   int gcd;
+   while(y != 0)
+   {
+       int remainder = x % y;
+       x = y;
+       y = remainder;
+   }
+   gcd = x;
+   return gcd;
+}
+
+int main(void)
+{
+   int t;
+   scanf("%d", &t);
+   while (t--)
+   {
+       int a, b;
+       scanf("%d %d", &a, &b);
+       int gcd = gcdEucledian(a, b);
+       lcm(gcd, a, b);
+   }
+  
+}
+
+		</code></pre> 
+   </div> 
+  </div>
      <br><br><hr><br>
           <footer class="footer">
-            <h6>© 2025 • Developed by <br>Muhammad Radif Hassan</h6>
+            <h6>© 2026 • Developed by <br>Muhammad Radif Hassan</h6>
         </footer>
         </div>
         </div>
