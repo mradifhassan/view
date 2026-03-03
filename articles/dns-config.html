@@ -462,6 +462,440 @@ Address: ::ffff:146.112.61.106
      </code></pre> 
    </div> 
   </div>
+<p>If you can still access pornsites, then simple run the command in your terminal <code>sudo systemd-resolve --flush-caches</code>.</p>
+<br><br><hr><br>
+
+
+
+
+
+
+
+ <u><h3>Guide 2: Laptop (WiFi – Global/System-Wide)</h3></u> 
+<p><b>Goal: </b>Blocking applies to every WiFi network you connect to (home, café, office, etc.). Perfect for portable use.</p>
+<p><b>Method A: GUI (Per WiFi SSID – Quick for home network)</b></p> 
+<p>Repeat Guide \(1\) GUI steps, but select your WiFi connection instead of Wired.</p>
+<p><b>Method B: Global (Recommended – Works on ALL networks)</b></p>
+<p>This forces the entire system to ignore all DHCP-provided DNS.</p>
+
+<p>First, go to the terminal and run the following commands:</p>
+   <div class="math-content">
+  <u><h3>Bash-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+// Identify network configuration .yaml file
+ls /etc/netplan 
+        </code></pre>
+        </div>
+</div>
+ <div class="math-content">
+  <u><h3>Terminal Ouput-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+// You will see most probably two files like this-
+01-network-manager-all.yaml
+90-NM-39bfe98f-2fb2-4817-ac13-33d776248c2b.yaml
+        </code></pre> 
+   </div> 
+  </div>
+<p>Now, we need to configure <code>.yaml</code> file for the specific interface. Before that, we need to know about Netplan. 
+Netplan, located in <code>/etc/netplan</code>, is the default network configuration tool in Ubuntu (\(18.04\)+) used to manage network interfaces via YAML files. 
+It provides an easy, declarative way to configure IP addresses, bridges, and gateways, acting as a wrapper that translates settings into backend renderers like 
+<code>systemd-networkd</code> or <code>NetworkManager</code>. <a href="https://www.google.com/search?client=firefox-b-d&q=what+is+netplan+in+%2Fetc%2Fnetplan%3F" 
+target="_blank"><code><i>[According to Google Search Result]</i></code></a></p>
+<p>Detect your ethernet cable running the following command:</p>
+ <div class="math-content">
+  <u><h3>Bash-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+sudo lshw -C network | grep "logical name"
+// or 
+iw dev
+        </code></pre> 
+   </div> 
+  </div>
+ <div class="math-content">
+  <u><h3>Terminal Output-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+// Expected output shoul look like this respectively-
+logical name: eth0 
+// or 
+logical name: wlp1s0
+phy#0
+	Interface wlp1s0
+		ifindex 2
+		wdev 0x1
+		addr f8:89:d2:50:41:f5
+		type managed
+		channel 149 (5745 MHz), width: 80 MHz, center1: 5775 MHz
+		txpower 20.00 dBm
+		multicast TXQ:
+			qsz-byt	qsz-pkt	flows	drops	marks	overlmt	hashcoltx-bytes	tx-packets
+			0	0	0	0	0	0	0	00
+        </code></pre> 
+   </div> 
+  </div>
+<p>Edit the <code>.yaml</code> file named as <code>01-network-manager-all.yaml</code> from <code>/etc/netplan</code>.</p>
+ <div class="math-content">
+  <u><h3>Bash-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+sudo cat /etc/netplan/01-network-manager-all.yaml
+        </code></pre> 
+   </div> 
+  </div>
+<div class="math-content">
+  <u><h3>Terminal Output-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+// Expected default output-
+# Let NetworkManager manage all devices on this system
+network:
+  version: 2
+  renderer: NetworkManager
+        </code></pre> 
+   </div> 
+  </div>
+<p>Change the file into by running</p>
+<div class="math-content">
+  <u><h3>Bash-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+sudo nano /etc/netplan/01-network-manager-all.yaml 
+// or 
+sudo vim /etc/netplan/01-network-manager-all.yaml
+        </code></pre> 
+   </div> 
+  </div>
+<div class="math-content">
+  <u><h3>File-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+network:
+  version: 2
+  renderer: networkd
+  wifis:
+    wlp1s0: 
+      dhcp4: true
+      nameservers:
+        addresses: [208.67.222.123, 208.67.220.123]
+        </code></pre> 
+   </div> 
+  </div>
+<p>Now save the file using <code>Ctrl + O</code>, hit enter and then <code>Ctrl + X</code> <i>[<code>for nano</code>]</i>
+or <code>esc</code> and <code>:wq</code> <i>[<code>for vim</code>]</i>. Now run the following command-</p>
+<div class="math-content">
+  <u><h3>Bash-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+sudo chmod 600 /etc/netplan/01-network-manager-all.yaml
+sudo netplan apply
+        </code></pre> 
+   </div> 
+  </div>
+<p>We need to configure another file now.</p>
+<div class="math-content">
+  <u><h3>Bash-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+sudo cat /etc/systemd/resolved.conf
+     </code></pre> 
+   </div> 
+  </div>
+<div class="math-content">
+  <u><h3>Terminal Output-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+
+#  This file is part of systemd.
+#
+#  systemd is free software; you can redistribute it and/or modify it under the
+#  terms of the GNU Lesser General Public License as published by the Free
+#  Software Foundation; either version 2.1 of the License, or (at your option)
+#  any later version.
+#
+# Entries in this file show the compile time defaults. Local configuration
+# should be created by either modifying this file (or a copy of it placed in
+# /etc/ if the original file is shipped in /usr/), or by creating "drop-ins" in
+# the /etc/systemd/resolved.conf.d/ directory. The latter is generally
+# recommended. Defaults can be restored by simply deleting the main
+# configuration file and all drop-ins located in /etc/.
+#
+# Use 'systemd-analyze cat-config systemd/resolved.conf' to display the full config.
+#
+# See resolved.conf(5) for details.
+
+[Resolve]
+# Some examples of DNS servers which may be used for DNS= and FallbackDNS=:
+# Cloudflare: 1.1.1.1#cloudflare-dns.com 1.0.0.1#cloudflare-dns.com 2606:4700:4700::1111#cloudflare-dns.com 2606:4700:4700::1001#cloudflare-dns.com
+# Google:     8.8.8.8#dns.google 8.8.4.4#dns.google 2001:4860:4860::8888#dns.google 2001:4860:4860::8844#dns.google
+# Quad9:      9.9.9.9#dns.quad9.net 149.112.112.112#dns.quad9.net 2620:fe::fe#dns.quad9.net 2620:fe::9#dns.quad9.net
+#DNS=
+#FallbackDNS=
+#Domains=
+#DNSSEC=no
+#DNSOverTLS=no
+#MulticastDNS=no
+#LLMNR=no
+#Cache=no-negative
+#CacheFromLocalhost=no
+#DNSStubListener=yes
+#DNSStubListenerExtra=
+#ReadEtcHosts=yes
+#ResolveUnicastSingleLabel=no
+#StaleRetentionSec=0
+     </code></pre> 
+   </div> 
+  </div>
+<p>Edit the file running the following command-</p>
+    <div class="math-content">
+  <u><h3>Bash-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+sudo nano /etc/systemd/resolved.conf
+// or
+sudo vim /etc/systemd/resolved.conf
+     </code></pre> 
+   </div> 
+  </div>
+<p>And add <code>DNS=208.67.222.123 208.67.220.123<br>
+FallbackDNS=208.67.222.222 208.67.220.220<br>
+DNSStubListener=yes<br></code>under the <code>[Resolve]</code> and finally it should look like this-</p>
+</p>
+<div class="math-content">
+  <u><h3>File-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#  This file is part of systemd.
+#
+#  systemd is free software; you can redistribute it and/or modify it under the
+#  terms of the GNU Lesser General Public License as published by the Free
+#  Software Foundation; either version 2.1 of the License, or (at your option)
+#  any later version.
+#
+# Entries in this file show the compile time defaults. Local configuration
+# should be created by either modifying this file (or a copy of it placed in
+# /etc/ if the original file is shipped in /usr/), or by creating "drop-ins" in
+# the /etc/systemd/resolved.conf.d/ directory. The latter is generally
+# recommended. Defaults can be restored by simply deleting the main
+# configuration file and all drop-ins located in /etc/.
+#
+# Use 'systemd-analyze cat-config systemd/resolved.conf' to display the full config.
+#
+# See resolved.conf(5) for details.
+
+[Resolve]
+DNS=208.67.222.123 208.67.220.123
+FallbackDNS=208.67.222.222 208.67.220.220
+Domains=~.
+DNSStubListener=yes
+# Some examples of DNS servers which may be used for DNS= and FallbackDNS=:
+# Cloudflare: 1.1.1.1#cloudflare-dns.com 1.0.0.1#cloudflare-dns.com 2606:4700:4700::1111#cloudflare-dns.com 2606:4700:4700::1001#cloudflare-dns.com
+# Google:     8.8.8.8#dns.google 8.8.4.4#dns.google 2001:4860:4860::8888#dns.google 2001:4860:4860::8844#dns.google
+# Quad9:      9.9.9.9#dns.quad9.net 149.112.112.112#dns.quad9.net 2620:fe::fe#dns.quad9.net 2620:fe::9#dns.quad9.net
+#DNS=
+#FallbackDNS=
+#Domains=
+#DNSSEC=no
+#DNSOverTLS=no
+#MulticastDNS=no
+#LLMNR=no
+#Cache=no-negative
+#CacheFromLocalhost=no
+#DNSStubListener=yes
+#DNSStubListenerExtra=
+#ReadEtcHosts=yes
+#ResolveUnicastSingleLabel=no
+#StaleRetentionSec=0
+     </code></pre> 
+   </div> 
+  </div>
+<p>Now we need to configure our last file-</p>
+    <div class="math-content">
+  <u><h3>Bash-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+sudo nano /etc/NetworkManager/NetworkManager.conf
+// or
+sudo vim /etc/NetworkManager/NetworkManager.conf
+     </code></pre> 
+   </div> 
+  </div>
+<p>Default configuration look like this-</p>
+    <div class="math-content">
+  <u><h3>File-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+[main]
+plugins=ifupdown,keyfile
+
+[ifupdown]
+managed=false
+
+[device]
+wifi.scan-rand-mac-address=no
+     </code></pre> 
+   </div> 
+  </div>
+<p>Change the setting to-</p>
+    <div class="math-content">
+  <u><h3>File-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+[main]
+dns=none
+[ifupdown]
+managed=false
+
+[device]
+wifi.scan-rand-mac-address=no
+     </code></pre> 
+   </div> 
+  </div>
+<p>What have been changed here?</p>
+<table border="1" cellspacing="0" cellpadding="5">
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>Your Setting</th>
+      <th>Ubuntu Default (Fresh Install)</th>
+      <th>Impact of Your Setting</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code style="font-size: 130%;">dns=</code></td>
+      <td><code style="font-size: 130%;">none</code></td>
+      <td>(Not set)</td>
+      <td>Biggest Change: <code style="font-size: 130%;">NetworkManager</code> stops updating your DNS. If you haven't manually configured <code style="font-size: 130%;">/etc/resolv.conf</code>, your internet will "connect" but websites won't load.</td>
+    </tr>
+    <tr>
+      <td><code style="font-size: 130%;">managed=</code></td>
+      <td><code style="font-size: 130%;">false</code></td>
+      <td><code style="font-size: 130%;">false</code></td>
+      <td>Same: This is the default. It prevents <code style="font-size: 130%;">NetworkManager</code> from conflicting with old-school <code style="font-size: 130%;">/etc/network/interfaces</code> files.</td>
+    </tr>
+    <tr>
+      <td><code style="font-size: 130%;">wifi.scan-rand-mac-address=</code></td>
+      <td><code style="font-size: 130%;">no</code></td>
+      <td>(Not set)</td>
+      <td>Change: This disables MAC address randomization during Wi-Fi scans. It’s a common tweak to fix connection drops on certain routers.</td>
+    </tr>
+    <tr>
+      <td><code style="font-size: 130%;">plugins=</code></td>
+      <td>(Missing)</td>
+      <td><code style="font-size: 130%;">ifupdown</code>, <code style="font-size: 130%;">keyfile</code></td>
+      <td>Minor: Usually, Ubuntu includes these by default to handle different connection storage types.</td>
+    </tr>
+  </tbody>
+</table>
+<p>Now our final step is to tell the system ignoring DHCP DNS, forcing OpenDNS IPs, restart the NetworkManager and systemd-resolved services-</p>
+   <div class="math-content">
+  <u><h3>Bash-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+// Identify your connection name
+nmcli connection show
+
+// Modify your connection
+sudo nmcli connection modify "RADIF_HASAN_5G" ipv4.ignore-auto-dns yes ipv4.dns "208.67.222.123,208.67.220.123"
+sudo nmcli connection modify "RADIF_HASAN_5G" ipv6.ignore-auto-dns yes ipv6.dns "2620:119:35::35 2620:119:53::53"
+
+// Activate
+sudo nmcli connection down "RADIF_HASAN_5G"
+sudo nmcli connection up "RADIF_HASAN_5G"
+
+// Restart services
+sudo systemctl restart NetworkManager
+sudo systemctl restart systemd-resolved
+
+// Verify services
+resolvectl status
+        </code></pre> 
+   </div> 
+  </div>
+<p>After running the commands above, you should see output similar to:</p>
+    <div class="math-content">
+  <u><h3>Terminal Output-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+Connection successfully activated (D-Bus active path: /org/freedesktop/NetworkManager/ActiveConnection/3)
+Global
+           Protocols: -LLMNR -mDNS -DNSOverTLS DNSSEC=no/unsupported
+    resolv.conf mode: stub
+  Current DNS Server: 208.67.222.123
+         DNS Servers: 208.67.222.123 208.67.220.123
+Fallback DNS Servers: 208.67.222.222 208.67.220.220
+
+Link 2 (eth0)
+    Current Scopes: DNS
+         Protocols: +DefaultRoute -LLMNR -mDNS -DNSOverTLS DNSSEC=no/unsupported
+Current DNS Server: 208.67.220.123
+       DNS Servers: 208.67.222.123 208.67.220.123
+     </code></pre> 
+   </div> 
+  </div>
+<p>To lock the settings, use the following commands:</p>
+    <div class="math-content">
+  <u><h3>Bash-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+sudo chattr +i /etc/systemd/resolved.conf
+sudo chattr +i /etc/NetworkManager/NetworkManager.conf
+sudo chattr +i /etc/netplan/01-network-manager-all.yaml
+     </code></pre> 
+   </div> 
+  </div>
+<p>Now check-</p>
+    <div class="math-content">
+  <u><h3>Bash-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+nslookup pornsite.com
+     </code></pre> 
+   </div> 
+  </div>
+      <div class="math-content">
+  <u><h3>Terminal Output-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+
+// → Must return 146.112.61.106 (block page IP)
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+Non-authoritative answer:
+Name:	pornsite.com
+Address: 146.112.61.106
+Name:	pornsite.com
+Address: ::ffff:146.112.61.106
+     </code></pre> 
+   </div> 
+  </div>
+<p>If you can still access pornsites, then simple run the command in your terminal <code>sudo systemd-resolve --flush-caches</code>.</p>
+
 <!---
 
    <div class="math-content">
@@ -473,7 +907,7 @@ Address: ::ffff:146.112.61.106
 nmcli connection show
 
 // 2. Replace "Wired connection 1" with your actual name
-sudo nmcli connection modify "Wired connection 1" ipv4.dns "208.67.222.123,208.67.220.123" ipv4.ignore-auto-dns yes
+sudo nmcli connection modify "Wired connection 1" ipv4.ignore-auto-dns yes ipv4.dns "208.67.222.123,208.67.220.123"
 sudo nmcli connection modify "Wired connection 1" ipv6.ignore-auto-dns yes ipv6.dns "2620:119:35::35 2620:119:53::53"
 
 // 3. Activate
