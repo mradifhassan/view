@@ -397,6 +397,8 @@ sudo systemctl restart systemd-resolved
 
 // Verify the link now shows OpenDNS
 resolvectl status
+sudo cat /etc/netplan/
+*.yaml
      </code></pre> 
    </div> 
   </div>
@@ -419,6 +421,79 @@ Link 2 (eth0)
          Protocols: +DefaultRoute -LLMNR -mDNS -DNSOverTLS DNSSEC=no/unsupported
 Current DNS Server: 208.67.220.123
        DNS Servers: 208.67.222.123 208.67.220.123
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    eth0: // or enp3s0
+      dhcp4: true
+      nameservers:
+        addresses: [208.67.222.123, 208.67.220.123]
+network:
+  version: 2
+  wifis:
+    NM-39bfe98f-2fb2-4817-ac13-33d776248c2b:
+      renderer: NetworkManager
+      match:
+        name: "wlp1s0"
+      nameservers:
+        addresses:
+        - 208.67.222.123
+        - 208.67.220.123
+      dhcp4: true
+      dhcp6: true
+      access-points:
+        "RADIF_HASAN_5G":
+          auth:
+            key-management: "psk"
+            password: "1e2dbc384d29ac5888dc16301ad33891f86c729cd4996a7fdf0a79162c31e4d8"
+          networkmanager:
+            uuid: "49cgf89g-3gc3-5928-bd24-44e887359d3c"
+            name: "RADIF_HASAN_5G"
+            passthrough:
+              connection.timestamp: "1772525614"
+              wifi-security.auth-alg: "open"
+              ipv4.ignore-auto-dns: "true"
+              ipv6.addr-gen-mode: "default"
+              ipv6.ip6-privacy: "-1"
+              proxy._: ""
+      networkmanager:
+        uuid: "49cgf89g-3gc3-5928-bd24-44e887359d3c"
+        name: "RADIF_HASAN_5G"
+network:
+  version: 2
+  wifis:
+    NM-b0b1fcc2-067f-4312-82a6-45cbbb0f26c9:
+      renderer: NetworkManager
+      match:
+        name: "wlp1s0"
+      nameservers:
+        addresses:
+        - 208.67.222.123
+        - 208.67.220.123
+        - 2620:119:35::35
+        - 2620:119:53::53
+      dhcp4: true
+      dhcp6: true
+      access-points:
+        "RADIF_HASAN":
+          auth:
+            key-management: "psk"
+            password: "1e2dbc384d29ac5888dc16301ad33891f86c729cd4996a7fdf0a79162c31e4d8"
+          networkmanager:
+            uuid: "38bfe78f-2fb2-4817-ac13-33d776248c2b"
+            name: "RADIF_HASAN"
+            passthrough:
+              connection.timestamp: "1772525623"
+              wifi-security.auth-alg: "open"
+              ipv4.ignore-auto-dns: "true"
+              ipv6.addr-gen-mode: "default"
+              ipv6.ignore-auto-dns: "true"
+              ipv6.ip6-privacy: "-1"
+              proxy._: ""
+      networkmanager:
+        uuid: "38bfe78f-2fb2-4817-ac13-33d776248c2b"
+        name: "RADIF_HASAN"
      </code></pre> 
    </div> 
   </div>
@@ -461,7 +536,7 @@ Name:	pornsite.com
 Address: ::ffff:146.112.61.106
      </code></pre> 
    </div> 
-  </div>
+</div>
 <p>If you can still access pornsites, then simple run the command in your terminal <code>sudo systemd-resolve --flush-caches</code>.</p>
 <br><br><hr><br>
  <u><h3>Guide 2: Laptop (WiFi – Global/System-Wide)</h3></u> 
@@ -822,6 +897,8 @@ sudo systemctl restart systemd-resolved
 
 // Verify services
 resolvectl status
+sudo cat /etc/netplan/
+*.yaml
         </code></pre> 
    </div> 
   </div>
@@ -844,6 +921,71 @@ Link 2 (eth0)
          Protocols: +DefaultRoute -LLMNR -mDNS -DNSOverTLS DNSSEC=no/unsupported
 Current DNS Server: 208.67.220.123
        DNS Servers: 208.67.222.123 208.67.220.123
+network:
+  version: 2
+  wifis:
+    NM-39bfe98f-2fb2-4817-ac13-33d776248c2b:
+      renderer: NetworkManager
+      match:
+        name: "wlp1s0"
+      nameservers:
+        addresses:
+        - 208.67.222.123
+        - 208.67.220.123
+      dhcp4: true
+      dhcp6: true
+      access-points:
+        "RADIF_HASAN_5G":
+          auth:
+            key-management: "psk"
+            password: "1e2dbc384d29ac5888dc16301ad33891f86c729cd4996a7fdf0a79162c31e4d8"
+          networkmanager:
+            uuid: "49cgf89g-3gc3-5928-bd24-44e887359d3c"
+            name: "RADIF_HASAN_5G"
+            passthrough:
+              connection.timestamp: "1772525614"
+              wifi-security.auth-alg: "open"
+              ipv4.ignore-auto-dns: "true"
+              ipv6.addr-gen-mode: "default"
+              ipv6.ip6-privacy: "-1"
+              proxy._: ""
+      networkmanager:
+        uuid: "49cgf89g-3gc3-5928-bd24-44e887359d3c"
+        name: "RADIF_HASAN_5G"
+network:
+  version: 2
+  wifis:
+    NM-b0b1fcc2-067f-4312-82a6-45cbbb0f26c9:
+      renderer: NetworkManager
+      match:
+        name: "wlp1s0"
+      nameservers:
+        addresses:
+        - 208.67.222.123
+        - 208.67.220.123
+        - 2620:119:35::35
+        - 2620:119:53::53
+      dhcp4: true
+      dhcp6: true
+      access-points:
+        "RADIF_HASAN":
+          auth:
+            key-management: "psk"
+            password: "1e2dbc384d29ac5888dc16301ad33891f86c729cd4996a7fdf0a79162c31e4d8"
+          networkmanager:
+            uuid: "38bfe78f-2fb2-4817-ac13-33d776248c2b"
+            name: "RADIF_HASAN"
+            passthrough:
+              connection.timestamp: "1772525623"
+              wifi-security.auth-alg: "open"
+              ipv4.ignore-auto-dns: "true"
+              ipv6.addr-gen-mode: "default"
+              ipv6.ignore-auto-dns: "true"
+              ipv6.ip6-privacy: "-1"
+              proxy._: ""
+      networkmanager:
+        uuid: "38bfe78f-2fb2-4817-ac13-33d776248c2b"
+        name: "RADIF_HASAN"
      </code></pre> 
    </div> 
   </div>
