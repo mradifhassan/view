@@ -464,13 +464,6 @@ Address: ::ffff:146.112.61.106
   </div>
 <p>If you can still access pornsites, then simple run the command in your terminal <code>sudo systemd-resolve --flush-caches</code>.</p>
 <br><br><hr><br>
-
-
-
-
-
-
-
  <u><h3>Guide 2: Laptop (WiFi – Global/System-Wide)</h3></u> 
 <p><b>Goal: </b>Blocking applies to every WiFi network you connect to (home, café, office, etc.). Perfect for portable use.</p>
 <p><b>Method A: GUI (Per WiFi SSID – Quick for home network)</b></p> 
@@ -895,64 +888,6 @@ Address: ::ffff:146.112.61.106
    </div> 
   </div>
 <p>If you can still access pornsites, then simple run the command in your terminal <code>sudo systemd-resolve --flush-caches</code>.</p>
-
-<!---
-
-   <div class="math-content">
-  <u><h3>Bash-</h3></u>
-<div class="container"> 
-   <div class="code-frame"> 
-    <pre><code class="language-c">
-// 1. Identify your connection name
-nmcli connection show
-
-// 2. Replace "Wired connection 1" with your actual name
-sudo nmcli connection modify "Wired connection 1" ipv4.ignore-auto-dns yes ipv4.dns "208.67.222.123,208.67.220.123"
-sudo nmcli connection modify "Wired connection 1" ipv6.ignore-auto-dns yes ipv6.dns "2620:119:35::35 2620:119:53::53"
-
-// 3. Activate
-sudo nmcli connection down "Wired connection 1"
-sudo nmcli connection up "Wired connection 1"
-
-// 4. Restart services
-sudo systemctl restart NetworkManager
-sudo systemctl restart systemd-resolved
-        </code></pre> 
-   </div> 
-  </div>
-  <div class="math-content">
-  <u><h3>Ouput-</h3></u>
-<div class="container"> 
-   <div class="code-frame"> 
-    <pre><code class="language-c">
-97
-        </code></pre> 
-   </div> 
-  </div>
-   <p>For the second case-</p>
-   <div class="math-content">
-  <u><h3>Code-</h3></u>
-<div class="container"> 
-   <div class="code-frame"> 
-    <pre><code class="language-c">
-// nothing to do, just check the output
-        </code></pre> 
-   </div> 
-  </div>
-   <div class="math-content">
-  <u><h3>Output-</h3></u>
-<div class="container"> 
-   <div class="code-frame"> 
-    <pre><code class="language-c">
-a
-        </code></pre> 
-   </div> 
-  </div>
-  <br><br><hr><br>            
-  
-  ---->
-
-
 <footer class="footer">
             <h6>© 2026 • Developed by <br>Muhammad Radif Hassan</h6>
         </footer>
