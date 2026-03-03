@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Short Notes</title>
+    <meta name="description" content="Concise programming notes in C: data type conversions, ASCII values, strings, null termination, arrays, memory addressing, and format specifiers.">
+  <meta name="keywords" content="C programming notes, ASCII conversion, string handling, null character, array memory, format specifiers, C tutorial">
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/prism-themes@1.9.0/themes/prism-vsc-dark-plus.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/kMVqKcWZbmrYvnzT3kMEO2Z2i1vZBw4Hbih4tnB3xQ9lFvHXtY2X5+J59Cl5YITgrW6n30z7tk2OA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="notes.css">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/prism.min.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-c.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/prism.min.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-c.min.js"></script> 
+   
+</head>
+<body>
+    <div class="profile-container">
+        <div class="profile-header">
+              <u class="published"><h6>Published: 02-03-2026</h6></u>
+        <u><h3>DNS configuration for Debian based Opeating Systems</h3></u>
+<p>Whats the problem of young generation? Well, they becoming horribly Zombie literally. Almost every young guy found scrolling tiktok, instagram and reels. More terrible fact is browsing porn sites which has damaged their potentials as well as their merit and intelligence. 
+    The western world tries to prove it as normal or they are just pushing towards us as its normal and making normalize. However, excessive consumptions of adult contents may led someone to become a zombie! Besides, western worlds are controlling and trying to take control over 
+    the youths so that they can manipulate us and for this, they are making vaious contents or spreading ill trends which spoil our brain and daily lifestyle. Also we are not safe from their trap and monitoring. Everytime, they are getting our browsing history and hearing or observing 
+    what we are doing right now, what would we do next etc etc. So, our data is not safe at all from them. Whatever we use, everything is being monitored. From your MacBook, Android, IOS device, Windows all of them are taking our information relentlessly without our permissions and 
+    secretly. So, we should aware about this, GNU-Linux is an open source Operating System which provides a self customizable control on your machine where you have your own control only on your device. The speciality comes in only not only for its security level, but also for its 
+    various tastes. I have made this content how you can block porn sites or adult sites from Debian based distributions as an Administrator of your machine. I have collected the editorials from different sites like stackexchange, google, websites, Grok AI, gemini etc etc. 
+These guides use OpenDNS FamilyShield (free, no account needed for basic blocking). It redirects adult/pornography sites to a block page via DNS (<code>IP: 208.67.222.123 and 208.67.220.123</code>). This works system-wide on the machine.</p>
+<br>
+      <p>There would be two versions for setting up-
+      <ul>
+      <li><b>Desktop PC :</b>Usually one fixed wired connection like <code>eth0</code> or <code>eth1</code> or <code>eth2</code>. Target that specific interface.</li>
+      <li><b>Laptop: </b>Uses WiFi (multiple SSIDs when traveling). Use the global/system-wide method so it applies everywhere like <code>wlp1s0</code>.</li></p>
+      <p>Both guides include <b>GUI (easiest)</b> and <b>CLI (most reliable)</b> methods. They are tested against common pitfalls from your terminal logs (permissions, netplan conflicts, NM vs. resolved fights, etc.).</p>
+         <br><hr>
+<u><h3>Guide 1: Desktop PC (Wired Ethernet – Specific Interface)</h3></u> 
+   <p>If you store an integer variable inside an integer type variable and then print it by changing its format specifier from <code>%d</code> to <code>%c</code>, you will get character, on the contrary if you store a character variable inside an character type variable and then print by changing its format specifier from <code>%c</code> to <code>%d</code>, you will get integer value. Do you know why it happened? It has happened because of the <a href="https://www.ascii-code.com/"><code>ASCII</code></a> numbers.</p>
+   <p>For the first case-</p>
+   <div class="math-content">
+  <u><h3>Code-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+# 1. Identify your connection name
+nmcli connection show
+
+# 2. Replace "Wired connection 1" with your actual name
+sudo nmcli connection modify "Wired connection 1" \
+  ipv4.dns "208.67.222.123,208.67.220.123" \
+  ipv4.ignore-auto-dns yes
+
+# 3. Activate
+sudo nmcli connection up "Wired connection 1"
+
+# 4. Restart services
+sudo systemctl restart NetworkManager
+sudo systemctl restart systemd-resolved
+        </code></pre> 
+   </div> 
+  </div>
+  <div class="math-content">
+  <u><h3>Ouput-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+97
+        </code></pre> 
+   </div> 
+  </div>
+   <p>For the second case-</p>
+   <div class="math-content">
+  <u><h3>Code-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int main(void){
+    int ch = 97;
+    printf("%c", ch); 
+    return 0;
+}
+        </code></pre> 
+   </div> 
+  </div>
+   <div class="math-content">
+  <u><h3>Output-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+a
+        </code></pre> 
+   </div> 
+  </div>
+  <br><br><hr><br>
+<footer class="footer">
+            <h6>© 2026 • Developed by <br>Muhammad Radif Hassan</h6>
+        </footer>
+        </div>
+        </div>
+    </div>
+</body>
+</html>
