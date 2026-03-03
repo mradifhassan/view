@@ -434,8 +434,34 @@ sudo chattr +i /etc/netplan/01-network-manager-all.yaml
      </code></pre> 
    </div> 
   </div>
+<p>Now check-</p>
+    <div class="math-content">
+  <u><h3>Bash-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+nslookup pornsite.com
+     </code></pre> 
+   </div> 
+  </div>
+      <div class="math-content">
+  <u><h3>Terminal Output-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
 
+// → Must return 146.112.61.106 (block page IP)
+Server:		127.0.0.53
+Address:	127.0.0.53#53
 
+Non-authoritative answer:
+Name:	pornsite.com
+Address: 146.112.61.106
+Name:	pornsite.com
+Address: ::ffff:146.112.61.106
+     </code></pre> 
+   </div> 
+  </div>
 <!---
 
    <div class="math-content">
