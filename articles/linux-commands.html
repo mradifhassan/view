@@ -99,11 +99,17 @@ operating system name as well as the system node name, operating system release,
 <br>
 <u><h3>Package Management</h3></u>
 <br>
-<p class="point"><code>sudo apt install (package name)</code> – Install packages.</p>
+<p class="point"><code>sudo apt install &lt;package name&gt;</code> – Install packages.</p>
 <p class="point"><code>sudo apt update && sudo apt upgrade</code> – Update and upgrade system packages.</p>
-<p class="point"><code>package --version</code> – Check installed package version.</p>
-<p class="point"><code>man (command)</code> – Open manual for a command.</p>
-<p class="point"><code>(command) --help</code> – Show help/usage for a command.</p>
+<p class="ponit"><code>sudo apt remove &lt;package&gt;</code> - Remove package that you installed.</p>
+<p class="point"><code>sudo snap install &lt;package&gt;</code> - Install any <code>snap</code> package.</p>
+<p class="point"><code>sudo snap remove &lt;package&gt;</code> - Uninstall any <code>snap</code> package.</p>
+<p class="point"><code>sudo apt purge &lt;package&gt;</code> - Instead of a standard remove command, use <code>purge</code> to remove system-wide configuration files.</p>
+<p class="point"><code>sudo apt autoremove</code> - Clean up libraries and dependencies that were installed with the software but are no longer needed.</p>
+<p class="point"><code>rm -rf ~/.config/&lt;appname&gt;</code> or <code>rm -rf ~/.local/share/&lt;appname&gt;</code> - The above commands do not delete files in your home directory (e.g., <code>~/.config/appname</code>). You must delete these manually.</p>
+<p class="point"><code>&lt;package&gt; --version</code> – Check the version of installed package.</p>
+<p class="point"><code>man &lt;service&gt;</code> – Open manual for a service.</p>
+<p class="point"><code>&lt;service&gt; --help</code> – Show help/usage for a service.</p>
 <br>
 <u><h3>File, Program, Security & Directory Management</h3></u>
 <br>
@@ -297,3 +303,4 @@ However,now we're ready to use <code>ollama run llama3</code> which doesn't requ
     </div>
 </body>
 </html>
+
