@@ -25,7 +25,7 @@ body {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     text-align: center;
     width: 90%;
-    max-width: 800px; /* Adjust max-width for responsiveness */
+    max-width: 800px; 
     box-sizing: border-box;
     margin-top: 20px;
 }
@@ -61,18 +61,18 @@ body {
     border-radius: 8px;
     overflow: auto;
     max-height: 400px;
-    font-size: 12px !important; /* Reduced font size with !important */
+    font-size: 12px !important; 
     line-height: 1.5;
     color: #fff;
 }
 
 .pre code {
-    font-size: inherit !important; /* Ensure it inherits the correct font size */
+    font-size: inherit !important; 
     color: inherit;
     white-space: pre-wrap;
 }
 .language-c {
-    font-size: 12px !important; /* Adjust the font size specifically for the C code */
+    font-size: 12px !important; 
 }
 
 .footer {
@@ -87,7 +87,7 @@ body {
 
 @media only screen and (max-width: 600px) {
     .profile-container {
-        width: 100%; /* Full width on smaller screens */
-        padding: 10px; /* Adjust padding for smaller screens */
+        width: 100%; 
+        padding: 10px; 
     }
 }

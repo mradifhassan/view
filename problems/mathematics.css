@@ -25,7 +25,7 @@ body {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     text-align: center;
     width: 90%;
-    max-width: 800px; /* Adjust max-width for responsiveness */
+    max-width: 800px; 
     box-sizing: border-box;
     margin-top: 20px;
 }
@@ -57,7 +57,7 @@ body {
 }
 
 svg {
-    width: 150px; /* Adjust the size of the SVG */
+    width: 150px; 
     height: 150px;
 }
 .moved-left {
@@ -87,7 +87,7 @@ p {
 
 @media only screen and (max-width: 600px) {
     .profile-container {
-        width: 100%; /* Full width on smaller screens */
-        padding: 10px; /* Adjust padding for smaller screens */
+        width: 100%; 
+        padding: 10px; 
     }
 }
