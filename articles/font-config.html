@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GNU-Linux custom font configuration</title>
+    <meta name="description" content="Concise programming notes in C: data type conversions, ASCII values, strings, null termination, arrays, memory addressing, and format specifiers.">
+  <meta name="keywords" content="C programming notes, ASCII conversion, string handling, null character, array memory, format specifiers, C tutorial">
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/prism-themes@1.9.0/themes/prism-vsc-dark-plus.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/kMVqKcWZbmrYvnzT3kMEO2Z2i1vZBw4Hbih4tnB3xQ9lFvHXtY2X5+J59Cl5YITgrW6n30z7tk2OA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../problems/programming.css">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/prism.min.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-c.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/prism.min.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-c.min.js"></script> 
+          <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+           <style>
+       body {
+           font-family: 'Spartan' 'Noto Serif Bengali';
+           font-size: 17px;
+       }
+  .image-container img {
+    max-width: 100%; 
+    height: auto;
+    display: block;   
+    margin: 10px auto; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+       }
+           pre[class*="language-markup"] .token.tag,
+    pre[class*="language-markup"] .token.punctuation {
+      color: #e6b673;
+    }
+    pre[class*="language-markup"] .token.attr-name {
+      color: #9cdcfe;
+    }
+    pre[class*="language-markup"] .token.attr-value {
+      color: #ce9178;
+    }
+    pre[class*="language-markup"] .token.comment {
+      color: #6a9955;
+      font-style: italic;
+    }
+   </style>
+</head>
+<body>
+    <div class="profile-container">
+        <div class="profile-header">
+              <u class="published"><h6>Published: 18-03-2026</h6></u>
+        <u><h3>Custom font configuration for Debian based Opeating Systems</h3></u>
+        <p>You will use an open-source Operating System without tasting your own Mother tongue or feel writing in custom fonts which are written or seen day to day life in your country, is this possible anyway? Of course not! The GNU-Linux provides users using custom fonts alongside default fonts itself and also provides <code>ibus</code> for switching language.
+        Since I'm from Bangladesh and <b>বাংলা</b> is my mother tongue, I'll show you that proccesdure. But hold on and relax, the way how you can set up your custom font might be similar or slightly little bit different which you might find out by searching anyway.<br>
+    Writing in বাংলা comes in two ways in modern Computer especially for Windows system. \(1.\) <a href="https://bijoybayanno.org/" target="_blank"><code>Bijoy</code></a> and \(2.\) <a href="https://www.omicronlab.com/avro-keyboard.html" target="_blank"><code>Avro</code></a> and the second one is very popular among people because its an open source software. However, for linux users, they also 
+    built something for its compatabilities on different distros.</p>
+<p>There would be two steps for setting up-</p>
+<p><ul>
+    <li><p>Installing fonts and <a href="https://linux.omicronlab.com/" target="_blank"><code>ibus-avro</code></a></p></li>
+    <li><p>CLI setup</p></li>
+</ul></p>
+<hr>
+<u><h3>Step \(1\): Installing fonts and Ibus-Avro</h3></u> 
+<p><b>Font installation:</b></p>
+<ol type="i">
+    <li><p>Install <a href="https://www.omicronlab.com/download/fonts/kalpurush.ttf" target="_blank"><code>Kalpurush</code></a>, <a href="https://www.omicronlab.com/download/fonts/SolaimanLipi_20-04-07.ttf" target="_blank"><code>SolaimanLipi</code></a> and <a href="https://banglafonts.org/fonts/sutonnymj-regular#" target="_blank"><code>SutonnyMJ</code></a> from 
+        <a href="https://www.omicronlab.com/bangla-fonts.html " target="_blank"><code>OmicronLab</code></a> and <a href="https://banglafonts.org/fonts/sutonnymj-regular" target="_blank"><code>Banglafonts</code></a> website. You might install other fonts according to your taste. But my recomendation would be those three fonts.</p></li>
+    <li><p>Make sure to have those fonts name <code>Kalpurush.ttf</code>, <code>SolaimanLipi.ttf</code> and <code>SutonnyMJ.ttf</code> respectively.</p></li>
+</ol>
+<p><b>Ibus-Avro installation:</b></p>
+<ol type="i">
+    <li><p>Go to the <a href="https://linux.omicronlab.com/" target="_blank"><code>ibus-avro</code></a> website and follow the instruction of installation process.</p></li>
+    <li><p>Open your terminal, type the following command and hit enter-</p></li>
+      <u><h3>Bash-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+sudo apt-get install ibus-avro
+        </code></pre> 
+   </div> 
+  </div>
+      <li><p>After installation, logout or reboot your machine-</p></li>
+      <u><h3>Bash-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+reboot        
+</code></pre> 
+   </div> 
+  </div>
+  <li><p>Go to the settings and select keyboard-</p></li>
+  <div class="image-container">
+    <img src="../assets/Screenshot from 2026-03-18 22-10-37.png" alt="keyboard">
+  </div>
+  <li><p>Click <code>Add Input Sources</code>-</p></li>
+    <div class="image-container">
+    <img src="../assets/Screenshot from 2026-03-18 22-10-58.png" alt="input source">
+  </div>
+  <li><p>Click vertical threedots(&#8942;)-</p></li>
+      <div class="image-container">
+    <img src="../assets/Screenshot from 2026-03-18 22-11-09.png" alt="vertical three dots">
+  </div>
+  <li><p>Click <code>Other</code> and search for <code>Avro</code>-</p></li>
+        <div class="image-container">
+    <img src="../assets/Screenshot from 2026-03-18 22-11-22.png" alt="other">
+  </div>
+  <li><p>Select <code>Bangla (Avro Phonetic)</code></p></li>
+          <div class="image-container">
+    <img src="../assets/Screenshot from 2026-03-18 22-11-32.png" alt="select">
+  </div>
+  <li><p>Click <code>Add</code>-</p></li>
+          <div class="image-container">
+    <img src="../assets/Screenshot from 2026-03-18 22-11-53.png" alt="other">
+  </div>
+  <li><p>Now you are done!</p></li>
+</ol>
+<hr>
+
+<u><h3>Step \(2\): CLI Setup</h3></u> 
+<p>First of all, you need to create a folder for storing your fonts-</p>
+      <u><h3>Bash-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+// Create a folder
+mkdir -p ~/.local/share/fonts/bangla
+
+// Copy your fonts here
+cp /path/to/your/fonts/
+*.ttf ~/.local/share/fonts/bangla/
+
+// Example:
+// cp ~/Downloads/SolaimanLipi.ttf ~/.local/share/fonts/bangla/
+        </code></pre> 
+   </div> 
+  </div>
+  <p>Alternative: Install for all users (needs password)</p>
+        <u><h3>Bash-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+sudo mkdir -p /usr/local/share/fonts/bangla
+sudo cp ~/Downloads/
+*.ttf /usr/local/share/fonts/bangla/
+sudo fc-cache -fv
+        </code></pre> 
+   </div> 
+  </div>
+  <p>Update font cache to detect by your machine</p>
+          <u><h3>Bash-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+fc-cache -fv
+        </code></pre> 
+   </div> 
+  </div>
+  <p>Verify they are recognized:</p>
+            <u><h3>Bash-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+fc-list | grep -i -E 'solaiman|kalpurush|sutonny'
+        </code></pre> 
+   </div> 
+  </div>
+  <p>You should see an ouput-</p>
+              <u><h3>Ouput-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+/home/yourname/.local/share/fonts/bangla/SolaimanLipi.ttf: SolaimanLipi:style=Regular
+        </code></pre> 
+   </div> 
+  </div>
+  <p>Create fontconfig rule to prefer your Bangla font for Bengali script
+This makes your font the top choice whenever Bengali characters need rendering (e.g. "আমি বাংলা লিখি"), but Latin/English still uses Ubuntu/Default fonts.
+Create a config file in your user directory (affects only you):</p>
+              <u><h3>Bash-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+mkdir -p ~/.config/fontconfig/conf.d
+nano ~/.config/fontconfig/conf.d/99-bangla-prefer.conf
+    </code></pre> 
+   </div> 
+  </div>
+  <p>Now paste the following script (change the family name if your font shows differently in <code>fc-list</code>):</p>
+  <div class="code-frame">
+    <pre class="line-numbers"><code class="language-markup">&lt;?xml version="1.0"?&gt;
+&lt;!DOCTYPE fontconfig SYSTEM "fonts.dtd"&gt;
+&lt;fontconfig&gt;
+
+  &lt;!-- Prefer SutonnyMJ for Bengali script --&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test qual="any" name="lang" compare="contains"&gt;
+      &lt;string&gt;bn&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;test qual="any" name="family"&gt;
+
+      &lt;string&gt;sans-serif&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="prepend" binding="strong"&gt;
+      &lt;string&gt;SutonnyMJ&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+
+  &lt;match target="pattern"&gt;
+    &lt;test qual="any" name="lang" compare="contains"&gt;
+      &lt;string&gt;bn&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;test qual="any" name="family"&gt;
+      &lt;string&gt;serif&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="prepend" binding="strong"&gt;
+      &lt;string&gt;SutonnyMJ&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+
+  &lt;!-- Fallbacks --&gt;
+  &lt;match target="pattern"&gt;
+    &lt;test qual="any" name="lang" compare="contains"&gt;
+      &lt;string&gt;bn&lt;/string&gt;
+    &lt;/test&gt;
+    &lt;edit name="family" mode="append"&gt;
+      &lt;string&gt;SolaimanLipi&lt;/string&gt;
+      &lt;string&gt;Kalpurush&lt;/string&gt;
+    &lt;/edit&gt;
+  &lt;/match&gt;
+
+&lt;/fontconfig&gt;
+</code></pre>
+  </div>
+  <p>How to know the exact font name? Run the following comman and copy the name shown in bold-</p>
+        <u><h3>Bash-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+fc-list | grep -i sutonny
+// Example output: 
+// /home/username/.local/share/fonts/bangla/SutonnyMJRegular.ttf: SutonnyMJ:style=Regular
+        </code></pre> 
+   </div> 
+  </div>
+  <p>Now apply changes-</p>
+          <u><h3>Bash-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+fc-cache -fv
+        </code></pre> 
+   </div> 
+  </div>
+  <p>You are now done, but you might check to test which font are being used for বাংলা rendering-</p>
+            <u><h3>Bash-</h3></u>
+<div class="container"> 
+   <div class="code-frame"> 
+    <pre><code class="language-c">
+LANG=bn_BD.UTF-8 fc-match sans-serif
+        </code></pre> 
+   </div> 
+  </div>
+<footer class="footer">
+            <h6>© 2026 • Developed by <br>Muhammad Radif Hassan</h6>
+        </footer>
+        </div>
+        </div>
+    </div>
+</body>
+</html>
