@@ -111,6 +111,11 @@ operating system name as well as the system node name, operating system release,
 <p class="point"><code>man &lt;service&gt;</code> – Open manual for a service.</p>
 <p class="point"><code>&lt;service&gt; --help</code> – Show help/usage for a service.</p>
 <br>
+<u><h3>USB Disk</h3></u>
+<br>
+<p class="point"><code>sudo umount /dev/sdX</code> - It requires before to start any operation in order to unmount.</p>
+<p class="point"><code>sudo dd if=/dev/zero of=/dev/sdX bs=4M status=progress conv=fsync</code></p> - This command wipes everything from your usb disk. Replace the actual name of your usb instead of <code>sdX</code> (check it by <code>lsblk -o NAME,SIZE,MODEL,MOUNTPOINT</code>).
+<p class="point"><code>sudo dd if=/path/to/os.iso of=/dev/sdX bs=4M status=progress conv=fsync sudo sync</code> - Make an <code>.iso</code> file bootable.</p>
 <u><h3>File, Program, Security & Directory Management</h3></u>
 <br>
 <p class="point"><code>ls</code> – List files/folders.</p>
@@ -286,7 +291,7 @@ However,now we're ready to use <code>ollama run llama3</code> which doesn't requ
 <p class="point"><code>git status</code> - Used to see if the working tree is clean or not.</p>
 <p class="point"><code>gh auth login</code> - Login from <code>VsCode</code> to <code>GitHub</code> in order to access and make changes to the repository.</p>
 <p class="point"><code>git config --global user.email "&lt;username@email.com&gt;</code> - If accessing for the first time then it requires to authenticate by your github email address.</p>
-<p class="point"><code>git global config --global user.name "&lt;username&gt;</code> - If accessing for the first time then it requires to authenticate by your github username.</p>
+<p class="point"><code>git config --global user.name "&lt;username&gt;</code> - If accessing for the first time then it requires to authenticate by your github username.</p>
 <u><b>Creating a new repository</b></u>
 <p class="point"><code>echo "# &lt;repository name&gt;" >> README.md</code> - Naming the <code>README</code> file.</p>
 <p class="point"><code>git init</code> - <code>Git</code> initialization.</p>
