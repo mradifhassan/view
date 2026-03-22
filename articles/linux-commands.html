@@ -114,7 +114,7 @@ operating system name as well as the system node name, operating system release,
 <u><h3>USB Disk</h3></u>
 <br>
 <p class="point"><code>sudo umount /dev/sdX</code> - It requires before to start any operation in order to unmount.</p>
-<p class="point"><code>sudo dd if=/dev/zero of=/dev/sdX bs=4M status=progress conv=fsync</code></p> - This command wipes everything from your usb disk. Replace the actual name of your usb instead of <code>sdX</code> (check it by <code>lsblk -o NAME,SIZE,MODEL,MOUNTPOINT</code>).
+<p class="point"><code>sudo dd if=/dev/zero of=/dev/sdX bs=4M status=progress conv=fsync</code></p> - This command wipes everything from your usb disk. Replace the actual name of your usb instead of <code>sdX</code> (check it by <code>lsblk -o NAME,SIZE,MODEL,MOUNTPOINT</code>).</p>
 <p class="point"><code>sudo dd if=/path/to/os.iso of=/dev/sdX bs=4M status=progress conv=fsync sudo sync</code> - Make an <code>.iso</code> file bootable.</p>
 <u><h3>File, Program, Security & Directory Management</h3></u>
 <br>
