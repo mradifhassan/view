@@ -114,9 +114,6 @@ operating system name as well as the system node name, operating system release,
 <br>
 <u><h3>USB Disk</h3></u>
 <br>
-<p class="point"><code>sudo umount /dev/sdX</code> - It requires before to start any operation in order to unmount.</p>
-<p class="point"><code>sudo dd if=/dev/zero of=/dev/sdX bs=4M status=progress conv=fsync</code> - This command wipes everything from your usb disk. Replace the actual name of your usb instead of <code>sdX</code> (check it by <code>lsblk -o NAME,SIZE,MODEL,MOUNTPOINT</code>).</p>
-<p class="point"><code>sudo dd if=/path/to/os.iso of=/dev/sdX bs=4M status=progress conv=fsync sudo sync</code> - Make an <code>.iso</code> file bootable.</p>
 <p class="point"><code>sudo umount /dev/sdX</code> - Unmount the USB drive before performing any operation. Replace <code>sdX</code> with your actual USB device name.</p>
 <p class="point"><code>sudo dd if=/dev/zero of=/dev/sdX bs=4M status=progress conv=fsync</code> - Completely wipe all data from your USB drive. Replace <code>sdX</code> with your USB device (check with <code>lsblk</code>).</p>
 <p class="point"><code>sudo dd if=/path/to/os.iso of=/dev/sdX bs=4M status=progress conv=fsync &amp;&amp; sudo sync</code> - Create a bootable USB from an ISO file. Replace <code>/path/to/os.iso</code> and <code>sdX</code> accordingly.</p>
@@ -244,6 +241,8 @@ However,now we're ready to use <code>ollama run llama3</code> which doesn't requ
 <p class="point"><code>feh image.png</code> – View image.</p>
 <p class="point"><code>pdftotext file.pdf file.txt</code> – Convert PDF to text.</p>
 <p class="point"><code>mupdf file.pdf</code> – View PDF file.</p>
+<p class="point"><code>ffmpeg -i input.webm -vn -acodec libmp3lame -q:a 2 output.mp3</code> – Once FFmpeg is installed (install via <code>sudo apt install ffmpeg</code>), navigate to the directory where your <code>.webm</code> file is located using the <code>cd</code> command. Then, use the following command to perform the conversion. Find more conversion manual usnig <code>man ffmpeg</code> command.
+<p class="point"><code>ffmpeg -i input.mp4 -vf subtitles=subtitiles.srt output.mp4</code> - Integrate subtitles with video file using this command.</p>
 <p class="point"><code>ffmpeg -i input.webm -vn -acodec libmp3lame -q:a 2 output.mp3</code> – Once FFmpeg is installed (install via <code>sudo apt install ffmpeg</code>), navigate to the directory where your <code>.webm</code> file is located using the <code>cd</code> command. Then, use the following command to perform the conversion. Find more conversion manual usnig <code>man ffmpeg</code> command.
 <p class="point"><code>ffmpeg -i input.mp4 -vf subtitles=subtitiles.srt output.mp4</code> - Integrate subtitles with video file using this command.</p>
 <p class="point"><code>ffmpeg -i input.webm -vn -acodec libmp3lame -q:a 2 output.mp3</code> – Convert WebM to high-quality MP3. Install FFmpeg with <code>sudo apt install ffmpeg</code>, then run the command in the file directory. Use <code>man ffmpeg</code> for full manual.</p>
