@@ -117,6 +117,15 @@ operating system name as well as the system node name, operating system release,
 <p class="point"><code>sudo umount /dev/sdX</code> - It requires before to start any operation in order to unmount.</p>
 <p class="point"><code>sudo dd if=/dev/zero of=/dev/sdX bs=4M status=progress conv=fsync</code> - This command wipes everything from your usb disk. Replace the actual name of your usb instead of <code>sdX</code> (check it by <code>lsblk -o NAME,SIZE,MODEL,MOUNTPOINT</code>).</p>
 <p class="point"><code>sudo dd if=/path/to/os.iso of=/dev/sdX bs=4M status=progress conv=fsync sudo sync</code> - Make an <code>.iso</code> file bootable.</p>
+<p class="point"><code>sudo umount /dev/sdX</code> - Unmount the USB drive before performing any operation. Replace <code>sdX</code> with your actual USB device name.</p>
+<p class="point"><code>sudo dd if=/dev/zero of=/dev/sdX bs=4M status=progress conv=fsync</code> - Completely wipe all data from your USB drive. Replace <code>sdX</code> with your USB device (check with <code>lsblk</code>).</p>
+<p class="point"><code>sudo dd if=/path/to/os.iso of=/dev/sdX bs=4M status=progress conv=fsync &amp;&amp; sudo sync</code> - Create a bootable USB from an ISO file. Replace <code>/path/to/os.iso</code> and <code>sdX</code> accordingly.</p>
+<p class="point"><code>lsblk -o NAME,SIZE,MODEL,MOUNTPOINT</code> - List all disks and partitions with size and mount points to identify your USB drive safely.</p>
+<p class="point"><code>sudo fdisk -l</code> - Show detailed information about all connected disks and partitions.</p>
+<p class="point"><code>sudo dd if=/dev/sdX of=backup.img bs=4M status=progress conv=fsync</code> - Create a full backup image of your USB drive or SD card.</p>
+<p class="point"><code>sudo dd if=backup.img of=/dev/sdX bs=4M status=progress conv=fsync &amp;&amp; sudo sync</code> - Restore a backup image back to USB drive.</p>
+<p class="point"><code>sudo wipefs -a /dev/sdX</code> - Quickly wipe filesystem signatures from the USB drive (faster alternative to zeroing).</p>
+<p class="point"><code>sudo parted /dev/sdX --script mklabel gpt</code> - Create a new GPT partition table on the USB drive.</p>
 <u><h3>File, Program, Security & Directory Management</h3></u>
 <br>
 <p class="point"><code>ls</code> – List files/folders.</p>
@@ -237,6 +246,22 @@ However,now we're ready to use <code>ollama run llama3</code> which doesn't requ
 <p class="point"><code>mupdf file.pdf</code> – View PDF file.</p>
 <p class="point"><code>ffmpeg -i input.webm -vn -acodec libmp3lame -q:a 2 output.mp3</code> – Once FFmpeg is installed (install via <code>sudo apt install ffmpeg</code>), navigate to the directory where your <code>.webm</code> file is located using the <code>cd</code> command. Then, use the following command to perform the conversion. Find more conversion manual usnig <code>man ffmpeg</code> command.
 <p class="point"><code>ffmpeg -i input.mp4 -vf subtitles=subtitiles.srt output.mp4</code> - Integrate subtitles with video file using this command.</p>
+<p class="point"><code>ffmpeg -i input.webm -vn -acodec libmp3lame -q:a 2 output.mp3</code> – Convert WebM to high-quality MP3. Install FFmpeg with <code>sudo apt install ffmpeg</code>, then run the command in the file directory. Use <code>man ffmpeg</code> for full manual.</p>
+<p class="point"><code>ffmpeg -i input.mp4 -vf subtitles=subtitles.srt output.mp4</code> – Burn subtitles into the video (hardcode). This re-encodes the video.</p>
+<p class="point"><code>ffmpeg -i input.mp4 output.mkv</code> – Simple conversion from MP4 to MKV (or any format).</p>
+<p class="point"><code>ffmpeg -i input.mkv -c:v copy -c:a copy output.mp4</code> – Fast remux without re-encoding (best quality & speed when possible).</p>
+<p class="point"><code>ffmpeg -i input.mp4 -c:v libx264 -crf 23 -preset medium -c:a aac output.mp4</code> – Compress video with good quality. CRF 18-28 (lower = better quality, larger file).</p>
+<p class="point"><code>ffmpeg -i input.mp4 -vn -c:a libmp3lame -q:a 2 output.mp3</code> – Extract audio from video and convert to high-quality MP3.</p>
+<p class="point"><code>ffmpeg -i input.mp4 -vn -c:a copy output.m4a</code> – Extract audio without re-encoding (fastest).</p>
+<p class="point"><code>ffmpeg -i input.mp3 -c:a flac -compression_level 8 output.flac</code> – Convert MP3 to lossless FLAC (best compression).</p>
+<p class="point"><code>ffmpeg -ss 00:01:30 -i input.mp4 -to 00:05:00 -c copy output.mp4</code> – Cut video from 1:30 to 5:00 without re-encoding (very fast).</p>
+<p class="point"><code>ffmpeg -i input.mp4 -t 120 -c copy output.mp4</code> – Keep only the first 120 seconds (2 minutes).</p>
+<p class="point"><code>ffmpeg -i input.mp4 -an -c:v copy output-muted.mp4</code> – Remove audio (mute the video).</p>
+<p class="point"><code>ffmpeg -i input.mp4 -vf scale=1280:720 output.mp4</code> – Resize video to 720p. Use <code>scale=1280:-1</code> for auto height.</p>
+<p class="point"><code>ffmpeg -i input.mp4 -i subtitles.srt -c:v copy -c:a copy -c:s mov_text output.mp4</code> – Add subtitles as soft stream (toggleable in player) for MP4.</p>
+<p class="point"><code>ffmpeg -i input.mp4 -movflags +faststart output.mp4</code> – Optimize MP4 for faster web streaming.</p>
+<p class="point"><code>ffprobe -i input.mp4</code> – Show detailed file information (duration, codecs, bitrate etc).</p>
+<p class="point"><code>ffmpeg -f concat -safe 0 -i list.txt -c copy output.mp4</code> – Join multiple videos. Create list.txt with <code>file 'part1.mp4'</code> lines.</p>
 <br>
 <u><h3>Downloading (yt-dlp)</h3></u>
 <br>
