@@ -111,7 +111,7 @@ operating system name as well as the system node name, operating system release,
 <p class="point"><code>dmesg -T | grep -i error</code> - Shows only the kernel messages that contain the word "error".</p>
 <p class="point"><code>dmesg -T | grep -i usb</code> - Shows all kernel messages related to USB devices.</p>
 <p class="point"><code>dmesg -T | grep -i fail</code> - Shows kernel messages that contain the word "fail" or "failed".</p>
-<p class="point"><code>Bashjournalctl -b -k -p 3..0</code> - Show ciritical+errors.</p>
+<p class="point"><code>journalctl -b -k -p 3..0</code> - Show ciritical+errors.</p>
 <p class="point"><code>journalctl -b</code> - Logs from current boot.</p>
 <p class="point"><code>journalctl -b -1</code> - Logs from previous boot.</p>
 <p class="point"><code>journalctl -f</code> - Follow logs in real-time (like tail -f).</p>
