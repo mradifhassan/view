@@ -100,6 +100,16 @@ operating system name as well as the system node name, operating system release,
 <p class="point"><code>hardinfo</code> - You will get everything you need to know about your deivce by this free open-source package.</p>
 <p class="point"><code>journalctl</code> - This command provides you viewing system logs of your machine.</p>
 <p class="point"><code>dmesg | tail -50</code> - View recent kernel messages (hardware errors, driver issues, USB problems).</p>
+<p class="point"><code>dmesg | grep -i error</code> - Find errors in kernel log.</p>
+<p class="point"><code>dmesg -w</code> - Watch kernel messages in real-time.</p>
+<p class="point"><code>mesg | grep -i usb</code> - Check USB related kernel messages.</p>
+<p class="point"><code>journalctl -b</code> - Logs from current boot.</p>
+<p class="point"><code>journalctl -b -1</code> - Logs from previous boot.</p>
+<p class="point"><code>journalctl -f</code> - Follow logs in real-time (like tail -f).</p>
+<p class="point"><code>journalctl -p err -b</code> - Show only errors from current boot.</p>
+<p class="point"><code>journalctl -u ssh.service</code> - Logs of specific service (e.g., SSH).</p>
+<p class="point"><code>journalctl --since "1 hour ago"</code> - Logs from last 1 hour.</p>
+<p class="point"><code>journalctl -b -k</code> - Shows only kernel messages from current boot (similar to dmesg but better).</p>
 <p class="point"><code>lshw -short</code> - Show complete hardware summary (CPU, RAM, disks, network cards).</p>
 <p class="point"><code>lspci -v | grep -i network</code> - Detailed info about network cards and drivers.</p>
 <p class="point"><code>lsusb -v</code> - List all USB devices with verbose details (useful for faulty peripherals).</p>
