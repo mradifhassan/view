@@ -32,15 +32,17 @@ something to do for general people (its completely my personal opinion btw :")).
 Linux allows you to know about Computer Archietecture and how Computer actually works behind. Now, I am going to provide some Linux based bash commands that I learnt up to this day according
     to their usage in different ways and I made them as categorized-</p>
 <br>
-<u><h3>Hardware Information</h3></u> 
+<u><h3>Hardware Information and Management</h3></u> 
 <br>
+<p class="point"><code>sudo reboot</code> - Restart the system.</p>
+<p class="point"><code>sudo shutdown -h now</code> - Shutdown immediately.</p>
 <p class="point"><code>neofetch/fastfetch</code> - It allows you to view your hardware and other stuffs at a glance, but before you need to install that first!</p>
 <p class="point"><code>date</code> - This will show time and date of your current location.</p>
 <p class="point"><code>arch</code> - This will let you know about the type of your processor archietecture.</p>
 <p class="point"><code>df -h</code> - It allows you to see how much memories your located files have taken, besides it will also show Size, Used, Avail, Use% and Mounted on.</p>
 <p class="point"><code>du -sh *</code> - It summarizes each and every folder or directory's spaces inside current directories.</p>
 <p class="point"><code>du -sh</code> - Shows the total space used by the current directory.</p>
-<p class="point"><code>free -mh</code> - Tells <code>Mem</code> (Physical RAM) and <code>Swap</code> (Disk-based virtual memory).</p>
+<p class="point"><code>free -h</code> - Tells <code>Mem</code> (Physical RAM) and <code>Swap</code> (Disk-based virtual memory).</p>
 <p class="point"><code>lsblk</code> - Refers to block storage devices. These are devices that move data in fixed-size blocks, primarily including hard drives (HDD), Solid State Drives (SSD), partitions, CD/DVD drives, and USB flash drives.</p>
 <p class="point"><code>lsusb</code> - Refers to devices connected via the Universal Serial Bus (USB) ports. This includes external peripherals like keyboards, mice, printers, webcams, USB flash drives, and external hard drives.</p>
 <p class="point"><code>lspci</code> - Refers to devices connected via the Peripheral Component Interconnect (PCI) bus. This includes most high-speed internal hardware components on the motherboard, such as graphics cards, network interface cards (NICs), sound cards, SATA/NVMe controllers, and USB host controllers.</p>
@@ -54,6 +56,7 @@ Linux allows you to know about Computer Archietecture and how Computer actually 
 <p class="point"><code>top</code> - Terminal based program processing viewer with PID.</p>
 <p class="point"><code>htop</code> - Interactive system monitor (CPU, Memory, Processes).</p>
 <p class="point"><code>history</code> - Shows bash command history.</p>
+<p class="point"><code>history | tail -20</code> - Show last 20 commands used.</p>
 <p class="point"><code>history -c</code> - Clears history in current shell (not permanent).</p>
 <p class="point"><code>history -c && > ~/.bash_history && history -w</code> - Permanently clears bash history.</p>
 <p class="point"><code>whoami</code> - Shows your current logged-in username.</p>
@@ -158,6 +161,12 @@ operating system name as well as the system node name, operating system release,
 <p class="point"><code>mv my_file.txt &lt;Directory&gt;</code> – Move file to another directory.</p>
 <p class="point"><code>mv old_name.txt new_name.txt</code> – Rename file.</p>
 <p class="point"><code>mv file1.txt file2.txt /path/to/destination</code> – Move multiple files.</p>
+<p class="point"><code>grep "text" file.txt</code> - Search for text in a file.</p>
+<p class="point"><code>grep -r "text" directory/</code> - Recursive search in directory.</p>
+<p class="point"><code>find /path -name "*.txt"</code> - Find files by name.</p>
+<p class="point"><code>less file.txt</code> - View file with paging (q to quit).</p>
+<p class="point"><code>head -n 10 file.txt</code> - Show first 10 lines.</p>
+<p class="point"><code>tail -f logfile.log</code> - Follow log file in real-time.</p>
 <p class="point"><code>cat filename.txt</code> – Display contents of a file.</p>
 <p class="point"><code>wc -w filename.txt</code> – Count words in file.</p>
 <p class="point"><code>wc -w &lt; filename.txt</code> – Count words (without showing filename).</p>
@@ -176,6 +185,9 @@ operating system name as well as the system node name, operating system release,
 <p class="point"><code>7z a archive.7z folder/</code> - Create 7zip archive (better compression).</p>
 <p class="point"><code>tar -xf &lt;filename&gt;.tar.xz</code> - Installing <code>.tar.xz</code> package. But requires to have installe. Install via <code>sudo apt install xz-utils</code>.</p>
 <p class="point"><code>sudo apt install -f</code> - Fix missing dependencies.</p>
+<p class="point"><code>chmod +x script.sh && ./script.sh</code> - Make a bash script executable and run it.</p>
+<p class="point"><code>#!/bin/bash&#10;# Your code here</code> - Basic script template. Save as <code>script.sh</code>.</p>
+<p class="point"><code>crontab -e</code> - Schedule scripts to run automatically (e.g., daily backup).</p>
 <p class="point"><code>chmod 755 file</code> - Make file executable by owner and readable by others.</p>
 <p class="point"><code>chmod -R 755 directory</code> - Apply permissions recursively.</p>
 <p class="point"><code>chmod +x &lt;program&gt;</code> - It executes a program.</p>
@@ -266,6 +278,12 @@ However,now we're ready to use <code>ollama run llama3</code> which doesn't requ
        for the specified object. If no guess can be made it  will  connect  to
        <code><a href="https://whois.networksolutions.com" target="_blank">whois.networksolutions.com</a></code> for <code>NIC</code> handles or <code><a href="https://whois.arin.net">whois.arin.net</a></code> for <code>IPv4</code>
        addresses and network names.</p>
+<p class="point"><code>ping google.com</code> - Test network connectivity.</p>
+<p class="point"><code>curl -I https://example.com</code> - Check HTTP headers.</p>
+<p class="point"><code>wget https://example.com/file</code> - Download a file.</p>
+<p class="point"><code>ssh user@ip_address</code> - Connect to remote server via SSH.</p>
+<p class="point"><code>ip addr show</code> - Show network interfaces and IP addresses.</p>
+<p class="point"><code>ss -tuln</code> - Show listening ports (replacement for netstat).</p>
 <br>
 <h3><u>Media & Documents</u></h3>
 <br>
@@ -379,6 +397,27 @@ However,now we're ready to use <code>ollama run llama3</code> which doesn't requ
   <p><i><code>[Information used this section taken from Google Search Results, Gemini and GitHub Documentation]
 </code></i></p>
 <br>
+<u><h3>Advanced Bash Scripting & Automation</h3></u>
+<p class="point"><code>#!/bin/bash</code> - Shebang line. Add this at the top of every .sh script to make it executable with <code>chmod +x script.sh</code>.</p>
+<p class="point"><code>for file in *.jpg; do mv "$file" "photo_${file}"; done</code> - Rename all .jpg files by adding prefix "photo_" using a for loop.</p>
+<p class="point"><code>for f in *.txt; do mv "$f" "${f%.txt}.md"; done</code> - Bulk rename all .txt files to .md (change extension) using parameter expansion.</p>
+<p class="point"><code>rename 's/\.jpeg$/\.jpg/' *.jpeg</code> - Bulk rename using Perl-based <code>rename</code> tool (install with <code>sudo apt install rename</code>).</p>
+<p class="point"><code>ls -1 *.png | sort -V | cat -n | while read n f; do mv "$f" "$(printf %03d $n)_$f"; done</code> - Rename files with sequential numbers (001_, 002_, etc.) in natural sort order.</p>
+<p class="point"><code>ls | sort -n</code> - Sort files/folders numerically instead of alphabetically.</p>
+<p class="point"><code>sort -k2 -n file.txt</code> - Sort a text file numerically by the 2nd column.</p>
+<p class="point"><code>sort -u file.txt > sorted_unique.txt</code> - Sort and remove duplicate lines.</p>
+<p class="point"><code>awk '{print $1}' data.csv | sort | uniq -c | sort -nr</code> - Count occurrences of items in first column and show top results (useful for logs).</p>
+<br>
+<u><h3>More Advanced One-liners & Scripts</h3></u>
+<br>
+<p class="point"><code>find . -name "*.bak" -delete</code> - Recursively find and delete all .bak backup files.</p>
+<p class="point"><code>for f in *.mp4; do ffmpeg -i "$f" "${f%.mp4}.mp3"; done</code> - Batch convert all MP4 files to MP3 using ffmpeg.</p>
+<p class="point"><code>while IFS= read -r line; do echo "Processing: $line"; done < list.txt</code> - Read a text file line by line and process each line.</p>
+<p class="point"><code>du -sh * | sort -hr</code> - Show directory sizes sorted by largest first (human readable).</p>
+<p class="point"><code>grep -r "error" /var/log/ | awk -F: '{print $1}' | sort | uniq -c | sort -nr</code> - Find error logs, count per file, and sort by frequency.</p>
+<p class="point"><code>ls *.jpg | wc -l</code> - Count number of .jpg files in current directory.</p>
+<p class="point"><code>sed -i 's/oldtext/newtext/g' *.txt</code> - Replace text in all .txt files (in-place editing).</p>
+<p class="point"><code>history | tail -50 | cut -c 8- > commands.log</code> - Save last 50 commands to a log file.</p>
 <u><h3>Fun / Miscellaneous</h3></u>
 <br>
 <p class="point"><code>cmatrix</code> – Matrix-style animation.</p>
