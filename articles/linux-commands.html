@@ -57,6 +57,10 @@ Linux allows you to know about Computer Archietecture and how Computer actually 
 <p class="point"><code>history -c</code> - Clears history in current shell (not permanent).</p>
 <p class="point"><code>history -c && > ~/.bash_history && history -w</code> - Permanently clears bash history.</p>
 <p class="point"><code>whoami</code> - Shows your current logged-in username.</p>
+<p class="point"><code>id</code> - Show user and group information.</p>
+<p class="point"><code>sudo adduser username</code> - Create a new user.</p>
+<p class="point"><code>sudo usermod -aG sudo username</code> - Add user to sudo group.</p>
+<p class="point"><code>chown user:group file</code> - Change owner and group of a file.</p>
 <p class="point"><code>passwd (your username)</code> - Change your user password.</p>
 <p class="point"><code>ls -la</code> - Lists all files and directories including hidden ones.</p>
 <p class="point"><code>package --version</code> - Shows installed package version.</p>
@@ -98,10 +102,14 @@ operating system name as well as the system node name, operating system release,
 <p class="point"><code>sudo snort -A console -q -c /etc/snort/snort.conf -i (YOUR_INTERFACE_NAME)</code> - An IDS can monitor system activities and detect potential security threats. One popular open-source IDS for Linux is Snort. You can get your interface name from <code>ip address</code> looking like <code>wlp0s0</code>, <code>wlp1s0</code>, <code>enp0s3</code> etc.</p>
 <p class="point"><code>speaker-test -t wav -c 8</code> - You will be able to inform and hear if your sound system (output) is okay or not. This is very useful to checkout sound problem.</p>
 <br>
-<u><h3>Package Management</h3></u>
+<u><h3>System Update, Maintancne and Package Management</h3></u>
 <br>
+<p class="point"><code>sudo apt update && sudo apt upgrade -y</code> - Update package list and upgrade all installed packages.</p>
+<p class="point"><code>sudo apt full-upgrade</code> - Upgrade packages with smart handling of dependencies.</p>
+<p class="point"><code>sudo apt autoremove && sudo apt autoclean</code> - Remove unused packages and clean cache.</p>
+<p class="point"><code>sudo apt install -f</code> - Fix broken dependencies.</p>
+<p class="point"><code>sudo journalctl --vacuum-time=2weeks</code> - Clear old systemd logs to free space.</p>
 <p class="point"><code>sudo apt install &lt;package name&gt;</code> – Install packages.</p>
-<p class="point"><code>sudo apt update && sudo apt upgrade</code> – Update and upgrade system packages.</p>
 <p class="ponit"><code>sudo apt remove &lt;package&gt;</code> - Remove package that you installed.</p>
 <p class="point"><code>sudo snap install &lt;package&gt;</code> - Install any <code>snap</code> package.</p>
 <p class="point"><code>sudo snap remove &lt;package&gt;</code> - Uninstall any <code>snap</code> package.</p>
@@ -111,6 +119,17 @@ operating system name as well as the system node name, operating system release,
 <p class="point"><code>&lt;package&gt; --version</code> – Check the version of installed package.</p>
 <p class="point"><code>man &lt;service&gt;</code> – Open manual for a service.</p>
 <p class="point"><code>&lt;service&gt; --help</code> – Show help/usage for a service.</p>
+<br>
+<u><h3>Process Management</h3></u>
+<br>
+<p class="point"><code>ps -aux | grep &lt;program name&gt;</code> - You can view if any program is running or not.</p>
+<p class="point"><code>ps aux</code> - Show all running processes.</p>
+<p class="point"><code>kill PID</code> - Kill a process by PID (graceful).</p>
+<p class="point"><code>kill -9 PID</code> - Force kill a process.</p>
+<p class="point"><code>kill -15 &lt;PID&gt;</code> - If you want to stop any program, then firstly view the <code>PID</code> from running <code>top</code>.</p>
+<p class="point"><code>htop</code> - Interactive process viewer (better than top).</p>
+<p class="point"><code>pgrep -f name</code> - Find process ID by name.</p>
+<p class="point"><code>sudo systemctl status service-name</code> - Check status of a systemd service.</p>
 <br>
 <u><h3>USB Disk</h3></u>
 <br>
@@ -150,8 +169,15 @@ operating system name as well as the system node name, operating system release,
 <p class="point"><code>ls -l | wc -l</code> - This command will tell the total properties inside your current directories as human readable format (decimal).</p>
 <p class="point"><code>sudo dpkg -i /path/to/filename.deb</code> - Installing downloaded package files.</p>
 <p class="point"><code>sudo dpkg -r path/to/filename.deb</code> - Uninstalling downloaded package files.</p>
+<p class="point"><code>tar -czvf archive.tar.gz folder/</code> - Create compressed tar.gz archive.</p>
+<p class="point"><code>tar -xzvf archive.tar.gz</code> - Extract tar.gz file.</p>
+<p class="point"><code>zip -r archive.zip folder/</code> - Create zip archive.</p>
+<p class="point"><code>unzip archive.zip</code> - Extract zip file.</p>
+<p class="point"><code>7z a archive.7z folder/</code> - Create 7zip archive (better compression).</p>
 <p class="point"><code>tar -xf &lt;filename&gt;.tar.xz</code> - Installing <code>.tar.xz</code> package. But requires to have installe. Install via <code>sudo apt install xz-utils</code>.</p>
 <p class="point"><code>sudo apt install -f</code> - Fix missing dependencies.</p>
+<p class="point"><code>chmod 755 file</code> - Make file executable by owner and readable by others.</p>
+<p class="point"><code>chmod -R 755 directory</code> - Apply permissions recursively.</p>
 <p class="point"><code>chmod +x &lt;program&gt;</code> - It executes a program.</p>
 <p class="point"><code>chmod 000 &lt;name of a directory&gt;</code> - It locks your folder and only root user can view this folder.</p>
 <p class="point"><code>sha256sum &lt;file name&gt;</code> - You can verify <code>SHA256 SUM</code> by running this command for your installed file. It's commonly used to verify <code>.iso</code> file.</p>
@@ -165,6 +191,12 @@ operating system name as well as the system node name, operating system release,
 <p class="point"><code>find . -mindepth 1 -printf '%h %f\n' | sort -t ' ' -k 2,2 | uniq -f 1 --all-repeated=separate | tr ' ' '/'
 </code> or <code>find . -mindepth 1 -printf '%h %f\n' | sort -t ' ' -k 2,2 | uniq -f 1 --all-repeated=separate | tr ' ' '/'
 </code> - You can use any of them and get as same result or output as previous command but this one is bit more complicated to memorize.</p>
+<br>
+<u><h3>Backup with Rsync</h3></u>
+<br>
+<p class="point"><code>rsync -avz source/ destination/</code> - Sync files and directories (fast backup).</p>
+<p class="point"><code>rsync -avz --delete source/ destination/</code> - Sync and delete files that no longer exist in source.</p>
+<p class="point"><code>rsync -avz -e ssh user@remote:/path/ /local/backup/</code> - Backup to remote server over SSH.</p>
 <br>
 <u><h3>Office Management</h3></u>
 <br>
