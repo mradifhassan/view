@@ -32,7 +32,7 @@ something to do for general people (its completely my personal opinion btw :")).
 Linux allows you to know about Computer Archietecture and how Computer actually works behind. Now, I am going to provide some Linux based bash commands that I learnt up to this day according
     to their usage in different ways and I made them as categorized-</p>
 <br>
-<u><h3>Hardware Information and Management</h3></u> 
+<u><h3>Hardware-Software Information and Management</h3></u> 
 <br>
 <p class="point"><code>sudo reboot</code> - Restart the system.</p>
 <p class="point"><code>sudo shutdown -h now</code> - Shutdown immediately.</p>
@@ -99,11 +99,59 @@ operating system name as well as the system node name, operating system release,
 <p class="point"><code>sudo dmidecode -s</code> - You will see many options for you you will pick one of them as an arguement get the serial number of the arguement. E.g., <code>system-serial-number</code>,<code>chassis-type</code>,<code>chassis-serial-number</code> etc.</p>
 <p class="point"><code>hardinfo</code> - You will get everything you need to know about your deivce by this free open-source package.</p>
 <p class="point"><code>journalctl</code> - This command provides you viewing system logs of your machine.</p>
+<p class="point"><code>dmesg | tail -50</code> - View recent kernel messages (hardware errors, driver issues, USB problems).</p>
+<p class="point"><code>lshw -short</code> - Show complete hardware summary (CPU, RAM, disks, network cards).</p>
+<p class="point"><code>lspci -v | grep -i network</code> - Detailed info about network cards and drivers.</p>
+<p class="point"><code>lsusb -v</code> - List all USB devices with verbose details (useful for faulty peripherals).</p>
+<p class="point"><code>smartctl -a /dev/sda</code> - Check SSD/HDD health and predict failures (install smartmontools).</p>
+<p class="point"><code>sensors</code> - Display CPU/GPU temperature and fan speed (install lm-sensors).</p>
+<p class="point"><code>inxi -Fxxxz</code> - All-in-one hardware + system report (very useful for debugging).</p>
+<p class="point"><code>journalctl -b -p err -p crit</code> - Show only errors and critical messages from last boot.</p>
 <p class="point"><code>systemctl list-jobs --type=service</code> - This is used to display a list of queued or currently running jobs in the systemd manager that specifically target service units.</p>
-<p class="point"><code>systemctl stop httpd</code> - This command immediately stops the httpd service in the current runtime session.</p>
-<p class="point"><code>systemctl disable httpd</code> - This command removes the symbolic links that tell systemd to start the httpd service during the system boot process.</p>
+<p class="point"><code>strace -p PID</code> - Trace system calls of a running process (great for debugging hanging programs).</p>
+<p class="point"><code>lsof -i :80</code> - List processes using a specific port (e.g., 80, 443, 22).</p>
+<p class="point"><code>ss -tuln</code> - Show listening sockets (modern, faster replacement of netstat).</p>
+<p class="point"><code>tcpdump -i eth0 -nn</code> - Capture live network packets for deep analysis.</p>
+<p class="point"><code>htop</code> - Interactive process viewer with CPU, memory, and swap usage.</p>
+<p class="point"><code>iotop -o</code> - Monitor real-time disk I/O usage by processes.</p>
+<p class="point"><code>iostat -xz 1</code> - Show CPU and disk I/O statistics every second.</p>
+<p class="point"><code>vmstat 1 5</code> - Report virtual memory, CPU, and I/O stats in real time.</p>
+<p class="point"><code>journalctl --since "1 hour ago" -p err</code> - Show recent error logs from systemd.</p>
 <p class="point"><code>sudo snort -A console -q -c /etc/snort/snort.conf -i (YOUR_INTERFACE_NAME)</code> - An IDS can monitor system activities and detect potential security threats. One popular open-source IDS for Linux is Snort. You can get your interface name from <code>ip address</code> looking like <code>wlp0s0</code>, <code>wlp1s0</code>, <code>enp0s3</code> etc.</p>
 <p class="point"><code>speaker-test -t wav -c 8</code> - You will be able to inform and hear if your sound system (output) is okay or not. This is very useful to checkout sound problem.</p>
+<br>
+<u><h3>Advanced Security & Hardening</h3></u>
+<br>
+<p class="point"><code>sudo ufw default deny incoming && sudo ufw default allow outgoing && sudo ufw enable</code> - Enable strict firewall (Ubuntu/Debian).</p>
+<p class="point"><code>sudo fail2ban-client status sshd</code> - Check if Fail2Ban is blocking brute-force attacks.</p>
+<p class="point"><code>sudo lynis audit system</code> - Run full security audit and get hardening suggestions (install lynis).</p>
+<p class="point"><code>sudo rkhunter --check</code> - Scan for rootkits and backdoors.</p>
+<p class="point"><code>sudo aa-status</code> - Check AppArmor security profiles status.</p>
+<p class="point"><code>sudo sysctl -a | grep -E 'net.ipv4.conf.*(accept|send)_redirects'</code> - Check kernel hardening parameters.</p>
+<p class="point"><code>sudo sshd -T | grep -E 'PasswordAuthentication|PermitRootLogin'</code> - Verify SSH security settings.</p>
+<p class="point"><code>sudo unattended-upgrade -d</code> - Check and apply security updates automatically.</p>
+<p class="point"><code>sudo auditctl -w /etc/ssh/sshd_config -p wa</code> - Audit changes to critical security files.</p>
+<p class="point"><code>gpg -c file.txt</code> - Encrypt a file with symmetric encryption (passphrase based) using GPG.</p>
+<p class="point"><code>gpg -d file.txt.gpg</code> - Decrypt a GPG encrypted file.</p>
+<p class="point"><code>gpg --encrypt --recipient user@email.com file.txt</code> - Encrypt file for specific person using their public key.</p>
+<p class="point"><code>tar -czf - folder/ | gpg -c > folder.tar.gz.gpg</code> - Encrypt entire folder (compressed + encrypted).</p>
+<p class="point"><code>sudo cryptsetup luksFormat /dev/sdb1</code> - Create LUKS encrypted partition (Full Disk Encryption).</p>
+<p class="point"><code>sudo cryptsetup luksOpen /dev/sdb1 mydrive</code> - Unlock LUKS encrypted drive.</p>
+<p class="point"><code>sudo cryptsetup status mydrive</code> - Check status of opened LUKS device.</p>
+<p class="point"><code>veracrypt --text --create volume.vc</code> - Create encrypted VeraCrypt container (very secure).</p>
+<p class="point"><code>openssl enc -aes-256-cbc -salt -in file.txt -out file.enc</code> - Encrypt file using OpenSSL AES-256.</p>
+<p class="point"><code>openssl enc -aes-256-cbc -d -in file.enc -out file.txt</code> - Decrypt OpenSSL encrypted file.</p>
+<p class="point"><code>ssh-keygen -t ed25519 -C "mykey"</code> - Generate modern secure SSH key (recommended over RSA).</p>
+<p class="point"><code>ssh-copy-id user@ip_address</code> - Copy public key to remote server for passwordless login.</p>
+<p class="point"><code>ssh -i ~/.ssh/mykey user@ip</code> - Connect using private key.</p>
+<p class="point"><code>sudo sshd -T | grep -E 'PubkeyAuthentication|PasswordAuthentication'</code> - Check SSH security configuration.</p>
+<p class="point"><code>sha256sum filename.iso</code> - Generate SHA-256 hash of a file (for integrity check).</p>
+<p class="point"><code>echo -n "password" | sha256sum</code> - Hash a password/string.</p>
+<p class="point"><code>sudo passwd -l username</code> - Lock a user account.</p>
+<p class="point"><code>sudo chage -l username</code> - Check password expiration and last change date.</p>
+<p class="point"><code>sudo fail2ban-client set sshd banip 192.168.1.100</code> - Manually ban an IP using Fail2Ban.</p>
+<p class="point"><code>lsblk -o NAME,TYPE,SIZE,FSTYPE,MOUNTPOINT,UUID</code> - Check which drives are encrypted (look for crypto_LUKS). <code><i>[Full System Encryption Check]</i></code></p>
+<p class="point"><code>sudo dmsetup status</code> - Show status of all device mapper devices (including LUKS). <code><i>[Full System Encryption Check]</i></code></p>
 <br>
 <u><h3>System Update, Maintancne and Package Management</h3></u>
 <br>
@@ -111,6 +159,8 @@ operating system name as well as the system node name, operating system release,
 <p class="point"><code>sudo apt full-upgrade</code> - Upgrade packages with smart handling of dependencies.</p>
 <p class="point"><code>sudo apt autoremove && sudo apt autoclean</code> - Remove unused packages and clean cache.</p>
 <p class="point"><code>sudo apt install -f</code> - Fix broken dependencies.</p>
+<p class="point"><code>systemctl stop httpd</code> - This command immediately stops the httpd service in the current runtime session.</p>
+<p class="point"><code>systemctl disable httpd</code> - This command removes the symbolic links that tell systemd to start the httpd service during the system boot process.</p>
 <p class="point"><code>sudo journalctl --vacuum-time=2weeks</code> - Clear old systemd logs to free space.</p>
 <p class="point"><code>sudo apt install &lt;package name&gt;</code> – Install packages.</p>
 <p class="ponit"><code>sudo apt remove &lt;package&gt;</code> - Remove package that you installed.</p>
