@@ -138,6 +138,9 @@ operating system name as well as the system node name, operating system release,
 <p class="point"><code>journalctl --since "1 hour ago" -p err</code> - Show recent error logs from systemd.</p>
 <p class="point"><code>sudo snort -A console -q -c /etc/snort/snort.conf -i (YOUR_INTERFACE_NAME)</code> - An IDS can monitor system activities and detect potential security threats. One popular open-source IDS for Linux is Snort. You can get your interface name from <code>ip address</code> looking like <code>wlp0s0</code>, <code>wlp1s0</code>, <code>enp0s3</code> etc.</p>
 <p class="point"><code>speaker-test -t wav -c 8</code> - You will be able to inform and hear if your sound system (output) is okay or not. This is very useful to checkout sound problem.</p>
+<p class="point"><code>timedatectl staus</code> - Current status of your time.</p>
+<p class="point"><code>timedatectl list-timezones</code> - List all the available timezones.</p>
+<p class="point"><code>timedatectl set-timezone &lt;Region/City&gt;</code> - Set your desired timezone.</p>
 <br>
 <u><h3>Advanced Security & Hardening</h3></u>
 <br>
