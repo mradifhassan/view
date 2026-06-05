@@ -375,7 +375,7 @@ However,now we're ready to use <code>ollama run llama3</code> which doesn't requ
 <p class="point"><code>ffmpeg -i input.mp4 -vn -c:a libmp3lame -q:a 2 output.mp3</code> – Extract audio from video and convert to high-quality MP3.</p>
 <p class="point"><code>ffmpeg -i input.mp4 -vn -c:a copy output.m4a</code> – Extract audio without re-encoding (fastest).</p>
 <p class="point"><code>ffmpeg -i input.mp3 -c:a flac -compression_level 8 output.flac</code> – Convert MP3 to lossless FLAC (best compression).</p>
-<p class="point"><code>ffmpeg -ss 00:01:30 -i input.mp4 -to 00:05:00 -c copy output.mp4</code> – Cut video from 1:30 to 5:00 without re-encoding (very fast).</p>
+<p class="point"><code>ffmpeg -ss 00:01:30 -i input.mp4 -to 00:05:00 -c copy output.mp4</code> – Cut video from 1:30 to 5 minutes without re-encoding (very fast).</p>
 <p class="point"><code>ffmpeg -i input.mp4 -t 120 -c copy output.mp4</code> – Keep only the first 120 seconds (2 minutes).</p>
 <p class="point"><code>ffmpeg -i input.mp4 -an -c:v copy output-muted.mp4</code> – Remove audio (mute the video).</p>
 <p class="point"><code>ffmpeg -i input.mp4 -vf scale=1280:720 output.mp4</code> – Resize video to 720p. Use <code>scale=1280:-1</code> for auto height.</p>
