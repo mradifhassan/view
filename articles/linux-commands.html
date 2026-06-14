@@ -199,12 +199,13 @@ operating system name as well as the system node name, operating system release,
 <br>
 <p class="point"><code>ps -aux | grep &lt;program name&gt;</code> - You can view if any program is running or not.</p>
 <p class="point"><code>ps aux</code> - Show all running processes.</p>
-<p class="point"><code>kill PID</code> - Kill a process by PID (graceful).</p>
-<p class="point"><code>kill -9 PID</code> - Force kill a process.</p>
+<p class="point"><code>kill &lt;PID&gt;</code> - Kill a process by PID (graceful).</p>
+<p class="point"><code>kill -9 &lt;PID&gt;</code> - Force kill a process.</p>
 <p class="point"><code>kill -15 &lt;PID&gt;</code> - If you want to stop any program, then firstly view the <code>PID</code> from running <code>top</code>.</p>
 <p class="point"><code>htop</code> - Interactive process viewer (better than top).</p>
-<p class="point"><code>pgrep -f name</code> - Find process ID by name.</p>
-<p class="point"><code>sudo systemctl status service-name</code> - Check status of a systemd service.</p>
+<p class="point"><code>pgrep -f &lt;serivce-name&gt;</code> - Find process ID by name.</p>
+<p class="point"><code>sudo systemctl status &lt;service-name&gt;</code> - Check status of a systemd service.</p>
+<p class="point"><code>cat /proc/&lt;PID&gt;/status</code> - Check status of a <code>PId</code>.</p>
 <br>
 <u><h3>USB Disk</h3></u>
 <br>
