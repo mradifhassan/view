@@ -314,6 +314,11 @@ operating system name as well as the system node name, operating system release,
 <p class="point"><code>objdump</code> - It is a command-line utility that is part of the <code>GNU Binutils</code> (Binary Utilities) suite, primarily used to display various information about object files, executable files, and libraries.</p>
 <p class="point"><code>objdump -x filename</code> - It works after compiling <code>C</code> code by displaying a comprehensive, verbose view of the entire structure and contents of the resulting executable file. The <code>-x</code> flag is a shorthand for displaying the file's entire header contents.</p>
 <p class="point"><code>gcc -S filename.c</code> - You will be able to create <code>assembly</code> file of your <code>C</code> code by using this command.</p>
+<p class="point"><code>gcc -S filename.c -o -</code> - Print assembly language directly to the Terminal.</p>
+<p class="point"><code>gcc -S -mams=intel filename.c -o -</code> - Generate intel formatted assembly code.</p>
+<p class="point"><code>objdump -S -M intel &gt;objectfile&lt;</code> - Generate intel style assembly from the compiled source code of C (objectfile).</p>
+<p class="point"><code>xxd -b &gt;objectfile&&lt;</code> - Prints binary of the program.</p>
+<p class="point"><code>readelf -h a.out</code> - reads and displays the ELF file header of a compiled object file.The ELF (Executable and Linkable Format) header acts as the roadmap for the entire file. It tells the operating system's loader how to interpret and execute the binary. </p>
 <br>
 <u><h3>Networking & Internet</h3></u>
 <br>
