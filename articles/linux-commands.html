@@ -211,8 +211,10 @@ operating system name as well as the system node name, operating system release,
 <br>
 <p class="point"><code>sudo umount /dev/sdX</code> - Unmount the USB drive before performing any operation. Replace <code>sdX</code> with your actual USB device name.</p>
 <p class="point"><code>sudo wipefs -a /dev/sdX</code> - Quickly wipe filesystem signatures from the USB drive (faster alternative to zeroing).</p>
-<p class="point"><code>sudo mkfs.vfat -F 32 -n "NAME_YOUR_FILE" /dev/sdX</code> - Create a single fresh partition (FAT32)</p>
-<p class="point"><code>sudo ./Ventoy2Disk.sh -i /dev/sda</code> - Install Ventoy program from the existing directory where it has installed.</p>
+<p class="point"><code>sudo mkfs.vfat -F 32 -n "NAME_YOUR_FILE" /dev/sdX</code> - Create a single fresh partition (FAT32) <i>[Great for cross-platform USB flash drives]</i></p>
+<p class="point"><code>sudo mkfs.exfat /dev/sdX</code> - Format as exFAT <i>[Format as exFAT (Best for large files across Linux, Windows, macOS]</i></p>
+<p class="point"><code>sudo mkfs.ext4 /dev/sdX</code> - Format as ext4 <i>[Linux native]</i></p>
+<p class="point"><code>sudo ./Ventoy2Disk.sh -i /dev/sdX</code> - Install Ventoy program from the existing directory where it has been installed.</p>
 <p class="point"><code>sudo dd if=/dev/zero of=/dev/sdX bs=4M status=progress conv=fsync</code> - Completely wipe all data from your USB drive. Replace <code>sdX</code> with your USB device (check with <code>lsblk</code>).</p>
 <p class="point"><code>sudo dd if=/path/to/os.iso of=/dev/sdX bs=4M status=progress conv=fsync &amp;&amp; sudo sync</code> - Create a bootable USB from an ISO file. Replace <code>/path/to/os.iso</code> and <code>sdX</code> accordingly.</p>
 <p class="point"><code>lsblk -o NAME,SIZE,MODEL,MOUNTPOINT</code> - List all disks and partitions with size and mount points to identify your USB drive safely.</p>
@@ -220,6 +222,7 @@ operating system name as well as the system node name, operating system release,
 <p class="point"><code>sudo dd if=/dev/sdX of=backup.img bs=4M status=progress conv=fsync</code> - Create a full backup image of your USB drive or SD card.</p>
 <p class="point"><code>sudo dd if=backup.img of=/dev/sdX bs=4M status=progress conv=fsync &amp;&amp; sudo sync</code> - Restore a backup image back to USB drive.</p>
 <p class="point"><code>sudo parted /dev/sdX --script mklabel gpt</code> - Create a new GPT partition table on the USB drive.</p>
+<p class="point"><code>echo '0' | sudo tee /sys/bus/usb/devices/usb1/power/autosuspend_delay_ms</code> - Reset a frozen USB device without rebooting.</p>
 <u><h3>File, Program, Security & Directory Management</h3></u>
 <br>
 <p class="point"><code>ls</code> – List files/folders.</p>
